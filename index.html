@@ -1,1 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuleLibrary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2165b6;
+            --primary-dark: #1a4d8c;
+            --secondary: #ff6b35;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+            flex: 1;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+
+            box-shadow: var(--shadow);
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .logo-text h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            gap: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            padding: 0.5rem 0;
+            flex: 1;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 260px calc(100% - 280px - 2rem);
+            gap: 1rem;
+            position: static;
+
+
+        }
+
+        /* Sidebar */
+        .sidebar {
+
+            width: 100%;
+            max-width: 280px;
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            top: 130px;
+
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .sidebar-header h2 {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .filter-options {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-title i {
+            color: var(--primary);
+        }
+
+        .difficulty-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .difficulty-btn {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .difficulty-btn.easy {
+            background-color: rgba(40, 167, 69, 0.15);
+            color: var(--success);
+        }
+
+        .difficulty-btn.medium {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #c69500;
+        }
+
+        .difficulty-btn.hard {
+            background-color: rgba(220, 53, 69, 0.15);
+            color: var(--danger);
+        }
+
+        .difficulty-btn.active {
+            border-color: currentColor;
+        }
+
+        .chapter-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .chapter-item {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .chapter-item:hover {
+            background-color: #e2e6ea;
+            transform: translateY(-2px);
+        }
+
+        .chapter-item.active {
+            background-color: rgba(33, 101, 182, 0.1);
+            border-left-color: var(--primary);
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .chapter-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .chapter-count {
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .chapter-topic {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .chapter-progress {
+            height: 6px;
+            background-color: #dee2e6;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--success);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* Loading Indicator */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-gray);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Main Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .chapter-info h2 {
+            color: var(--primary-dark);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .chapter-info p {
+            color: var(--gray);
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .control-btn.primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .control-btn.secondary {
+            background-color: var(--light-gray);
+            color: var(--dark);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .control-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* MCQ Display */
+        .mcq-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mcq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .mcq-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .mcq-tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .mcq-tag.chapter {
+            background-color: rgba(33, 101, 182, 0.15);
+            color: var(--primary);
+        }
+
+        .mcq-tag.difficulty {
+            background-color: rgba(40, 167, 69, 0.15);
+            color: var(--success);
+        }
+
+        .mcq-tag.difficulty.medium {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #c69500;
+        }
+
+        .mcq-tag.difficulty.hard {
+            background-color: rgba(220, 53, 69, 0.15);
+            color: var(--danger);
+        }
+
+        .mcq-id {
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            flex: 1;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .option {
+            padding: 0.5rem 0.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            background-color: rgba(33, 101, 182, 0.05);
+            border-color: rgba(33, 101, 182, 0.3);
+        }
+
+        .option.selected {
+            background-color: rgba(33, 101, 182, 0.1);
+            border-color: var(--primary);
+        }
+
+        .option.correct {
+            background-color: rgba(40, 167, 69, 0.15);
+            border-color: var(--success);
+        }
+
+        .option.incorrect {
+            background-color: rgba(220, 53, 69, 0.15);
+            border-color: var(--danger);
+        }
+
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            background-color: var(--light-gray);
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+
+        .selected .option-letter {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .correct .option-letter {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .incorrect .option-letter {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .option-text {
+            flex: 1;
+            font-size: 1.05rem;
+        }
+
+        /* Explanation Panel */
+        .explanation-panel {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .explanation-panel.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .explanation-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .explanation-content {
+            line-height: 1.6;
+        }
+
+        .explanation-correct {
+            padding: 1rem;
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid var(--success);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .explanation-incorrect {
+            padding: 1rem;
+            background-color: rgba(220, 53, 69, 0.05);
+            border-left: 4px solid #e0a6ac;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .incorrect-option {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .incorrect-option:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .incorrect-letter {
+            font-weight: 700;
+            color: var(--danger);
+            margin-right: 8px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--gray);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .footer-logo-text h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .footer-logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 100%) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+
+        }
+
+        @media (max-width: 100px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .stats {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .content-header {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mcq-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .control-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .option {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(33, 101, 182, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(33, 101, 182, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(33, 101, 182, 0);
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        /* ===== Light Backdrop Overlay ===== */
+        .modal-backdrop,
+        .about-popup {
+            position: fixed;
+            inset: 0;
+            /* top/right/bottom/left: 0 */
+            background: rgba(255, 255, 255, 0.72);
+            /* soft light backdrop */
+            backdrop-filter: blur(2px);
+            /* subtle frosted effect */
+            -webkit-backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        /* ===== Modal Card ===== */
+        .about-content,
+        .modal .modal-content {
+            background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+            color: #1f2937;
+            /* dark slate text */
+            width: min(640px, 92vw);
+            padding: 1.75rem;
+            border-radius: 16px;
+            box-shadow:
+                0 18px 40px rgba(33, 101, 182, 0.08),
+                0 6px 18px rgba(0, 0, 0, 0.06);
+            position: relative;
+            text-align: center;
+            animation: modalEnter 220ms ease-out;
+            border: 1px solid #e6edf5;
+            /* refined edge */
+        }
+
+        /* Title */
+        .about-content h2,
+        .modal-content h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #174a8c;
+            /* your primary-dark hue */
+            margin-bottom: 0.75rem;
+        }
+
+        /* Body text */
+        .about-content p,
+        .modal-content p {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #344054;
+            /* neutral text */
+            opacity: 0.98;
+            margin: 0.35rem 0;
+        }
+
+        /* Lists (Privacy/Terms) */
+        .modal-list {
+            margin: 1rem auto;
+            text-align: left;
+            max-width: 540px;
+            color: #344054;
+        }
+
+        .modal-list li {
+            margin: 0.45rem 0;
+        }
+
+        /* Accent pill tags (optional) */
+        .modal-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(33, 101, 182, 0.08);
+            color: #2165b6;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Primary button */
+        .modal-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 18px;
+            border-radius: 10px;
+            background: #2165b6;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(33, 101, 182, 0.25);
+        }
+
+        /* Outline button (secondary) */
+        .modal-btn.outline {
+            background: transparent;
+            color: #2165b6;
+            border: 1.5px solid #2165b6;
+            margin-left: 10px;
+        }
+
+        .modal-btn.outline:hover {
+            background: rgba(33, 101, 182, 0.08);
+        }
+
+        /* Close “×” */
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 1.6rem;
+            line-height: 1;
+            color: #667085;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .close-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Entrance animation */
+        @keyframes modalEnter {
+            from {
+                opacity: 0;
+                transform: translateY(6px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Utility: hide elements */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="logo-text">
+                        <h1>MuleLibrary</h1>
+                        <p>Master MuleSoft with 5000+ Practice Questions</p>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalMcqs">5,000</div>
+                        <div class="stat-label">Total MCQs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">16</div>
+                        <div class="stat-label">Chapters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">14</div>
+                        <div class="stat-label">Topics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="dashboard">
+                <!-- Sidebar with Chapters -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2>Chapters</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-options">
+                        <div class="filter-title">
+                            <i class="fas fa-filter"></i> Filter by Difficulty
+                        </div>
+                        <div class="difficulty-filters">
+                            <div class="difficulty-btn easy active" data-difficulty="all">All</div>
+                            <div class="difficulty-btn easy" data-difficulty="easy">Easy</div>
+                            <div class="difficulty-btn medium" data-difficulty="medium">Medium</div>
+                            <div class="difficulty-btn hard" data-difficulty="hard">Hard</div>
+                        </div>
+                    </div>
+
+                    <div class="chapter-list" id="chapterList">
+                        <!-- Chapters will be dynamically loaded here -->
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <p>Loading chapters...</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="content-area">
+                    <!-- Chapter Header -->
+                    <div class="content-header">
+                        <div class="chapter-info">
+                            <h2 id="currentChapterTitle">Select a Chapter to Begin</h2>
+                            <p id="currentChapterTopic">Choose from the sidebar to load MCQs</p>
+                        </div>
+                        <div class="controls">
+                            <button class="control-btn secondary" id="prevBtn" disabled>
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button class="control-btn primary" id="nextBtn" disabled>
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="control-btn secondary" id="showAnswerBtn" disabled>
+                                <i class="fas fa-lightbulb"></i> Show Answer
+                            </button>
+                            <button class="control-btn secondary" id="resetBtn" disabled>
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- MCQ Display -->
+                    <div class="mcq-container">
+                        <div class="empty-state" id="emptyState">
+                            <i class="fas fa-book-open"></i>
+                            <h3>No Chapter Selected</h3>
+                            <p>Select a chapter from the sidebar to start practicing questions.</p>
+                        </div>
+
+                        <div id="mcqContent" class="hidden">
+                            <div class="mcq-header">
+                                <div class="mcq-meta">
+                                    <div class="mcq-tag chapter" id="mcqChapterTag">Chapter 1</div>
+                                    <div class="mcq-tag difficulty easy" id="mcqDifficultyTag">Easy</div>
+                                    <div class="mcq-id" id="mcqId">ID: CH01-0001</div>
+                                </div>
+                                <div class="mcq-navigation">
+                                    <span id="currentQuestion">1</span> of <span id="totalQuestions">0</span>
+                                </div>
+                            </div>
+
+                            <div class="question-text" id="questionText">
+                                Loading question...
+                            </div>
+
+                            <div class="options-container" id="optionsContainer">
+                                <!-- Options will be dynamically loaded here -->
+                            </div>
+
+                            <!-- Explanation Panel -->
+                            <div class="explanation-panel" id="explanationPanel">
+                                <div class="explanation-title">
+                                    <i class="fas fa-info-circle"></i> Explanation
+                                </div>
+                                <div class="explanation-content">
+                                    <div class="explanation-correct" id="correctExplanation">
+                                        <strong>Correct Answer Explanation:</strong> Explanation will appear here after
+                                        you submit your answer.
+                                    </div>
+                                    <div class="explanation-incorrect" id="incorrectExplanation">
+                                        <strong>Why other options are incorrect:</strong>
+                                        <div id="incorrectOptionsList">
+                                            <!-- Incorrect explanations will be dynamically loaded here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="loading hidden" id="mcqLoading">
+                            <div class="loading-spinner"></div>
+                            <p>Loading questions...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="footer-logo-text">
+                        <h3>MuleLibrary</h3>
+                        <p>Your preparation hub for MuleSoft certifications</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#" id="aboutLink">About</a>
+                    <a href="#" id="contactLink">Contact</a>
+                    <a href="#" id="privacyLink">Privacy Policy</a>
+                    <a href="#" id="termsLink">Terms of Use</a>
+                </div>
+                <div id="aboutPopup" class="about-popup hidden">
+                    <div class="about-content">
+                        <span class="close-btn" id="closePopup">&times;</span>
+                        <h2>About This Portal</h2>
+                        <p>This MuleSoft MCQ Portal is designed and developed by <strong>Suraj Prakash Verma</strong>.
+                        </p>
+                        <p>Purpose: To help learners master MuleSoft concepts with 5000+ practice questions.</p>
+                        <p>Crafted with passion for learning and sharing knowledge.</p>
+                    </div>
+                </div>
+                <!-- Contact Modal -->
+                <div id="contactPopup" class="modal-backdrop hidden">
+                    <div class="about-content">
+                        <span class="close-btn" data-close="contactPopup">&times;</span>
+                        <h2>Contact</h2>
+                        <p>If you have questions, suggestions, or feedback, feel free to reach out.</p>
+                        <div class="contact-block">
+                            <p><strong>Name:</strong> Suraj Prakash Verma</p>
+                            <p><strong>Email:</strong> <a
+                                    href="mailto:suraj.verma@example.com">suraj.verma@example.com</a></p>
+                            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/surajprakashverma"
+                                    target="_blank" rel="noopener">/in/surajprakashverma</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Modal -->
+                <div id="privacyPopup" class="modal-backdrop hidden">
+                    <div class="about-content">
+                        <span class="close-btn" data-close="privacyPopup">&times;</span>
+                        <h2>Privacy Policy</h2>
+                        <p>We respect your privacy. This portal stores minimal data locally to improve your
+                            experience.</p>
+                        <ul class="modal-list">
+                            <li><strong>Local Storage:</strong> Progress (completed questions, last seen question)
+                                is stored in your browser only.</li>
+                            <li><strong>No Tracking:</strong> We do not use cookies or third‑party trackers.</li>
+                            <li><strong>Data Control:</strong> You can clear your progress anytime via your browser
+                                settings.</li>
+                        </ul>
+                        <p>For questions about privacy, contact Suraj Prakash Verma.</p>
+                    </div>
+                </div>
+
+                <!-- Terms of Use Modal -->
+                <div id="termsPopup" class="modal-backdrop hidden">
+                    <div class="about-content">
+                        <span class="close-btn" data-close="termsPopup">&times;</span>
+                        <h2>Terms of Use</h2>
+                        <ul class="modal-list">
+                            <li>This portal is provided “as‑is” for learning and practice.</li>
+                            <li>Do not redistribute the content without permission.</li>
+                            <li>Use the questions responsibly for study and interview preparation.</li>
+                            <li>By using this portal, you agree that the author is not liable for any outcomes from
+                                its use.</li>
+                        </ul>
+                        <p>Designed and developed by <strong>Suraj Prakash Verma</strong>.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Chapter data with MCQ counts (same as your distribution)
+        const chapters = [
+            { id: 1, title: "APIs, Integrations, No/Low Code, API-Led", topic: "Introduction to APIs and MuleSoft", mcqs: 400, file: "data/CH01.json" },
+            { id: 2, title: "API Design (RAML, OAS, URI, Query, Mocking)", topic: "API Design Principles", mcqs: 350, file: "data/CH02.json" },
+            { id: 3, title: "Anypoint Studio & ACB", topic: "Development Tools", mcqs: 350, file: "data/CH03.json" },
+            { id: 4, title: "Core Components, Flows, Error Handling", topic: "MuleSoft Core Concepts", mcqs: 500, file: "data/CH04.json" },
+            { id: 5, title: "Anypoint Platform (Runtime, API Manager, Exchange)", topic: "Platform Management", mcqs: 400, file: "data/CH05.json" },
+            { id: 6, title: "DataWeave Fundamentals", topic: "Data Transformation Basics", mcqs: 450, file: "data/CH06.json" },
+            { id: 7, title: "DataWeave Transformations & Modules", topic: "Advanced DataWeave", mcqs: 450, file: "data/CH07.json" },
+            { id: 8, title: "Application Building (Scheduler, APIKit, Object Store)", topic: "Application Development", mcqs: 350, file: "data/CH08.json" },
+            { id: 9, title: "Deployment & CI/CD", topic: "Deployment Strategies", mcqs: 300, file: "data/CH09.json" },
+            { id: 10, title: "API Security & Policies", topic: "Security Practices", mcqs: 300, file: "data/CH10.json" },
+            { id: 11, title: "Testing & MUnit", topic: "Testing Framework", mcqs: 300, file: "data/CH11.json" },
+            { id: 12, title: "Salesforce Integration", topic: "Salesforce Connector", mcqs: 350, file: "data/CH12.json" },
+            { id: 13, title: "Connectors & Use Cases", topic: "Integration Connectors", mcqs: 300, file: "data/CH13.json" },
+            { id: 14, title: "Best Practices", topic: "Development Best Practices", mcqs: 200, file: "data/CH14.json" },
+            { id: 15, title: "Certification & Interviews", topic: "Career Preparation", mcqs: 150, file: "data/CH15.json" },
+            { id: 16, title: "AI, Composer, RPA, IDP", topic: "Emerging Technologies", mcqs: 150, file: "data/CH16.json" }
+        ];
+
+        // Application state
+        let currentChapterId = null;
+        let currentQuestionIndex = 0;
+        let questions = [];
+        let filteredQuestions = [];
+        let selectedOption = null;
+        let answerSubmitted = false;
+        let currentDifficultyFilter = 'all';
+        let userProgress = {};
+
+        // DOM Elements
+        const chapterList = document.getElementById('chapterList');
+        const currentChapterTitle = document.getElementById('currentChapterTitle');
+        const currentChapterTopic = document.getElementById('currentChapterTopic');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const mcqChapterTag = document.getElementById('mcqChapterTag');
+        const mcqDifficultyTag = document.getElementById('mcqDifficultyTag');
+        const mcqId = document.getElementById('mcqId');
+        const currentQuestion = document.getElementById('currentQuestion');
+        const totalQuestions = document.getElementById('totalQuestions');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const showAnswerBtn = document.getElementById('showAnswerBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const explanationPanel = document.getElementById('explanationPanel');
+        const correctExplanation = document.getElementById('correctExplanation');
+        const incorrectOptionsList = document.getElementById('incorrectOptionsList');
+        const difficultyFilters = document.querySelectorAll('.difficulty-btn');
+        const emptyState = document.getElementById('emptyState');
+        const mcqContent = document.getElementById('mcqContent');
+        const mcqLoading = document.getElementById('mcqLoading');
+        const totalMcqsElement = document.getElementById('totalMcqs');
+
+        // Initialize the application
+        async function init() {
+            // Load user progress from localStorage
+            loadUserProgress();
+
+            // Render chapters
+            renderChapters();
+
+            // Setup event listeners
+            setupEventListeners();
+
+            // Load first chapter by default
+            await loadChapter(1);
+        }
+
+        // Load user progress from localStorage
+        function loadUserProgress() {
+            const savedProgress = localStorage.getItem('mulesoftMcqProgress');
+            if (savedProgress) {
+                userProgress = JSON.parse(savedProgress);
+            } else {
+                // Initialize empty progress
+                chapters.forEach(chapter => {
+                    userProgress[chapter.id] = {
+                        completed: 0,
+                        total: 0,
+                        lastQuestion: 0
+                    };
+                });
+            }
+        }
+
+        // Save user progress to localStorage
+        function saveUserProgress() {
+            localStorage.setItem('mulesoftMcqProgress', JSON.stringify(userProgress));
+        }
+
+        // Update progress for current chapter
+        function updateProgress() {
+            if (!currentChapterId || questions.length === 0) return;
+
+            if (!userProgress[currentChapterId]) {
+                userProgress[currentChapterId] = {
+                    completed: 0,
+                    total: questions.length,
+                    lastQuestion: currentQuestionIndex
+                };
+            } else {
+                userProgress[currentChapterId].total = questions.length;
+                userProgress[currentChapterId].lastQuestion = currentQuestionIndex;
+            }
+
+            saveUserProgress();
+            updateChapterProgressUI();
+        }
+
+        // Render chapters in the sidebar
+        function renderChapters() {
+            // Clear loading state
+            chapterList.innerHTML = '';
+
+            chapters.forEach(chapter => {
+                const progress = userProgress[chapter.id] || { completed: 0, total: chapter.mcqs };
+                const progressPercent = progress.total > 0 ? Math.min(100, (progress.completed / progress.total) * 100) : 0;
+
+                const chapterItem = document.createElement('div');
+                chapterItem.className = `chapter-item ${chapter.id === 1 ? 'active' : ''}`;
+                chapterItem.dataset.id = chapter.id;
+
+                chapterItem.innerHTML = `
+                    <div class="chapter-header">
+                        <div class="chapter-title">Chapter ${chapter.id}</div>
+                        <div class="chapter-count">${chapter.mcqs} MCQs</div>
+                    </div>
+                    <div class="chapter-topic">${chapter.topic}</div>
+                    <div class="chapter-progress">
+                        <div class="progress-bar" style="width: ${progressPercent}%"></div>
+                    </div>
+                `;
+
+                chapterItem.addEventListener('click', () => loadChapter(chapter.id));
+                chapterList.appendChild(chapterItem);
+            });
+
+            // Update total MCQs count
+            const totalMcqs = chapters.reduce((sum, chapter) => sum + chapter.mcqs, 0);
+            totalMcqsElement.textContent = totalMcqs.toLocaleString();
+        }
+
+        // Update chapter progress UI
+        function updateChapterProgressUI() {
+            if (!currentChapterId) return;
+
+            const progress = userProgress[currentChapterId] || { completed: 0, total: questions.length };
+            const progressPercent = progress.total > 0 ? Math.min(100, (progress.completed / progress.total) * 100) : 0;
+
+            // Update active chapter progress bar
+            const activeChapterItem = document.querySelector(`.chapter-item[data-id="${currentChapterId}"] .progress-bar`);
+            if (activeChapterItem) {
+                activeChapterItem.style.width = `${progressPercent}%`;
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Difficulty filters
+            difficultyFilters.forEach(filter => {
+                filter.addEventListener('click', function () {
+                    difficultyFilters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    currentDifficultyFilter = this.dataset.difficulty;
+
+                    // Filter questions if we have a chapter loaded
+                    if (currentChapterId && questions.length > 0) {
+                        filterQuestions();
+                        currentQuestionIndex = 0;
+                        displayQuestion(currentQuestionIndex);
+                    }
+                });
+            });
+
+            // Navigation buttons
+            prevBtn.addEventListener('click', showPreviousQuestion);
+            nextBtn.addEventListener('click', showNextQuestion);
+            showAnswerBtn.addEventListener('click', showAnswer);
+            resetBtn.addEventListener('click', resetQuiz);
+        }
+
+        // Load a chapter
+        async function loadChapter(chapterId) {
+            currentChapterId = chapterId;
+            currentQuestionIndex = 0;
+            answerSubmitted = false;
+
+            // Show loading state
+            emptyState.classList.add('hidden');
+            mcqContent.classList.add('hidden');
+            mcqLoading.classList.remove('hidden');
+
+            // Update active chapter in sidebar
+            document.querySelectorAll('.chapter-item').forEach(item => {
+                item.classList.remove('active');
+                if (parseInt(item.dataset.id) === chapterId) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update chapter info
+            const chapter = chapters.find(c => c.id === chapterId);
+            currentChapterTitle.textContent = `Chapter ${chapterId}: ${chapter.title}`;
+            currentChapterTopic.textContent = chapter.topic;
+
+            try {
+                // Load questions from JSON file
+                await loadQuestionsFromFile(chapter.file);
+
+                // Filter questions based on current difficulty filter
+                filterQuestions();
+
+                // Hide loading, show content
+                mcqLoading.classList.add('hidden');
+
+                if (filteredQuestions.length > 0) {
+                    emptyState.classList.add('hidden');
+                    mcqContent.classList.remove('hidden');
+
+                    // Restore last question position if available
+                    if (userProgress[chapterId] && userProgress[chapterId].lastQuestion) {
+                        currentQuestionIndex = Math.min(userProgress[chapterId].lastQuestion, filteredQuestions.length - 1);
+                    }
+
+                    // Display the question
+                    displayQuestion(currentQuestionIndex);
+
+                    // Enable buttons
+                    showAnswerBtn.disabled = false;
+                    resetBtn.disabled = false;
+                } else {
+                    // No questions after filtering
+                    emptyState.classList.remove('hidden');
+                    mcqContent.classList.add('hidden');
+                    emptyState.innerHTML = `
+                        <i class="fas fa-filter"></i>
+                        <h3>No Questions Match Filter</h3>
+                        <p>Try changing the difficulty filter to see questions for this chapter.</p>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading chapter:', error);
+                mcqLoading.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error Loading Questions</h3>
+                    <p>Could not load questions for Chapter ${chapterId} from ${chapter.file}.</p>
+                    <p class="mt-2">Please make sure the JSON file exists in the /data/ directory.</p>
+                    <p class="mt-2"><small>Error: ${error.message}</small></p>
+                `;
+            }
+
+            // Update progress UI
+            updateChapterProgressUI();
+        }
+
+        // Load questions from JSON file
+        async function loadQuestionsFromFile(filePath) {
+            const response = await fetch(filePath);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status} - Could not load ${filePath}`);
+            }
+            questions = await response.json();
+
+            // Validate the data structure
+            if (!Array.isArray(questions)) {
+                throw new Error(`Invalid data format in ${filePath}. Expected an array of questions.`);
+            }
+
+            // Validate each question has required fields
+            questions.forEach((q, index) => {
+                if (!q.id || !q.question || !q.options || !q.correctAnswer) {
+                    console.warn(`Question at index ${index} in ${filePath} is missing required fields`);
+                }
+            });
+        }
+
+        // Filter questions based on difficulty
+        function filterQuestions() {
+            if (currentDifficultyFilter === 'all') {
+                filteredQuestions = [...questions];
+            } else {
+                filteredQuestions = questions.filter(q =>
+                    q.difficulty && q.difficulty.toLowerCase() === currentDifficultyFilter.toLowerCase()
+                );
+            }
+
+            // Update total questions display
+            totalQuestions.textContent = filteredQuestions.length;
+
+            // Update navigation buttons
+            updateNavigationButtons();
+        }
+
+        // Display a question
+        function displayQuestion(index) {
+            if (filteredQuestions.length === 0) return;
+
+            const question = filteredQuestions[index];
+            currentQuestionIndex = index;
+            currentQuestion.textContent = index + 1;
+
+            // Update question text
+            questionText.textContent = question.question;
+
+            // Update tags
+            mcqChapterTag.textContent = `Chapter ${question.chapter || currentChapterId}`;
+
+            // Set difficulty tag with fallback
+            const difficulty = question.difficulty || 'Easy';
+            mcqDifficultyTag.textContent = difficulty;
+            mcqDifficultyTag.className = `mcq-tag difficulty ${difficulty.toLowerCase()}`;
+
+            mcqId.textContent = `ID: ${question.id || `CH${currentChapterId.toString().padStart(2, '0')}-${(index + 1).toString().padStart(4, '0')}`}`;
+
+            // Update options
+            optionsContainer.innerHTML = '';
+
+            if (question.options && typeof question.options === 'object') {
+                Object.entries(question.options).forEach(([key, value]) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'option';
+                    optionElement.dataset.option = key;
+
+                    optionElement.innerHTML = `
+                        <div class="option-letter">${key}</div>
+                        <div class="option-text">${value}</div>
+                    `;
+
+                    if (!answerSubmitted) {
+                        optionElement.addEventListener('click', () => selectOption(key));
+                    }
+
+                    optionsContainer.appendChild(optionElement);
+                });
+            }
+
+            // Update navigation buttons
+            updateNavigationButtons();
+
+            // Reset explanation panel
+            explanationPanel.classList.remove('show');
+            selectedOption = null;
+            answerSubmitted = false;
+
+            // Update progress
+            updateProgress();
+        }
+
+        // Update navigation buttons
+        function updateNavigationButtons() {
+            prevBtn.disabled = currentQuestionIndex === 0 || filteredQuestions.length === 0;
+            nextBtn.disabled = currentQuestionIndex === filteredQuestions.length - 1 || filteredQuestions.length === 0;
+        }
+
+        // Select an option
+        function selectOption(optionKey) {
+            if (answerSubmitted) return;
+
+            // Remove selected class from all options
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            // Add selected class to clicked option
+            const selectedElement = document.querySelector(`.option[data-option="${optionKey}"]`);
+            if (selectedElement) {
+                selectedElement.classList.add('selected');
+            }
+
+            selectedOption = optionKey;
+        }
+
+        // Show answer explanation
+        function showAnswer() {
+            if (filteredQuestions.length === 0 || answerSubmitted) return;
+
+            const question = filteredQuestions[currentQuestionIndex];
+            answerSubmitted = true;
+
+            // Mark correct and incorrect options
+            document.querySelectorAll('.option').forEach(opt => {
+                const optionKey = opt.dataset.option;
+                opt.classList.remove('selected');
+
+                if (optionKey === question.correctAnswer) {
+                    opt.classList.add('correct');
+                } else if (optionKey === selectedOption) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            // Show explanation if available
+            if (question.explanation) {
+                correctExplanation.innerHTML = `<strong>Correct Answer Explanation:</strong> ${question.explanation.correct || 'No explanation available.'}`;
+
+                // Show incorrect options explanations if available
+                incorrectOptionsList.innerHTML = '';
+                if (question.explanation.incorrect && typeof question.explanation.incorrect === 'object') {
+                    Object.entries(question.explanation.incorrect).forEach(([key, value]) => {
+                        if (key !== question.correctAnswer) {
+                            const incorrectOption = document.createElement('div');
+                            incorrectOption.className = 'incorrect-option';
+                            incorrectOption.innerHTML = `
+                                <span class="incorrect-letter">${key}:</span> ${value}
+                            `;
+                            incorrectOptionsList.appendChild(incorrectOption);
+                        }
+                    });
+                } else {
+                    incorrectOptionsList.innerHTML = '<p>No detailed explanation for incorrect options available.</p>';
+                }
+            } else {
+                correctExplanation.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+                incorrectOptionsList.innerHTML = '<p>No explanation available for this question.</p>';
+            }
+
+            explanationPanel.classList.add('show');
+
+            // Update progress if user got it right
+            if (selectedOption === question.correctAnswer && userProgress[currentChapterId]) {
+                userProgress[currentChapterId].completed = Math.min(
+                    userProgress[currentChapterId].completed + 1,
+                    userProgress[currentChapterId].total
+                );
+                saveUserProgress();
+                updateChapterProgressUI();
+            }
+        }
+
+        // Show previous question
+        function showPreviousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        // Show next question
+        function showNextQuestion() {
+            if (currentQuestionIndex < filteredQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        // Reset the quiz
+        function resetQuiz() {
+
+            if (filteredQuestions.length > 0) {
+                currentQuestionIndex = 0;
+                selectedOption = null;
+                answerSubmitted = false;
+
+                // Hide any shown explanation
+                explanationPanel.classList.remove('show');
+
+                // Render the first question and update navigation buttons
+                displayQuestion(currentQuestionIndex);
+                updateNavigationButtons();
+
+            }
+        }
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+
+        const aboutLink = document.getElementById('aboutLink');
+        const contactLink = document.getElementById('contactLink');
+        const privacyLink = document.getElementById('privacyLink');
+        const termsLink = document.getElementById('termsLink');
+
+        const aboutPopup = document.getElementById('aboutPopup');
+        const contactPopup = document.getElementById('contactPopup');
+        const privacyPopup = document.getElementById('privacyPopup');
+        const termsPopup = document.getElementById('termsPopup');
+        const closePopup = document.getElementById('closePopup');
+
+        function closeAllModals() {
+            [aboutPopup, contactPopup, privacyPopup, termsPopup].forEach(m => m.classList.add('hidden'));
+        }
+
+        // Open handlers
+        aboutLink.addEventListener('click', (e) => { e.preventDefault(); closeAllModals(); aboutPopup.classList.remove('hidden'); });
+        contactLink.addEventListener('click', (e) => { e.preventDefault(); closeAllModals(); contactPopup.classList.remove('hidden'); });
+        privacyLink.addEventListener('click', (e) => { e.preventDefault(); closeAllModals(); privacyPopup.classList.remove('hidden'); });
+        termsLink.addEventListener('click', (e) => { e.preventDefault(); closeAllModals(); termsPopup.classList.remove('hidden'); });
+
+        // Close About via its ×
+        closePopup.addEventListener('click', () => aboutPopup.classList.add('hidden'));
+
+        // Close individual modals via their × buttons
+        document.querySelectorAll('.close-btn[data-close]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.getAttribute('data-close');
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+        });
+
+        // Backdrop click: close if user clicks outside the card
+        [aboutPopup, contactPopup, privacyPopup, termsPopup].forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+        });
+
+        // ESC closes any open modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllModals();
+        });
+
+
+    </script>
+</body>
+
+</html>
