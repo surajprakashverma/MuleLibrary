@@ -1,0 +1,4816 @@
+[
+  {
+    "id": "CH14-0001",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "contract-first",
+    "difficulty": "Medium",
+    "question": "Why is a contract-first approach recommended when designing APIs?",
+    "options": {
+      "A": "It eliminates the need for testing",
+      "B": "It aligns stakeholders before implementation begins",
+      "C": "It reduces the number of APIs required",
+      "D": "It improves runtime performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Contract-first design ensures expectations are agreed upon early, reducing rework.",
+      "incorrect": {
+        "A": "Testing is still mandatory.",
+        "C": "API count is unrelated.",
+        "D": "Runtime performance is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0002",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "resource naming",
+    "difficulty": "Easy",
+    "question": "What is a best practice for REST resource naming?",
+    "options": {
+      "A": "Use verbs in resource paths",
+      "B": "Use nouns that represent collections",
+      "C": "Embed business logic in URLs",
+      "D": "Use uppercase letters"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "RESTful APIs represent resources as nouns, not actions.",
+      "incorrect": {
+        "A": "Verbs belong to HTTP methods.",
+        "C": "Business logic should not be in URLs.",
+        "D": "Lowercase is preferred."
+      }
+    }
+  },
+  {
+    "id": "CH14-0003",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "standardization",
+    "difficulty": "Medium",
+    "question": "Why should error responses be standardized across APIs?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To simplify client-side error handling",
+      "C": "To avoid logging",
+      "D": "To increase throughput"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consistent error formats allow clients to handle failures predictably.",
+      "incorrect": {
+        "A": "Payload size is secondary.",
+        "C": "Logging remains necessary.",
+        "D": "Throughput is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0004",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "error propagation",
+    "difficulty": "Hard",
+    "question": "What is the best practice when propagating backend errors to API consumers?",
+    "options": {
+      "A": "Expose full stack traces",
+      "B": "Translate errors into consumer-friendly messages",
+      "C": "Suppress all error details",
+      "D": "Return HTTP 200 with error text"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consumers need meaningful but safe error information.",
+      "incorrect": {
+        "A": "Stack traces expose sensitive data.",
+        "C": "Total suppression reduces usability.",
+        "D": "HTTP status codes must reflect errors."
+      }
+    }
+  },
+  {
+    "id": "CH14-0005",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "payload optimization",
+    "difficulty": "Easy",
+    "question": "What is a recommended way to optimize API payloads?",
+    "options": {
+      "A": "Return all available fields by default",
+      "B": "Return only fields required by the consumer",
+      "C": "Disable compression",
+      "D": "Increase payload nesting"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Smaller payloads reduce latency and resource usage.",
+      "incorrect": {
+        "A": "Over-fetching wastes bandwidth.",
+        "C": "Compression improves performance.",
+        "D": "Deep nesting increases complexity."
+      }
+    }
+  },
+  {
+    "id": "CH14-0006",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "caching",
+    "difficulty": "Medium",
+    "question": "When should caching be applied in API-led architectures?",
+    "options": {
+      "A": "Only at the experience layer",
+      "B": "Where data is read-heavy and changes infrequently",
+      "C": "For all write operations",
+      "D": "Only inside Mule flows"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Caching is most effective for frequently read, stable data.",
+      "incorrect": {
+        "A": "Caching may exist at multiple layers.",
+        "C": "Writes should not be cached.",
+        "D": "Caching is not Mule-only."
+      }
+    }
+  },
+  {
+    "id": "CH14-0007",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "least privilege",
+    "difficulty": "Easy",
+    "question": "Why is the principle of least privilege critical in integration design?",
+    "options": {
+      "A": "It improves response time",
+      "B": "It limits the impact of compromised credentials",
+      "C": "It reduces the number of APIs",
+      "D": "It simplifies transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Limiting permissions reduces security blast radius.",
+      "incorrect": {
+        "A": "Performance is unaffected.",
+        "C": "API count is unrelated.",
+        "D": "Transformations are independent."
+      }
+    }
+  },
+  {
+    "id": "CH14-0008",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "credential management",
+    "difficulty": "Medium",
+    "question": "What is the safest way to manage credentials in Mule applications?",
+    "options": {
+      "A": "Store them in source code",
+      "B": "Use secure properties or secrets managers",
+      "C": "Share credentials across environments",
+      "D": "Store them in documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Secrets managers protect credentials from exposure.",
+      "incorrect": {
+        "A": "Source code storage is insecure.",
+        "C": "Sharing increases risk.",
+        "D": "Documentation is not secure storage."
+      }
+    }
+  },
+  {
+    "id": "CH14-0009",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log levels",
+    "difficulty": "Easy",
+    "question": "Why should log levels be used appropriately in Mule applications?",
+    "options": {
+      "A": "To eliminate the need for monitoring",
+      "B": "To balance observability and performance",
+      "C": "To avoid error handling",
+      "D": "To increase payload size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Excessive logging impacts performance, insufficient logging reduces visibility.",
+      "incorrect": {
+        "A": "Monitoring is still required.",
+        "C": "Error handling remains necessary.",
+        "D": "Payload size is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0010",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "sensitive data",
+    "difficulty": "Medium",
+    "question": "What is the best practice when logging sensitive data?",
+    "options": {
+      "A": "Log it only in production",
+      "B": "Mask or avoid logging sensitive values",
+      "C": "Encrypt logs manually",
+      "D": "Increase log verbosity"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Masking prevents accidental exposure of sensitive information.",
+      "incorrect": {
+        "A": "Production is the most sensitive environment.",
+        "C": "Manual encryption is error-prone.",
+        "D": "Higher verbosity increases risk."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0011",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "environment separation",
+    "difficulty": "Easy",
+    "question": "Why should environments like dev, test, and prod be strictly separated?",
+    "options": {
+      "A": "To increase API limits",
+      "B": "To prevent unintended impact on production",
+      "C": "To simplify transformations",
+      "D": "To reduce logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Isolation prevents test changes from affecting live systems.",
+      "incorrect": {
+        "A": "Limits are unrelated.",
+        "C": "Transformations are independent.",
+        "D": "Logging remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0012",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "immutable builds",
+    "difficulty": "Medium",
+    "question": "What is the advantage of immutable application builds?",
+    "options": {
+      "A": "They allow hot fixes in production",
+      "B": "They ensure consistency across environments",
+      "C": "They eliminate testing",
+      "D": "They increase runtime flexibility"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Immutable builds guarantee the same artifact runs everywhere.",
+      "incorrect": {
+        "A": "Hot fixes break immutability.",
+        "C": "Testing is still required.",
+        "D": "Flexibility is reduced intentionally."
+      }
+    }
+  },
+  {
+    "id": "CH14-0013",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "stateless design",
+    "difficulty": "Medium",
+    "question": "Why is stateless design recommended for scalable Mule applications?",
+    "options": {
+      "A": "It reduces API count",
+      "B": "It enables horizontal scaling",
+      "C": "It simplifies transformations",
+      "D": "It removes the need for persistence"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stateless services can be replicated without coordination.",
+      "incorrect": {
+        "A": "API count is unrelated.",
+        "C": "Transformations are unaffected.",
+        "D": "Persistence may still be required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0014",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "thread usage",
+    "difficulty": "Hard",
+    "question": "What is a best practice regarding thread usage in Mule flows?",
+    "options": {
+      "A": "Block threads whenever possible",
+      "B": "Avoid blocking operations on critical threads",
+      "C": "Increase thread pool size indefinitely",
+      "D": "Use synchronous calls everywhere"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blocking critical threads limits throughput and scalability.",
+      "incorrect": {
+        "A": "Blocking reduces performance.",
+        "C": "Infinite threads cause instability.",
+        "D": "Synchronous calls reduce scalability."
+      }
+    }
+  },
+  {
+    "id": "CH14-0015",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test coverage",
+    "difficulty": "Easy",
+    "question": "Why is high test coverage important for integration applications?",
+    "options": {
+      "A": "It guarantees zero defects",
+      "B": "It reduces regression risk during changes",
+      "C": "It increases deployment speed automatically",
+      "D": "It removes the need for monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Tests catch unintended behavior introduced by changes.",
+      "incorrect": {
+        "A": "Zero defects cannot be guaranteed.",
+        "C": "Speed depends on pipelines.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0016",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "mocking",
+    "difficulty": "Medium",
+    "question": "Why should external systems be mocked during automated testing?",
+    "options": {
+      "A": "To increase realism",
+      "B": "To isolate tests from external failures",
+      "C": "To avoid writing assertions",
+      "D": "To reduce code size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Mocking ensures tests are reliable and repeatable.",
+      "incorrect": {
+        "A": "Mocks reduce dependency on real systems.",
+        "C": "Assertions are still required.",
+        "D": "Code size is unaffected."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0017",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "api lifecycle",
+    "difficulty": "Medium",
+    "question": "Why is managing the full API lifecycle a best practice?",
+    "options": {
+      "A": "To reduce API count",
+      "B": "To ensure consistency from design to retirement",
+      "C": "To eliminate security reviews",
+      "D": "To avoid documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Lifecycle management prevents unmanaged and obsolete APIs.",
+      "incorrect": {
+        "A": "API count may still grow.",
+        "C": "Security reviews are essential.",
+        "D": "Documentation is required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0018",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "reuse",
+    "difficulty": "Easy",
+    "question": "What is a key benefit of reusing APIs and integrations?",
+    "options": {
+      "A": "Increased coupling",
+      "B": "Reduced development time and inconsistency",
+      "C": "Higher runtime cost",
+      "D": "Less documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Reuse avoids duplication and promotes standard behavior.",
+      "incorrect": {
+        "A": "Reuse reduces coupling when designed properly.",
+        "C": "Cost is often reduced.",
+        "D": "Documentation is still needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0019",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "monitoring",
+    "difficulty": "Easy",
+    "question": "Why is proactive monitoring a best practice?",
+    "options": {
+      "A": "It eliminates incidents",
+      "B": "It detects issues before users are impacted",
+      "C": "It reduces code complexity",
+      "D": "It removes the need for alerts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early detection reduces outage duration and impact.",
+      "incorrect": {
+        "A": "Incidents can still occur.",
+        "C": "Complexity is unchanged.",
+        "D": "Alerts are part of monitoring."
+      }
+    }
+  },
+  {
+    "id": "CH14-0020",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "automation",
+    "difficulty": "Easy",
+    "question": "What is the main benefit of automating operational tasks?",
+    "options": {
+      "A": "Increased manual control",
+      "B": "Reduced human error and faster recovery",
+      "C": "Higher runtime latency",
+      "D": "More configuration drift"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automation ensures consistent and rapid responses.",
+      "incorrect": {
+        "A": "Automation reduces manual effort.",
+        "C": "Latency is not increased.",
+        "D": "Automation reduces drift."
+      }
+    }
+  },
+  {
+    "id": "CH14-0021",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "resource naming",
+    "difficulty": "Easy",
+    "question": "Which resource naming convention is recommended for REST APIs?",
+    "options": {
+      "A": "Verb-based singular names",
+      "B": "Noun-based plural names",
+      "C": "Database table names",
+      "D": "CamelCase action names"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Plural nouns clearly represent collections of resources.",
+      "incorrect": {
+        "A": "Verbs belong to HTTP methods.",
+        "C": "Table names expose implementation details.",
+        "D": "Action-based naming breaks REST principles."
+      }
+    }
+  },
+  {
+    "id": "CH14-0022",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "idempotency",
+    "difficulty": "Medium",
+    "question": "Which HTTP method is inherently idempotent?",
+    "options": {
+      "A": "POST",
+      "B": "PUT",
+      "C": "CONNECT",
+      "D": "PATCH"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Multiple identical PUT requests result in the same state.",
+      "incorrect": {
+        "A": "POST may create multiple resources.",
+        "C": "CONNECT establishes tunnels.",
+        "D": "PATCH may produce different outcomes."
+      }
+    }
+  },
+  {
+    "id": "CH14-0023",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "query usage",
+    "difficulty": "Medium",
+    "question": "When should query parameters be used instead of request bodies?",
+    "options": {
+      "A": "For resource creation",
+      "B": "For optional filtering and sorting",
+      "C": "For large payloads",
+      "D": "For sensitive data"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Queries refine responses without changing resource state.",
+      "incorrect": {
+        "A": "Creation belongs in the body.",
+        "C": "Large payloads should use request bodies.",
+        "D": "Sensitive data should not be in URLs."
+      }
+    }
+  },
+  {
+    "id": "CH14-0024",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "error consistency",
+    "difficulty": "Medium",
+    "question": "Why should error responses follow a consistent structure?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To simplify client-side handling",
+      "C": "To improve authentication",
+      "D": "To increase performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consistency allows clients to process errors predictably.",
+      "incorrect": {
+        "A": "Structure consistency does not minimize size.",
+        "C": "Authentication is unrelated.",
+        "D": "Performance impact is negligible."
+      }
+    }
+  },
+  {
+    "id": "CH14-0025",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "retries",
+    "difficulty": "Hard",
+    "question": "Which scenario should NOT trigger automatic retries?",
+    "options": {
+      "A": "Temporary network failure",
+      "B": "HTTP 503 from downstream service",
+      "C": "Validation error from client input",
+      "D": "Intermittent DNS resolution issue"
+    },
+    "correctAnswer": "C",
+    "explanation": {
+      "correct": "Validation errors require correction, not retries.",
+      "incorrect": {
+        "A": "Transient failures may succeed on retry.",
+        "B": "Service unavailability is often temporary.",
+        "D": "DNS issues may resolve quickly."
+      }
+    }
+  },
+  {
+    "id": "CH14-0026",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "connection pooling",
+    "difficulty": "Medium",
+    "question": "What is the primary benefit of connection pooling?",
+    "options": {
+      "A": "Improved security",
+      "B": "Reduced connection setup overhead",
+      "C": "Simplified transformations",
+      "D": "Lower memory usage always"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Reusing connections avoids repeated handshakes.",
+      "incorrect": {
+        "A": "Security is configured separately.",
+        "C": "Transformations are unrelated.",
+        "D": "Memory usage depends on configuration."
+      }
+    }
+  },
+  {
+    "id": "CH14-0027",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "threading model",
+    "difficulty": "Medium",
+    "question": "Why should blocking operations be minimized on CPU-intensive threads?",
+    "options": {
+      "A": "To reduce logging",
+      "B": "To prevent throughput degradation",
+      "C": "To improve security",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blocking CPU threads limits concurrent processing.",
+      "incorrect": {
+        "A": "Logging is unrelated.",
+        "C": "Security is unaffected.",
+        "D": "Deployment complexity is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0028",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "authentication failures",
+    "difficulty": "Easy",
+    "question": "Which HTTP status code should be returned for failed authentication?",
+    "options": {
+      "A": "403",
+      "B": "401",
+      "C": "400",
+      "D": "500"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "401 indicates authentication is required or has failed.",
+      "incorrect": {
+        "A": "403 indicates authorization failure.",
+        "C": "400 indicates malformed request.",
+        "D": "500 indicates server error."
+      }
+    }
+  },
+  {
+    "id": "CH14-0029",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "authorization",
+    "difficulty": "Medium",
+    "question": "Why should authorization checks occur after authentication?",
+    "options": {
+      "A": "To reduce latency",
+      "B": "To verify identity before checking permissions",
+      "C": "To simplify code",
+      "D": "To improve logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Permissions are evaluated only after identity is established.",
+      "incorrect": {
+        "A": "Latency is not the reason.",
+        "C": "Code simplicity is secondary.",
+        "D": "Logging is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0030",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log levels",
+    "difficulty": "Easy",
+    "question": "Which log level is most appropriate for recoverable runtime issues?",
+    "options": {
+      "A": "DEBUG",
+      "B": "WARN",
+      "C": "TRACE",
+      "D": "INFO"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "WARN highlights issues that need attention but are not fatal.",
+      "incorrect": {
+        "A": "DEBUG is for development details.",
+        "C": "TRACE is extremely verbose.",
+        "D": "INFO is for normal operation."
+      }
+    }
+  },
+  {
+    "id": "CH14-0031",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "correlation",
+    "difficulty": "Medium",
+    "question": "Why should a correlation ID be propagated across service calls?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To trace a transaction end-to-end",
+      "C": "To improve security",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Correlation IDs link logs across distributed components.",
+      "incorrect": {
+        "A": "IDs slightly increase payload size.",
+        "C": "Security is separate.",
+        "D": "Retries are unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0032",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "configuration management",
+    "difficulty": "Medium",
+    "question": "Why should environment-specific values be externalized?",
+    "options": {
+      "A": "To reduce code size",
+      "B": "To reuse the same artifact across environments",
+      "C": "To improve performance",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Externalization avoids rebuilding artifacts per environment.",
+      "incorrect": {
+        "A": "Code size change is minimal.",
+        "C": "Performance is unaffected.",
+        "D": "Testing is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0033",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "release strategy",
+    "difficulty": "Medium",
+    "question": "Which release strategy limits user impact during deployments?",
+    "options": {
+      "A": "Big bang deployment",
+      "B": "Blue-green deployment",
+      "C": "Manual hot fixes",
+      "D": "Direct production changes"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blue-green allows traffic switching with minimal downtime.",
+      "incorrect": {
+        "A": "Big bang increases risk.",
+        "C": "Hot fixes bypass controls.",
+        "D": "Direct changes are unsafe."
+      }
+    }
+  },
+  {
+    "id": "CH14-0034",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test coverage",
+    "difficulty": "Easy",
+    "question": "Why is high test coverage important in integration solutions?",
+    "options": {
+      "A": "To eliminate production bugs",
+      "B": "To detect regressions early",
+      "C": "To reduce documentation",
+      "D": "To simplify monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Coverage helps catch breaking changes before release.",
+      "incorrect": {
+        "A": "Bugs can still occur.",
+        "C": "Documentation is separate.",
+        "D": "Monitoring is still needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0035",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test environments",
+    "difficulty": "Medium",
+    "question": "Why should test environments closely resemble production?",
+    "options": {
+      "A": "To reduce costs",
+      "B": "To uncover environment-specific issues",
+      "C": "To simplify configuration",
+      "D": "To avoid security checks"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Differences often cause production-only failures.",
+      "incorrect": {
+        "A": "Cost reduction is secondary.",
+        "C": "Configuration may still differ.",
+        "D": "Security must remain enabled."
+      }
+    }
+  },
+  {
+    "id": "CH14-0036",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "ownership",
+    "difficulty": "Easy",
+    "question": "Why should each integration have a clearly defined owner?",
+    "options": {
+      "A": "To increase bureaucracy",
+      "B": "To ensure accountability and maintenance",
+      "C": "To reduce reuse",
+      "D": "To slow development"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Ownership ensures issues are addressed promptly.",
+      "incorrect": {
+        "A": "Ownership improves efficiency.",
+        "C": "Reuse is encouraged.",
+        "D": "Clear ownership speeds decisions."
+      }
+    }
+  },
+  {
+    "id": "CH14-0037",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "standards enforcement",
+    "difficulty": "Medium",
+    "question": "What is the purpose of enforcing integration standards?",
+    "options": {
+      "A": "To reduce flexibility completely",
+      "B": "To ensure consistency and quality",
+      "C": "To eliminate innovation",
+      "D": "To reduce monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Standards reduce fragmentation and defects.",
+      "incorrect": {
+        "A": "Standards allow controlled flexibility.",
+        "C": "Innovation is still possible.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0038",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "incident response",
+    "difficulty": "Medium",
+    "question": "Why should incident response procedures be predefined?",
+    "options": {
+      "A": "To assign blame quickly",
+      "B": "To enable fast and consistent recovery",
+      "C": "To reduce logging",
+      "D": "To avoid alerts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Prepared procedures reduce downtime during incidents.",
+      "incorrect": {
+        "A": "Blame does not resolve incidents.",
+        "C": "Logging supports response.",
+        "D": "Alerts trigger response."
+      }
+    }
+  },
+  {
+    "id": "CH14-0039",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "post incident review",
+    "difficulty": "Medium",
+    "question": "What is the main goal of post-incident reviews?",
+    "options": {
+      "A": "To document failures",
+      "B": "To prevent recurrence through learning",
+      "C": "To reduce alert thresholds",
+      "D": "To increase testing time"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Reviews drive improvements that reduce future incidents.",
+      "incorrect": {
+        "A": "Documentation alone is insufficient.",
+        "C": "Thresholds may or may not change.",
+        "D": "Testing time is not the objective."
+      }
+    }
+  },
+  {
+    "id": "CH14-0040",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "runbooks",
+    "difficulty": "Easy",
+    "question": "What is the primary purpose of operational runbooks?",
+    "options": {
+      "A": "Replace monitoring tools",
+      "B": "Guide responders during operational issues",
+      "C": "Reduce code complexity",
+      "D": "Eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Runbooks provide clear actions during incidents.",
+      "incorrect": {
+        "A": "Monitoring is still required.",
+        "C": "Code complexity is unrelated.",
+        "D": "Testing remains mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH14-0041",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "resource hierarchy",
+    "difficulty": "Medium",
+    "question": "When should nested resources be used in REST APIs?",
+    "options": {
+      "A": "When resources are tightly coupled and cannot exist independently",
+      "B": "For all related resources",
+      "C": "To reduce endpoint count",
+      "D": "To expose database relationships"
+    },
+    "correctAnswer": "A",
+    "explanation": {
+      "correct": "Nested resources should represent strong ownership relationships.",
+      "incorrect": {
+        "B": "Over-nesting increases complexity.",
+        "C": "Endpoint count is not the main factor.",
+        "D": "Database structure should not be exposed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0042",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "pagination",
+    "difficulty": "Easy",
+    "question": "Why should pagination be enforced on large result sets?",
+    "options": {
+      "A": "To simplify transformations",
+      "B": "To prevent performance degradation and memory pressure",
+      "C": "To reduce authentication overhead",
+      "D": "To eliminate filtering"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Pagination avoids returning excessively large payloads.",
+      "incorrect": {
+        "A": "Transformations are unaffected.",
+        "C": "Authentication is unrelated.",
+        "D": "Filtering is still useful."
+      }
+    }
+  },
+  {
+    "id": "CH14-0043",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "http status usage",
+    "difficulty": "Medium",
+    "question": "Which status code should be returned when a resource is successfully created?",
+    "options": {
+      "A": "200",
+      "B": "201",
+      "C": "204",
+      "D": "202"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "201 indicates successful creation of a resource.",
+      "incorrect": {
+        "A": "200 is generic success.",
+        "C": "204 returns no content.",
+        "D": "202 indicates asynchronous acceptance."
+      }
+    }
+  },
+  {
+    "id": "CH14-0044",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "exception boundaries",
+    "difficulty": "Medium",
+    "question": "Why should errors be handled at system boundaries?",
+    "options": {
+      "A": "To increase logging volume",
+      "B": "To prevent leaking internal implementation details",
+      "C": "To improve performance",
+      "D": "To avoid retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Boundary handling ensures safe, consistent external responses.",
+      "incorrect": {
+        "A": "Excess logging is harmful.",
+        "C": "Performance is unaffected.",
+        "D": "Retries are handled separately."
+      }
+    }
+  },
+  {
+    "id": "CH14-0045",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "retry backoff",
+    "difficulty": "Hard",
+    "question": "Why should retries use exponential backoff?",
+    "options": {
+      "A": "To retry faster",
+      "B": "To avoid overwhelming failing downstream systems",
+      "C": "To simplify configuration",
+      "D": "To eliminate timeouts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Backoff reduces load on unstable dependencies.",
+      "incorrect": {
+        "A": "Immediate retries worsen failures.",
+        "C": "Configuration may be more complex.",
+        "D": "Timeouts are still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0046",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "async processing",
+    "difficulty": "Medium",
+    "question": "When should asynchronous processing be preferred?",
+    "options": {
+      "A": "For short-running synchronous operations",
+      "B": "For long-running or non-blocking tasks",
+      "C": "For validation logic",
+      "D": "For read-only operations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Async processing improves responsiveness for long tasks.",
+      "incorrect": {
+        "A": "Sync is fine for short tasks.",
+        "C": "Validation is usually synchronous.",
+        "D": "Reads may still be synchronous."
+      }
+    }
+  },
+  {
+    "id": "CH14-0047",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "caching",
+    "difficulty": "Medium",
+    "question": "Which scenario is best suited for caching?",
+    "options": {
+      "A": "Highly volatile transactional data",
+      "B": "Frequently requested, rarely changing data",
+      "C": "Sensitive credentials",
+      "D": "Streaming payloads"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stable data benefits most from caching.",
+      "incorrect": {
+        "A": "Volatile data causes cache inconsistency.",
+        "C": "Credentials must not be cached.",
+        "D": "Streaming data is not cache-friendly."
+      }
+    }
+  },
+  {
+    "id": "CH14-0048",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "input validation",
+    "difficulty": "Easy",
+    "question": "Why must input validation occur before processing requests?",
+    "options": {
+      "A": "To increase throughput",
+      "B": "To block malformed or malicious inputs early",
+      "C": "To reduce logging",
+      "D": "To simplify transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early validation prevents unnecessary processing and attacks.",
+      "incorrect": {
+        "A": "Throughput may slightly decrease.",
+        "C": "Logging is independent.",
+        "D": "Transformations still apply."
+      }
+    }
+  },
+  {
+    "id": "CH14-0049",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "token scopes",
+    "difficulty": "Medium",
+    "question": "What is the purpose of OAuth token scopes?",
+    "options": {
+      "A": "To increase token lifetime",
+      "B": "To limit what actions a token can perform",
+      "C": "To simplify authentication",
+      "D": "To improve logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Scopes enforce fine-grained authorization.",
+      "incorrect": {
+        "A": "Lifetime is configured separately.",
+        "C": "Authentication remains unchanged.",
+        "D": "Logging is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0050",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log verbosity",
+    "difficulty": "Medium",
+    "question": "Why should debug logging be disabled in production by default?",
+    "options": {
+      "A": "It prevents errors",
+      "B": "It impacts performance and may expose sensitive data",
+      "C": "It breaks monitoring tools",
+      "D": "It disables alerts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Verbose logs add overhead and security risk.",
+      "incorrect": {
+        "A": "Errors still occur.",
+        "C": "Monitoring still works.",
+        "D": "Alerts are unaffected."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0051",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "zero downtime",
+    "difficulty": "Medium",
+    "question": "Which deployment approach supports zero-downtime releases?",
+    "options": {
+      "A": "Manual restarts",
+      "B": "Blue-green deployment",
+      "C": "Direct production updates",
+      "D": "Night-time deployments only"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blue-green allows traffic switching without outage.",
+      "incorrect": {
+        "A": "Restarts cause downtime.",
+        "C": "Direct changes are risky.",
+        "D": "Timing does not guarantee safety."
+      }
+    }
+  },
+  {
+    "id": "CH14-0052",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "artifact promotion",
+    "difficulty": "Medium",
+    "question": "Why should the same artifact be promoted across environments?",
+    "options": {
+      "A": "To reduce build time",
+      "B": "To ensure environment parity",
+      "C": "To simplify logging",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Using the same artifact prevents environment-specific bugs.",
+      "incorrect": {
+        "A": "Build time is secondary.",
+        "C": "Logging is unaffected.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0053",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "contract testing",
+    "difficulty": "Medium",
+    "question": "What does contract testing validate?",
+    "options": {
+      "A": "Internal implementation details",
+      "B": "Agreement between API providers and consumers",
+      "C": "Runtime performance",
+      "D": "Deployment scripts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Contract tests ensure compatibility across teams.",
+      "incorrect": {
+        "A": "Implementation details may change.",
+        "C": "Performance is tested separately.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0054",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test isolation",
+    "difficulty": "Easy",
+    "question": "Why should tests not depend on execution order?",
+    "options": {
+      "A": "To reduce execution speed",
+      "B": "To ensure reliable and repeatable results",
+      "C": "To simplify assertions",
+      "D": "To eliminate failures"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Order-independent tests are more stable.",
+      "incorrect": {
+        "A": "Speed is unrelated.",
+        "C": "Assertions are still needed.",
+        "D": "Failures may still occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0055",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "api lifecycle",
+    "difficulty": "Medium",
+    "question": "Why is API lifecycle management important?",
+    "options": {
+      "A": "To eliminate versioning",
+      "B": "To control evolution from design to retirement",
+      "C": "To reduce testing",
+      "D": "To avoid documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Lifecycle management ensures safe evolution and deprecation.",
+      "incorrect": {
+        "A": "Versioning remains required.",
+        "C": "Testing is still needed.",
+        "D": "Documentation is essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0056",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "deprecation",
+    "difficulty": "Medium",
+    "question": "What should be done before deprecating an API?",
+    "options": {
+      "A": "Immediately shut it down",
+      "B": "Notify consumers and provide migration guidance",
+      "C": "Disable monitoring",
+      "D": "Remove documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consumers need time to migrate safely.",
+      "incorrect": {
+        "A": "Immediate shutdown breaks consumers.",
+        "C": "Monitoring is still needed.",
+        "D": "Documentation remains required."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0057",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "observability",
+    "difficulty": "Medium",
+    "question": "Which combination best supports observability?",
+    "options": {
+      "A": "Logging only",
+      "B": "Logs, metrics, and tracing",
+      "C": "Dashboards only",
+      "D": "Alerts only"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Observability requires multiple signals.",
+      "incorrect": {
+        "A": "Logs alone are insufficient.",
+        "C": "Dashboards need data sources.",
+        "D": "Alerts depend on metrics."
+      }
+    }
+  },
+  {
+    "id": "CH14-0058",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "capacity planning",
+    "difficulty": "Medium",
+    "question": "Why is capacity planning necessary?",
+    "options": {
+      "A": "To reduce documentation",
+      "B": "To avoid unexpected saturation under load",
+      "C": "To simplify deployments",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Planning prevents overload-related outages.",
+      "incorrect": {
+        "A": "Documentation is unaffected.",
+        "C": "Deployment complexity is unchanged.",
+        "D": "Testing remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0059",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "runbooks",
+    "difficulty": "Easy",
+    "question": "What should a runbook primarily contain?",
+    "options": {
+      "A": "Source code",
+      "B": "Step-by-step operational procedures",
+      "C": "Architecture diagrams only",
+      "D": "Test cases"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Runbooks guide responders during incidents.",
+      "incorrect": {
+        "A": "Code is not operational guidance.",
+        "C": "Diagrams alone are insufficient.",
+        "D": "Test cases serve a different purpose."
+      }
+    }
+  },
+  {
+    "id": "CH14-0060",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "change management",
+    "difficulty": "Medium",
+    "question": "Why should operational changes follow a controlled change process?",
+    "options": {
+      "A": "To slow down releases",
+      "B": "To reduce risk and unintended impact",
+      "C": "To eliminate automation",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Controlled changes reduce outages and regressions.",
+      "incorrect": {
+        "A": "Process enables safe speed.",
+        "C": "Automation is complementary.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0061",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "payload consistency",
+    "difficulty": "Medium",
+    "question": "Why should response payload structures remain consistent across similar endpoints?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To simplify consumer parsing logic",
+      "C": "To improve authentication",
+      "D": "To eliminate versioning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consistent structures reduce client-side complexity and errors.",
+      "incorrect": {
+        "A": "Size optimization is secondary.",
+        "C": "Authentication is unrelated.",
+        "D": "Versioning is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0062",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "http caching",
+    "difficulty": "Medium",
+    "question": "Which HTTP header enables client-side caching of GET responses?",
+    "options": {
+      "A": "Authorization",
+      "B": "Cache-Control",
+      "C": "Content-Type",
+      "D": "Accept"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Cache-Control defines caching behavior for responses.",
+      "incorrect": {
+        "A": "Authorization controls access.",
+        "C": "Content-Type defines media type.",
+        "D": "Accept defines expected response format."
+      }
+    }
+  },
+  {
+    "id": "CH14-0063",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "client responsibility",
+    "difficulty": "Medium",
+    "question": "Which error category indicates that the client must modify the request before retrying?",
+    "options": {
+      "A": "5xx",
+      "B": "4xx",
+      "C": "3xx",
+      "D": "2xx"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "4xx errors signal issues with the client request.",
+      "incorrect": {
+        "A": "5xx indicates server-side failures.",
+        "C": "3xx is redirection.",
+        "D": "2xx indicates success."
+      }
+    }
+  },
+  {
+    "id": "CH14-0064",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "exception mapping",
+    "difficulty": "Hard",
+    "question": "Why should internal exceptions be mapped to standardized API error codes?",
+    "options": {
+      "A": "To expose stack traces",
+      "B": "To provide predictable error contracts to consumers",
+      "C": "To improve throughput",
+      "D": "To avoid retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Standardized error contracts make consumer error handling reliable.",
+      "incorrect": {
+        "A": "Stack traces expose internals.",
+        "C": "Throughput is unaffected.",
+        "D": "Retries depend on error type."
+      }
+    }
+  },
+  {
+    "id": "CH14-0065",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "thread starvation",
+    "difficulty": "Medium",
+    "question": "What commonly causes thread starvation in integration runtimes?",
+    "options": {
+      "A": "Excessive logging",
+      "B": "Blocking I/O operations without timeouts",
+      "C": "Payload transformations",
+      "D": "Stateless processing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blocking calls without timeouts can exhaust thread pools.",
+      "incorrect": {
+        "A": "Logging alone does not starve threads.",
+        "C": "Transformations are CPU-bound.",
+        "D": "Stateless processing improves scalability."
+      }
+    }
+  },
+  {
+    "id": "CH14-0066",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "bulk operations",
+    "difficulty": "Medium",
+    "question": "Why are bulk operations preferred over per-record processing for large datasets?",
+    "options": {
+      "A": "They eliminate error handling",
+      "B": "They reduce per-record overhead",
+      "C": "They simplify schema validation",
+      "D": "They disable retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Batching improves efficiency and throughput.",
+      "incorrect": {
+        "A": "Error handling is still required.",
+        "C": "Validation still applies.",
+        "D": "Retries remain applicable."
+      }
+    }
+  },
+  {
+    "id": "CH14-0067",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "attack surface",
+    "difficulty": "Medium",
+    "question": "Which practice most effectively reduces an API’s attack surface?",
+    "options": {
+      "A": "Exposing all endpoints publicly",
+      "B": "Disabling unused endpoints and methods",
+      "C": "Increasing logging verbosity",
+      "D": "Using larger payloads"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Removing unused access points limits exploitation opportunities.",
+      "incorrect": {
+        "A": "Public exposure increases risk.",
+        "C": "Logging does not reduce surface area.",
+        "D": "Payload size is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH14-0068",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "credential leakage",
+    "difficulty": "Easy",
+    "question": "Which action best prevents accidental credential leakage?",
+    "options": {
+      "A": "Hard-coding secrets",
+      "B": "Storing secrets in a secure vault",
+      "C": "Logging credentials at DEBUG level",
+      "D": "Sharing credentials across teams"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Secure vaults protect sensitive values.",
+      "incorrect": {
+        "A": "Hard-coding exposes secrets.",
+        "C": "Logging credentials is unsafe.",
+        "D": "Sharing increases blast radius."
+      }
+    }
+  },
+  {
+    "id": "CH14-0069",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "structured logs",
+    "difficulty": "Medium",
+    "question": "Why are structured logs preferred over plain text logs?",
+    "options": {
+      "A": "They reduce log volume",
+      "B": "They enable efficient querying and correlation",
+      "C": "They improve authentication",
+      "D": "They eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Structured logs are machine-readable and searchable.",
+      "incorrect": {
+        "A": "Volume may increase.",
+        "C": "Authentication is unrelated.",
+        "D": "Monitoring still requires logs."
+      }
+    }
+  },
+  {
+    "id": "CH14-0070",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log retention",
+    "difficulty": "Easy",
+    "question": "Why should log retention policies be defined?",
+    "options": {
+      "A": "To increase storage usage",
+      "B": "To balance compliance, cost, and troubleshooting needs",
+      "C": "To eliminate audits",
+      "D": "To reduce alerting"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Retention policies align legal and operational needs.",
+      "incorrect": {
+        "A": "Storage must be controlled.",
+        "C": "Audits still occur.",
+        "D": "Alerting is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0071",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "configuration drift",
+    "difficulty": "Medium",
+    "question": "What is the primary risk of configuration drift across environments?",
+    "options": {
+      "A": "Improved flexibility",
+      "B": "Unexpected production behavior",
+      "C": "Lower build times",
+      "D": "Simpler troubleshooting"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Differences cause hard-to-diagnose production issues.",
+      "incorrect": {
+        "A": "Drift reduces predictability.",
+        "C": "Build time is unaffected.",
+        "D": "Troubleshooting becomes harder."
+      }
+    }
+  },
+  {
+    "id": "CH14-0072",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "rollback validation",
+    "difficulty": "Medium",
+    "question": "What should be verified after performing a rollback?",
+    "options": {
+      "A": "Only application startup",
+      "B": "Functional and non-functional behavior",
+      "C": "Build logs only",
+      "D": "Configuration files only"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Rollback success includes correctness and performance.",
+      "incorrect": {
+        "A": "Startup alone is insufficient.",
+        "C": "Logs do not confirm behavior.",
+        "D": "Config alone is not enough."
+      }
+    }
+  },
+  {
+    "id": "CH14-0073",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "regression testing",
+    "difficulty": "Medium",
+    "question": "Why is regression testing critical after changes?",
+    "options": {
+      "A": "To increase code coverage metrics",
+      "B": "To detect unintended side effects",
+      "C": "To reduce documentation",
+      "D": "To improve performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Regression tests catch breaks in existing behavior.",
+      "incorrect": {
+        "A": "Metrics alone are insufficient.",
+        "C": "Documentation is separate.",
+        "D": "Performance testing is different."
+      }
+    }
+  },
+  {
+    "id": "CH14-0074",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test data",
+    "difficulty": "Easy",
+    "question": "Why should test data be controlled and predictable?",
+    "options": {
+      "A": "To slow test execution",
+      "B": "To ensure repeatable results",
+      "C": "To eliminate failures",
+      "D": "To reduce monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Predictable data ensures consistent outcomes.",
+      "incorrect": {
+        "A": "Speed is not the goal.",
+        "C": "Failures can still occur.",
+        "D": "Monitoring is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0075",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "review gates",
+    "difficulty": "Medium",
+    "question": "Why should architectural review gates exist before implementation?",
+    "options": {
+      "A": "To delay development",
+      "B": "To prevent costly rework later",
+      "C": "To eliminate flexibility",
+      "D": "To reduce testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early validation avoids expensive redesign.",
+      "incorrect": {
+        "A": "They enable safe speed.",
+        "C": "Flexibility remains within standards.",
+        "D": "Testing remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0076",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "documentation",
+    "difficulty": "Easy",
+    "question": "What is the primary role of integration documentation?",
+    "options": {
+      "A": "Replace code comments",
+      "B": "Enable understanding and safe reuse",
+      "C": "Reduce monitoring",
+      "D": "Eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Documentation supports maintainability and reuse.",
+      "incorrect": {
+        "A": "Comments and docs serve different purposes.",
+        "C": "Monitoring is still required.",
+        "D": "Testing remains mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH14-0077",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "alert fatigue",
+    "difficulty": "Medium",
+    "question": "What causes alert fatigue in operations teams?",
+    "options": {
+      "A": "Too few alerts",
+      "B": "Excessive non-actionable alerts",
+      "C": "Structured logging",
+      "D": "Low traffic"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Noise reduces attention to real incidents.",
+      "incorrect": {
+        "A": "Too few alerts is a different issue.",
+        "C": "Logging supports alerting.",
+        "D": "Traffic level is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH14-0078",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "health checks",
+    "difficulty": "Easy",
+    "question": "Why are health check endpoints important?",
+    "options": {
+      "A": "To expose internal logic",
+      "B": "To allow automated monitoring of service availability",
+      "C": "To reduce API count",
+      "D": "To improve authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Health checks enable automated availability detection.",
+      "incorrect": {
+        "A": "Internals should remain hidden.",
+        "C": "API count is unrelated.",
+        "D": "Authentication is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0079",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "capacity alerts",
+    "difficulty": "Medium",
+    "question": "Why should capacity-based alerts trigger before full saturation?",
+    "options": {
+      "A": "To increase alert volume",
+      "B": "To allow proactive remediation",
+      "C": "To simplify dashboards",
+      "D": "To eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early alerts prevent outages.",
+      "incorrect": {
+        "A": "Noise is harmful.",
+        "C": "Dashboards are secondary.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0080",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "incident drills",
+    "difficulty": "Medium",
+    "question": "Why should incident response drills be conducted periodically?",
+    "options": {
+      "A": "To assign blame",
+      "B": "To ensure teams can respond effectively under pressure",
+      "C": "To reduce documentation",
+      "D": "To eliminate incidents"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Practice improves real incident response.",
+      "incorrect": {
+        "A": "Blame is counterproductive.",
+        "C": "Documentation remains necessary.",
+        "D": "Incidents can still occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0081",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "horizontal scaling",
+    "difficulty": "Medium",
+    "question": "What design choice enables horizontal scaling of services?",
+    "options": {
+      "A": "Stateful session storage in memory",
+      "B": "Stateless processing with externalized state",
+      "C": "Single-threaded execution",
+      "D": "Hard-coded configuration"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stateless services can be replicated safely.",
+      "incorrect": {
+        "A": "In-memory state limits scaling.",
+        "C": "Single-threading limits throughput.",
+        "D": "Hard-coding reduces flexibility."
+      }
+    }
+  },
+  {
+    "id": "CH14-0082",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "load testing",
+    "difficulty": "Easy",
+    "question": "What is the purpose of load testing?",
+    "options": {
+      "A": "To increase code coverage",
+      "B": "To validate behavior under expected traffic",
+      "C": "To simplify logging",
+      "D": "To eliminate failures"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Load testing reveals bottlenecks and limits.",
+      "incorrect": {
+        "A": "Coverage is separate.",
+        "C": "Logging is unrelated.",
+        "D": "Failures can still occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0083",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "backpressure",
+    "difficulty": "Hard",
+    "question": "What is the primary role of backpressure mechanisms?",
+    "options": {
+      "A": "Increase throughput indefinitely",
+      "B": "Protect downstream systems from overload",
+      "C": "Simplify transformations",
+      "D": "Disable retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Backpressure prevents cascading failures.",
+      "incorrect": {
+        "A": "Unlimited throughput is unsafe.",
+        "C": "Transformations are unrelated.",
+        "D": "Retries remain applicable."
+      }
+    }
+  },
+  {
+    "id": "CH14-0084",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Scalability",
+    "subtopic": "autoscaling",
+    "difficulty": "Medium",
+    "question": "What triggers autoscaling decisions most effectively?",
+    "options": {
+      "A": "Deployment time",
+      "B": "Runtime metrics such as CPU or queue depth",
+      "C": "Log volume",
+      "D": "Build success"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Metrics reflect real system load.",
+      "incorrect": {
+        "A": "Deployment time is irrelevant.",
+        "C": "Logs are indirect signals.",
+        "D": "Builds do not indicate runtime load."
+      }
+    }
+  },
+  {
+    "id": "CH14-0085",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "circuit breaker",
+    "difficulty": "Hard",
+    "question": "What problem does a circuit breaker pattern primarily address?",
+    "options": {
+      "A": "Data transformation errors",
+      "B": "Cascading failures from unstable dependencies",
+      "C": "Authentication failures",
+      "D": "Payload size limitations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Circuit breakers isolate failing services.",
+      "incorrect": {
+        "A": "Transformations are unrelated.",
+        "C": "Auth failures are handled differently.",
+        "D": "Payload size is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH14-0086",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "graceful degradation",
+    "difficulty": "Medium",
+    "question": "What does graceful degradation aim to achieve?",
+    "options": {
+      "A": "Full functionality under all conditions",
+      "B": "Partial functionality instead of total failure",
+      "C": "Faster deployments",
+      "D": "Simpler testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Partial service is better than complete outage.",
+      "incorrect": {
+        "A": "Total availability is unrealistic.",
+        "C": "Deployment speed is unrelated.",
+        "D": "Testing complexity remains."
+      }
+    }
+  },
+  {
+    "id": "CH14-0087",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "timeout hierarchy",
+    "difficulty": "Hard",
+    "question": "Why must upstream timeouts be shorter than downstream timeouts?",
+    "options": {
+      "A": "To improve logging",
+      "B": "To avoid resource exhaustion and request pileup",
+      "C": "To reduce payload size",
+      "D": "To simplify configuration"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Shorter upstream timeouts prevent cascading waits.",
+      "incorrect": {
+        "A": "Logging is unrelated.",
+        "C": "Payload size is unaffected.",
+        "D": "Configuration may be more complex."
+      }
+    }
+  },
+  {
+    "id": "CH14-0088",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "retry limits",
+    "difficulty": "Medium",
+    "question": "Why should retry attempts always be capped?",
+    "options": {
+      "A": "To reduce code size",
+      "B": "To prevent infinite retry loops",
+      "C": "To eliminate failures",
+      "D": "To simplify monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Unlimited retries can overwhelm systems.",
+      "incorrect": {
+        "A": "Code size is irrelevant.",
+        "C": "Failures can still occur.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0089",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "fallbacks",
+    "difficulty": "Medium",
+    "question": "What is the purpose of a fallback mechanism?",
+    "options": {
+      "A": "Improve authentication",
+      "B": "Provide an alternative response when a dependency fails",
+      "C": "Reduce payload size",
+      "D": "Disable monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Fallbacks improve user experience during failures.",
+      "incorrect": {
+        "A": "Authentication is separate.",
+        "C": "Payload size is unaffected.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0090",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "failure domains",
+    "difficulty": "Hard",
+    "question": "Why should failure domains be isolated?",
+    "options": {
+      "A": "To simplify architecture diagrams",
+      "B": "To prevent failures from spreading across systems",
+      "C": "To reduce logging",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Isolation limits blast radius.",
+      "incorrect": {
+        "A": "Diagrams are secondary.",
+        "C": "Logging is unrelated.",
+        "D": "Retries may still be needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0091",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "idempotent design",
+    "difficulty": "Medium",
+    "question": "Why is idempotent design critical for retryable operations?",
+    "options": {
+      "A": "To improve latency",
+      "B": "To avoid duplicate side effects",
+      "C": "To reduce configuration",
+      "D": "To eliminate failures"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Idempotency ensures safe retries.",
+      "incorrect": {
+        "A": "Latency is not the goal.",
+        "C": "Configuration is unchanged.",
+        "D": "Failures still occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0092",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "duplicate handling",
+    "difficulty": "Medium",
+    "question": "Which mechanism helps handle duplicate messages safely?",
+    "options": {
+      "A": "Random IDs",
+      "B": "Idempotency keys",
+      "C": "Higher thread count",
+      "D": "Larger payloads"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Idempotency keys detect and ignore duplicates.",
+      "incorrect": {
+        "A": "Random IDs do not prevent duplicates.",
+        "C": "Threads do not solve duplication.",
+        "D": "Payload size is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH14-0093",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "exactly once myth",
+    "difficulty": "Hard",
+    "question": "Why is exactly-once delivery hard to guarantee in distributed systems?",
+    "options": {
+      "A": "Because of payload transformations",
+      "B": "Because network failures are unavoidable",
+      "C": "Because of logging overhead",
+      "D": "Because of versioning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Failures and retries make duplicates unavoidable.",
+      "incorrect": {
+        "A": "Transformations are unrelated.",
+        "C": "Logging is unrelated.",
+        "D": "Versioning is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0094",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "at least once",
+    "difficulty": "Medium",
+    "question": "What delivery guarantee is most commonly achievable in integrations?",
+    "options": {
+      "A": "At most once",
+      "B": "At least once",
+      "C": "Exactly once",
+      "D": "Never delivered"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "At-least-once ensures delivery with possible duplicates.",
+      "incorrect": {
+        "A": "Messages may be lost.",
+        "C": "Exactly-once is rarely feasible.",
+        "D": "Delivery must occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0095",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "dead letter queues",
+    "difficulty": "Medium",
+    "question": "What is the primary purpose of a dead-letter queue?",
+    "options": {
+      "A": "Increase throughput",
+      "B": "Isolate and analyze repeatedly failing messages",
+      "C": "Replace retries",
+      "D": "Simplify transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "DLQs prevent poison messages from blocking flows.",
+      "incorrect": {
+        "A": "Throughput may improve indirectly.",
+        "C": "Retries still occur before DLQ.",
+        "D": "Transformations are unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0096",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "message ordering",
+    "difficulty": "Hard",
+    "question": "Why is strict message ordering difficult to guarantee at scale?",
+    "options": {
+      "A": "Because of logging delays",
+      "B": "Because of parallelism and retries",
+      "C": "Because of schema validation",
+      "D": "Because of authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Parallel processing and retries reorder messages.",
+      "incorrect": {
+        "A": "Logging is unrelated.",
+        "C": "Validation is unrelated.",
+        "D": "Authentication is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0097",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "ordering tradeoff",
+    "difficulty": "Medium",
+    "question": "What is a common trade-off when enforcing strict message ordering?",
+    "options": {
+      "A": "Higher throughput",
+      "B": "Reduced scalability",
+      "C": "Simpler design",
+      "D": "Lower latency"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Ordering often limits parallelism.",
+      "incorrect": {
+        "A": "Throughput usually decreases.",
+        "C": "Design becomes more complex.",
+        "D": "Latency often increases."
+      }
+    }
+  },
+  {
+    "id": "CH14-0098",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "compensation",
+    "difficulty": "Hard",
+    "question": "When are compensating transactions most appropriate?",
+    "options": {
+      "A": "For read-only operations",
+      "B": "When distributed rollback is not possible",
+      "C": "For synchronous validations",
+      "D": "For logging failures"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Compensation undoes effects without global rollback.",
+      "incorrect": {
+        "A": "Reads do not need compensation.",
+        "C": "Validation does not require compensation.",
+        "D": "Logging failures are unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0099",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "eventual consistency",
+    "difficulty": "Medium",
+    "question": "Why is eventual consistency often accepted in integrations?",
+    "options": {
+      "A": "It guarantees immediate accuracy",
+      "B": "It improves scalability and availability",
+      "C": "It eliminates retries",
+      "D": "It simplifies security"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Strong consistency limits scale and resilience.",
+      "incorrect": {
+        "A": "Updates may be delayed.",
+        "C": "Retries may still occur.",
+        "D": "Security is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0100",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "consistency tradeoffs",
+    "difficulty": "Hard",
+    "question": "Which factor most influences the choice between strong and eventual consistency?",
+    "options": {
+      "A": "Payload size",
+      "B": "Business tolerance for temporary inconsistency",
+      "C": "Logging verbosity",
+      "D": "Deployment frequency"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Business requirements determine acceptable consistency.",
+      "incorrect": {
+        "A": "Payload size is irrelevant.",
+        "C": "Logging does not affect consistency.",
+        "D": "Deployment frequency is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0101",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "content negotiation",
+    "difficulty": "Medium",
+    "question": "Which HTTP header is used by clients to request a specific response format?",
+    "options": {
+      "A": "Content-Type",
+      "B": "Accept",
+      "C": "Cache-Control",
+      "D": "Authorization"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "The Accept header indicates preferred response media types.",
+      "incorrect": {
+        "A": "Content-Type describes the request body.",
+        "C": "Cache-Control manages caching behavior.",
+        "D": "Authorization handles access control."
+      }
+    }
+  },
+  {
+    "id": "CH14-0102",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "API Design",
+    "subtopic": "response codes",
+    "difficulty": "Easy",
+    "question": "Which status code should be returned when a request is accepted for asynchronous processing?",
+    "options": {
+      "A": "200",
+      "B": "201",
+      "C": "202",
+      "D": "204"
+    },
+    "correctAnswer": "C",
+    "explanation": {
+      "correct": "202 indicates the request was accepted but not yet completed.",
+      "incorrect": {
+        "A": "200 implies immediate completion.",
+        "B": "201 implies resource creation.",
+        "D": "204 implies no content response."
+      }
+    }
+  },
+  {
+    "id": "CH14-0103",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "error categorization",
+    "difficulty": "Medium",
+    "question": "Why should business errors be distinguished from technical errors?",
+    "options": {
+      "A": "To reduce logging",
+      "B": "To allow clients to react appropriately",
+      "C": "To simplify deployments",
+      "D": "To improve throughput"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Clients can correct business errors but not technical failures.",
+      "incorrect": {
+        "A": "Logging is unrelated.",
+        "C": "Deployment is unaffected.",
+        "D": "Throughput is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0104",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Error Handling",
+    "subtopic": "global handlers",
+    "difficulty": "Medium",
+    "question": "What is the primary role of a global error handler?",
+    "options": {
+      "A": "Handle all errors without context",
+      "B": "Provide consistent fallback handling",
+      "C": "Improve performance",
+      "D": "Replace local error handling"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Global handlers ensure consistent responses across flows.",
+      "incorrect": {
+        "A": "Context is still required.",
+        "C": "Performance is unaffected.",
+        "D": "Local handlers are still useful."
+      }
+    }
+  },
+  {
+    "id": "CH14-0105",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "payload size",
+    "difficulty": "Medium",
+    "question": "Why should APIs avoid returning unnecessary fields in responses?",
+    "options": {
+      "A": "To improve security only",
+      "B": "To reduce network and processing overhead",
+      "C": "To simplify authentication",
+      "D": "To eliminate caching"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Smaller payloads improve performance and scalability.",
+      "incorrect": {
+        "A": "Security may improve but is not the main reason.",
+        "C": "Authentication is unaffected.",
+        "D": "Caching remains useful."
+      }
+    }
+  },
+  {
+    "id": "CH14-0106",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Performance",
+    "subtopic": "non-blocking IO",
+    "difficulty": "Hard",
+    "question": "What is the key advantage of non-blocking I/O models?",
+    "options": {
+      "A": "Simpler code",
+      "B": "Better utilization of threads",
+      "C": "Reduced need for retries",
+      "D": "Lower payload size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Non-blocking I/O prevents threads from waiting on external resources.",
+      "incorrect": {
+        "A": "Code may become more complex.",
+        "C": "Retries are unrelated.",
+        "D": "Payload size is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0107",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "authorization checks",
+    "difficulty": "Medium",
+    "question": "Where should authorization checks ideally be enforced?",
+    "options": {
+      "A": "Only at the client",
+      "B": "At every protected resource boundary",
+      "C": "Only at the database",
+      "D": "Only in logging layers"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Authorization must be enforced at each access point.",
+      "incorrect": {
+        "A": "Client-side checks are insufficient.",
+        "C": "Database-only checks are too late.",
+        "D": "Logging layers do not enforce access."
+      }
+    }
+  },
+  {
+    "id": "CH14-0108",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "token expiration",
+    "difficulty": "Easy",
+    "question": "Why should access tokens have limited lifetimes?",
+    "options": {
+      "A": "To reduce token size",
+      "B": "To limit impact if compromised",
+      "C": "To simplify caching",
+      "D": "To avoid validation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Short-lived tokens reduce exposure window.",
+      "incorrect": {
+        "A": "Token size is unaffected.",
+        "C": "Caching is unrelated.",
+        "D": "Validation is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0109",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log context",
+    "difficulty": "Medium",
+    "question": "Why should logs include contextual information such as user or request ID?",
+    "options": {
+      "A": "To increase log size",
+      "B": "To enable effective troubleshooting",
+      "C": "To improve authentication",
+      "D": "To reduce monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Context allows tracing issues across components.",
+      "incorrect": {
+        "A": "Size increase is a tradeoff.",
+        "C": "Authentication is separate.",
+        "D": "Monitoring still requires context."
+      }
+    }
+  },
+  {
+    "id": "CH14-0110",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Logging",
+    "subtopic": "log sampling",
+    "difficulty": "Medium",
+    "question": "When is log sampling most useful?",
+    "options": {
+      "A": "Low traffic systems",
+      "B": "High-volume systems to reduce overhead",
+      "C": "Security auditing",
+      "D": "Functional testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Sampling controls cost and performance impact.",
+      "incorrect": {
+        "A": "Low traffic does not require sampling.",
+        "C": "Audits require full logs.",
+        "D": "Testing logs should be complete."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0111",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "pipeline automation",
+    "difficulty": "Medium",
+    "question": "Why should deployments be automated through pipelines?",
+    "options": {
+      "A": "To reduce monitoring",
+      "B": "To ensure repeatable and auditable releases",
+      "C": "To eliminate rollbacks",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automation reduces human error and increases traceability.",
+      "incorrect": {
+        "A": "Monitoring remains required.",
+        "C": "Rollbacks are still needed.",
+        "D": "Testing is still mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH14-0112",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Deployment",
+    "subtopic": "canary releases",
+    "difficulty": "Hard",
+    "question": "What is the purpose of a canary release?",
+    "options": {
+      "A": "Deploy to all users immediately",
+      "B": "Test changes on a small subset of traffic",
+      "C": "Eliminate rollbacks",
+      "D": "Speed up deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Canary releases reduce risk by limiting exposure.",
+      "incorrect": {
+        "A": "That is a full rollout.",
+        "C": "Rollbacks may still be required.",
+        "D": "Speed is not the main goal."
+      }
+    }
+  },
+  {
+    "id": "CH14-0113",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "boundary testing",
+    "difficulty": "Medium",
+    "question": "What is the goal of boundary value testing?",
+    "options": {
+      "A": "Test only average values",
+      "B": "Identify issues at extreme input limits",
+      "C": "Reduce test cases",
+      "D": "Improve performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Failures often occur at boundaries.",
+      "incorrect": {
+        "A": "Average values may hide defects.",
+        "C": "Coverage is more important.",
+        "D": "Performance is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0114",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Testing",
+    "subtopic": "test independence",
+    "difficulty": "Easy",
+    "question": "Why should automated tests be independent of each other?",
+    "options": {
+      "A": "To reduce execution time",
+      "B": "To ensure consistent and reliable outcomes",
+      "C": "To eliminate failures",
+      "D": "To simplify monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Independent tests avoid cascading failures.",
+      "incorrect": {
+        "A": "Speed is secondary.",
+        "C": "Failures can still occur.",
+        "D": "Monitoring is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0115",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "design reviews",
+    "difficulty": "Medium",
+    "question": "Why should API designs be reviewed before implementation?",
+    "options": {
+      "A": "To slow development",
+      "B": "To catch design flaws early",
+      "C": "To reduce testing",
+      "D": "To eliminate versioning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early feedback prevents costly redesign later.",
+      "incorrect": {
+        "A": "Reviews improve speed long-term.",
+        "C": "Testing is still required.",
+        "D": "Versioning remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0116",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Governance",
+    "subtopic": "reuse metrics",
+    "difficulty": "Medium",
+    "question": "Which metric best indicates successful API reuse?",
+    "options": {
+      "A": "Number of deployments",
+      "B": "Number of consuming applications",
+      "C": "Payload size",
+      "D": "Thread count"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "More consumers indicate higher reuse.",
+      "incorrect": {
+        "A": "Deployments do not measure reuse.",
+        "C": "Payload size is unrelated.",
+        "D": "Thread count is unrelated."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0117",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "service level objectives",
+    "difficulty": "Medium",
+    "question": "Why are service level objectives (SLOs) important?",
+    "options": {
+      "A": "To eliminate incidents",
+      "B": "To define acceptable reliability targets",
+      "C": "To reduce logging",
+      "D": "To simplify testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "SLOs align expectations between teams and stakeholders.",
+      "incorrect": {
+        "A": "Incidents may still occur.",
+        "C": "Logging is unaffected.",
+        "D": "Testing is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0118",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "error budgets",
+    "difficulty": "Hard",
+    "question": "What does an error budget represent?",
+    "options": {
+      "A": "Maximum acceptable failure rate",
+      "B": "Total number of bugs",
+      "C": "Logging capacity",
+      "D": "Deployment frequency"
+    },
+    "correctAnswer": "A",
+    "explanation": {
+      "correct": "Error budgets quantify acceptable unreliability.",
+      "incorrect": {
+        "B": "Bug count is unrelated.",
+        "C": "Logging is unrelated.",
+        "D": "Deployments are not budgets."
+      }
+    }
+  },
+  {
+    "id": "CH14-0119",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "postmortems",
+    "difficulty": "Medium",
+    "question": "Why should post-incident reviews be blameless?",
+    "options": {
+      "A": "To avoid accountability",
+      "B": "To encourage honest learning and improvement",
+      "C": "To reduce documentation",
+      "D": "To eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Blameless reviews improve system resilience.",
+      "incorrect": {
+        "A": "Accountability still exists.",
+        "C": "Documentation is still required.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0120",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "operational readiness",
+    "difficulty": "Medium",
+    "question": "What should be validated before declaring a service production-ready?",
+    "options": {
+      "A": "Only functional correctness",
+      "B": "Monitoring, alerting, and recovery procedures",
+      "C": "Only code quality",
+      "D": "Only deployment scripts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Operational readiness ensures sustainability in production.",
+      "incorrect": {
+        "A": "Functionality alone is insufficient.",
+        "C": "Quality is only one aspect.",
+        "D": "Scripts do not ensure operability."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0121",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "on-call readiness",
+    "difficulty": "Easy",
+    "question": "Why must on-call teams have access to documentation and dashboards?",
+    "options": {
+      "A": "To increase alert volume",
+      "B": "To diagnose and resolve issues quickly",
+      "C": "To reduce testing",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Immediate visibility speeds resolution.",
+      "incorrect": {
+        "A": "Alert volume is unrelated.",
+        "C": "Testing remains required.",
+        "D": "Deployment is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0122",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "automation",
+    "difficulty": "Medium",
+    "question": "Why should repetitive operational tasks be automated?",
+    "options": {
+      "A": "To eliminate human oversight",
+      "B": "To reduce errors and response time",
+      "C": "To avoid documentation",
+      "D": "To increase complexity"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automation improves consistency and speed.",
+      "incorrect": {
+        "A": "Oversight is still needed.",
+        "C": "Documentation remains necessary.",
+        "D": "Automation reduces complexity."
+      }
+    }
+  },
+  {
+    "id": "CH14-0123",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "mean time to recovery",
+    "difficulty": "Medium",
+    "question": "Which metric best reflects operational recovery effectiveness?",
+    "options": {
+      "A": "Mean time to recovery",
+      "B": "Throughput",
+      "C": "Payload size",
+      "D": "CPU usage"
+    },
+    "correctAnswer": "A",
+    "explanation": {
+      "correct": "MTTR measures how quickly services recover from incidents.",
+      "incorrect": {
+        "B": "Throughput is unrelated.",
+        "C": "Payload size is irrelevant.",
+        "D": "CPU usage is indirect."
+      }
+    }
+  },
+  {
+    "id": "CH14-0124",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "single points of failure",
+    "difficulty": "Hard",
+    "question": "Why should single points of failure be eliminated?",
+    "options": {
+      "A": "To reduce costs",
+      "B": "To prevent total system outages",
+      "C": "To simplify monitoring",
+      "D": "To improve logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "A single failure should not bring down the system.",
+      "incorrect": {
+        "A": "Cost reduction is secondary.",
+        "C": "Monitoring does not remove SPOFs.",
+        "D": "Logging does not prevent outages."
+      }
+    }
+  },
+  {
+    "id": "CH14-0125",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "redundancy",
+    "difficulty": "Medium",
+    "question": "What is the main benefit of redundancy in system design?",
+    "options": {
+      "A": "Lower latency",
+      "B": "Improved availability",
+      "C": "Simpler architecture",
+      "D": "Reduced testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Redundancy allows continued operation during failures.",
+      "incorrect": {
+        "A": "Latency may increase.",
+        "C": "Architecture becomes more complex.",
+        "D": "Testing effort increases."
+      }
+    }
+  },
+  {
+    "id": "CH14-0126",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "failover",
+    "difficulty": "Medium",
+    "question": "What is the purpose of automatic failover?",
+    "options": {
+      "A": "Manual recovery",
+      "B": "Seamless continuation of service after failure",
+      "C": "Simpler deployments",
+      "D": "Reduced logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Failover minimizes downtime.",
+      "incorrect": {
+        "A": "Manual recovery is slower.",
+        "C": "Deployment is unrelated.",
+        "D": "Logging is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0127",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "health probes",
+    "difficulty": "Easy",
+    "question": "Why are liveness and readiness probes important?",
+    "options": {
+      "A": "To expose internal logic",
+      "B": "To allow platforms to manage unhealthy instances",
+      "C": "To reduce API count",
+      "D": "To simplify authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Probes enable automatic recovery actions.",
+      "incorrect": {
+        "A": "Internals should remain hidden.",
+        "C": "API count is unrelated.",
+        "D": "Authentication is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0128",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "graceful shutdown",
+    "difficulty": "Medium",
+    "question": "Why should services support graceful shutdown?",
+    "options": {
+      "A": "To terminate requests immediately",
+      "B": "To complete in-flight requests safely",
+      "C": "To reduce memory usage",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Graceful shutdown prevents data loss.",
+      "incorrect": {
+        "A": "Immediate termination causes errors.",
+        "C": "Memory is secondary.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0129",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "chaos testing",
+    "difficulty": "Hard",
+    "question": "What is the goal of chaos testing?",
+    "options": {
+      "A": "Increase failure rate",
+      "B": "Validate system resilience under failure conditions",
+      "C": "Reduce documentation",
+      "D": "Eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Chaos testing exposes hidden weaknesses.",
+      "incorrect": {
+        "A": "Failures are controlled and intentional.",
+        "C": "Documentation remains necessary.",
+        "D": "Monitoring is essential during chaos tests."
+      }
+    }
+  },
+  {
+    "id": "CH14-0130",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "resilience validation",
+    "difficulty": "Medium",
+    "question": "Why should resilience be tested regularly?",
+    "options": {
+      "A": "To slow development",
+      "B": "To ensure systems remain robust as they evolve",
+      "C": "To reduce testing effort",
+      "D": "To eliminate incidents"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Changes can introduce new failure modes.",
+      "incorrect": {
+        "A": "Testing improves long-term speed.",
+        "C": "Effort may increase.",
+        "D": "Incidents can still occur."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0131",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "code readability",
+    "difficulty": "Easy",
+    "question": "Why is readable code important for long-term maintenance?",
+    "options": {
+      "A": "To improve runtime performance",
+      "B": "To reduce onboarding time for new team members",
+      "C": "To eliminate bugs",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Readable code lowers maintenance cost.",
+      "incorrect": {
+        "A": "Performance is unrelated.",
+        "C": "Bugs can still occur.",
+        "D": "Deployment is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0132",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "modularity",
+    "difficulty": "Medium",
+    "question": "What is the main benefit of modular integration design?",
+    "options": {
+      "A": "Higher latency",
+      "B": "Easier change and reuse",
+      "C": "Reduced security",
+      "D": "Lower availability"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Modularity isolates changes and promotes reuse.",
+      "incorrect": {
+        "A": "Latency is not a benefit.",
+        "C": "Security is unaffected.",
+        "D": "Availability is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0133",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "naming conventions",
+    "difficulty": "Easy",
+    "question": "Why should consistent naming conventions be enforced?",
+    "options": {
+      "A": "To reduce runtime errors",
+      "B": "To improve readability and understanding",
+      "C": "To eliminate documentation",
+      "D": "To improve performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consistency improves clarity across teams.",
+      "incorrect": {
+        "A": "Runtime behavior is unaffected.",
+        "C": "Documentation is still required.",
+        "D": "Performance is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0134",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "code duplication",
+    "difficulty": "Medium",
+    "question": "Why should code duplication be avoided?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To avoid inconsistent fixes and increased maintenance",
+      "C": "To simplify logging",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Duplication increases risk and maintenance effort.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Logging is unaffected.",
+        "D": "Testing remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0135",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "technical debt",
+    "difficulty": "Medium",
+    "question": "Why should technical debt be actively managed?",
+    "options": {
+      "A": "To increase short-term speed only",
+      "B": "To prevent long-term productivity decline",
+      "C": "To reduce monitoring",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Unmanaged debt slows future development.",
+      "incorrect": {
+        "A": "Short-term gains can backfire.",
+        "C": "Monitoring is unrelated.",
+        "D": "Testing is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0136",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "refactoring",
+    "difficulty": "Medium",
+    "question": "When should refactoring ideally be performed?",
+    "options": {
+      "A": "Only when bugs occur",
+      "B": "Continuously as part of development",
+      "C": "Only during major rewrites",
+      "D": "Never in production systems"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Continuous refactoring keeps systems healthy.",
+      "incorrect": {
+        "A": "Waiting increases debt.",
+        "C": "Large rewrites are risky.",
+        "D": "Production systems still need refactoring."
+      }
+    }
+  },
+  {
+    "id": "CH14-0137",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "documentation freshness",
+    "difficulty": "Easy",
+    "question": "Why must documentation be kept up to date?",
+    "options": {
+      "A": "To increase code coverage",
+      "B": "To prevent incorrect usage and misunderstandings",
+      "C": "To reduce monitoring",
+      "D": "To improve performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Outdated docs cause misuse and errors.",
+      "incorrect": {
+        "A": "Coverage is unrelated.",
+        "C": "Monitoring is unaffected.",
+        "D": "Performance is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0138",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "ownership rotation",
+    "difficulty": "Medium",
+    "question": "Why should knowledge be shared across team members?",
+    "options": {
+      "A": "To reduce accountability",
+      "B": "To avoid single points of knowledge failure",
+      "C": "To increase handoffs",
+      "D": "To reduce documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Shared knowledge improves resilience.",
+      "incorrect": {
+        "A": "Accountability still exists.",
+        "C": "Handoffs increase risk.",
+        "D": "Documentation remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0139",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "code reviews",
+    "difficulty": "Medium",
+    "question": "What is the primary benefit of code reviews?",
+    "options": {
+      "A": "Slower development",
+      "B": "Early defect detection and knowledge sharing",
+      "C": "Reduced testing",
+      "D": "Improved runtime performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Reviews catch issues and spread understanding.",
+      "incorrect": {
+        "A": "Reviews improve quality long-term.",
+        "C": "Testing remains essential.",
+        "D": "Performance is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0140",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "change impact",
+    "difficulty": "Hard",
+    "question": "Why should the impact of changes be analyzed before implementation?",
+    "options": {
+      "A": "To reduce logging",
+      "B": "To avoid unintended side effects",
+      "C": "To simplify deployment",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Impact analysis prevents regressions and outages.",
+      "incorrect": {
+        "A": "Logging is unaffected.",
+        "C": "Deployment remains complex.",
+        "D": "Testing is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0141",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "separation of concerns",
+    "difficulty": "Medium",
+    "question": "Why should integration logic be separated from transport-specific concerns?",
+    "options": {
+      "A": "To improve runtime performance",
+      "B": "To simplify reuse and future changes",
+      "C": "To reduce payload size",
+      "D": "To avoid authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Separation allows transport changes without rewriting core logic.",
+      "incorrect": {
+        "A": "Performance gains are incidental.",
+        "C": "Payload size is unrelated.",
+        "D": "Authentication remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0142",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "layered architecture",
+    "difficulty": "Medium",
+    "question": "What is a key benefit of using a layered architecture in integrations?",
+    "options": {
+      "A": "Reduced latency",
+      "B": "Clear responsibility boundaries",
+      "C": "Elimination of testing",
+      "D": "Simpler deployment pipelines"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Layers isolate responsibilities and simplify change management.",
+      "incorrect": {
+        "A": "Latency is not the primary benefit.",
+        "C": "Testing remains essential.",
+        "D": "Pipelines are unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0143",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "configuration management",
+    "difficulty": "Easy",
+    "question": "Why should configuration be externalized from application logic?",
+    "options": {
+      "A": "To reduce memory usage",
+      "B": "To allow changes without code modification",
+      "C": "To improve authentication",
+      "D": "To simplify logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Externalized configuration enables environment-specific changes safely.",
+      "incorrect": {
+        "A": "Memory usage is unaffected.",
+        "C": "Authentication is separate.",
+        "D": "Logging is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0144",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "dependency management",
+    "difficulty": "Medium",
+    "question": "Why should integration components avoid tight coupling to external systems?",
+    "options": {
+      "A": "To improve throughput",
+      "B": "To minimize ripple effects when systems change",
+      "C": "To reduce payload size",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Loose coupling limits the impact of changes in dependent systems.",
+      "incorrect": {
+        "A": "Throughput is not the main concern.",
+        "C": "Payload size is unrelated.",
+        "D": "Retries are still needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0145",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Maintainability",
+    "subtopic": "shared libraries",
+    "difficulty": "Medium",
+    "question": "When should shared libraries be used in integration solutions?",
+    "options": {
+      "A": "For all logic regardless of reuse",
+      "B": "For truly common and stable functionality",
+      "C": "For experimental features",
+      "D": "To avoid documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Only stable, reusable logic belongs in shared libraries.",
+      "incorrect": {
+        "A": "Overuse increases coupling.",
+        "C": "Experimental code should remain isolated.",
+        "D": "Documentation remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0146",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Change Management",
+    "subtopic": "impact analysis",
+    "difficulty": "Medium",
+    "question": "What should be evaluated during impact analysis of an integration change?",
+    "options": {
+      "A": "Only code formatting",
+      "B": "Downstream consumers and dependencies",
+      "C": "Logging verbosity only",
+      "D": "Thread counts only"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Changes can affect consumers and dependent systems.",
+      "incorrect": {
+        "A": "Formatting has no impact.",
+        "C": "Logging is only one aspect.",
+        "D": "Threads alone do not reflect impact."
+      }
+    }
+  },
+  {
+    "id": "CH14-0147",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Change Management",
+    "subtopic": "backward compatibility",
+    "difficulty": "Medium",
+    "question": "Why is backward compatibility important when evolving APIs?",
+    "options": {
+      "A": "To avoid documentation updates",
+      "B": "To prevent breaking existing consumers",
+      "C": "To eliminate versioning",
+      "D": "To simplify testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Existing consumers may not migrate immediately.",
+      "incorrect": {
+        "A": "Documentation must still be updated.",
+        "C": "Versioning remains necessary.",
+        "D": "Testing remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0148",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Change Management",
+    "subtopic": "feature toggles",
+    "difficulty": "Hard",
+    "question": "What is a key benefit of using feature toggles?",
+    "options": {
+      "A": "Eliminating rollbacks",
+      "B": "Decoupling deployment from feature release",
+      "C": "Reducing test coverage",
+      "D": "Avoiding monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Feature toggles allow controlled activation without redeployment.",
+      "incorrect": {
+        "A": "Rollbacks may still be required.",
+        "C": "Testing remains necessary.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0149",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Change Management",
+    "subtopic": "change windows",
+    "difficulty": "Easy",
+    "question": "Why are planned change windows used in operations?",
+    "options": {
+      "A": "To slow development",
+      "B": "To minimize business impact of changes",
+      "C": "To reduce documentation",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Changes during low-usage periods reduce risk.",
+      "incorrect": {
+        "A": "Windows enable safe speed.",
+        "C": "Documentation is still required.",
+        "D": "Testing remains mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH14-0150",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Change Management",
+    "subtopic": "approval workflows",
+    "difficulty": "Medium",
+    "question": "Why should high-risk changes require approval workflows?",
+    "options": {
+      "A": "To eliminate accountability",
+      "B": "To ensure review and risk assessment",
+      "C": "To reduce automation",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Approvals reduce the likelihood of harmful changes.",
+      "incorrect": {
+        "A": "Accountability is maintained.",
+        "C": "Automation complements approvals.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0151",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "metrics selection",
+    "difficulty": "Medium",
+    "question": "Which type of metric best reflects system health?",
+    "options": {
+      "A": "Number of code commits",
+      "B": "Latency, error rate, and throughput",
+      "C": "Lines of code",
+      "D": "Payload size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "These metrics directly reflect runtime behavior.",
+      "incorrect": {
+        "A": "Commits do not reflect health.",
+        "C": "Code size is unrelated.",
+        "D": "Payload size is indirect."
+      }
+    }
+  },
+  {
+    "id": "CH14-0152",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "golden signals",
+    "difficulty": "Medium",
+    "question": "Why are the four golden signals commonly monitored?",
+    "options": {
+      "A": "They reduce logging needs",
+      "B": "They provide a balanced view of system behavior",
+      "C": "They eliminate alerts",
+      "D": "They simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Golden signals cover performance and reliability dimensions.",
+      "incorrect": {
+        "A": "Logging remains necessary.",
+        "C": "Alerts depend on these signals.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0153",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "distributed tracing",
+    "difficulty": "Medium",
+    "question": "What problem does distributed tracing primarily solve?",
+    "options": {
+      "A": "Authentication failures",
+      "B": "Understanding request flow across services",
+      "C": "Payload transformation errors",
+      "D": "Deployment failures"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Tracing shows end-to-end request paths.",
+      "incorrect": {
+        "A": "Auth is handled separately.",
+        "C": "Transformations are local.",
+        "D": "Deployments are unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0154",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "alert design",
+    "difficulty": "Hard",
+    "question": "What characteristic makes an alert actionable?",
+    "options": {
+      "A": "High frequency",
+      "B": "Clear indication of required response",
+      "C": "Verbose log output",
+      "D": "Low threshold"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Actionable alerts guide responders on what to do.",
+      "incorrect": {
+        "A": "Frequency alone is harmful.",
+        "C": "Logs support alerts but are not alerts.",
+        "D": "Low thresholds cause noise."
+      }
+    }
+  },
+  {
+    "id": "CH14-0155",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "alert ownership",
+    "difficulty": "Easy",
+    "question": "Why should every alert have a defined owner?",
+    "options": {
+      "A": "To increase alert volume",
+      "B": "To ensure timely response and resolution",
+      "C": "To reduce documentation",
+      "D": "To eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Ownership prevents alerts from being ignored.",
+      "incorrect": {
+        "A": "Volume is unrelated.",
+        "C": "Documentation remains required.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0156",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Observability",
+    "subtopic": "alert fatigue",
+    "difficulty": "Medium",
+    "question": "Which practice helps reduce alert fatigue?",
+    "options": {
+      "A": "Lowering all thresholds",
+      "B": "Removing non-actionable alerts",
+      "C": "Increasing logging",
+      "D": "Alerting on every metric change"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Only actionable alerts should page responders.",
+      "incorrect": {
+        "A": "Lower thresholds increase noise.",
+        "C": "Logging does not reduce alerts.",
+        "D": "Alerting on everything causes fatigue."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0157",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "fault isolation",
+    "difficulty": "Medium",
+    "question": "Why is fault isolation important in distributed systems?",
+    "options": {
+      "A": "To improve logging",
+      "B": "To prevent failures from cascading",
+      "C": "To reduce payload size",
+      "D": "To simplify authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Isolation limits the blast radius of failures.",
+      "incorrect": {
+        "A": "Logging does not isolate faults.",
+        "C": "Payload size is unrelated.",
+        "D": "Authentication is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0158",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "timeouts",
+    "difficulty": "Medium",
+    "question": "Why must timeouts be consistently configured across service calls?",
+    "options": {
+      "A": "To improve security",
+      "B": "To avoid thread exhaustion and request pileups",
+      "C": "To reduce logging",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Timeouts prevent resources from being held indefinitely.",
+      "incorrect": {
+        "A": "Security is separate.",
+        "C": "Logging is unrelated.",
+        "D": "Retries are still needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0159",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "bulkheads",
+    "difficulty": "Hard",
+    "question": "What problem does the bulkhead pattern address?",
+    "options": {
+      "A": "Slow database queries",
+      "B": "Resource exhaustion across unrelated components",
+      "C": "Authentication failures",
+      "D": "Payload transformation errors"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Bulkheads isolate resources to prevent total failure.",
+      "incorrect": {
+        "A": "Queries are a separate concern.",
+        "C": "Authentication is unrelated.",
+        "D": "Transformations are unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0160",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Resilience",
+    "subtopic": "fallback design",
+    "difficulty": "Medium",
+    "question": "When designing fallbacks, what should be prioritized?",
+    "options": {
+      "A": "Perfect accuracy",
+      "B": "Maintaining core functionality",
+      "C": "Reducing code size",
+      "D": "Eliminating monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Fallbacks should preserve essential behavior.",
+      "incorrect": {
+        "A": "Accuracy may be reduced.",
+        "C": "Code size is secondary.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0161",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "availability targets",
+    "difficulty": "Medium",
+    "question": "Why should availability targets be explicitly defined?",
+    "options": {
+      "A": "To eliminate incidents",
+      "B": "To align system design with business expectations",
+      "C": "To reduce testing",
+      "D": "To simplify logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Targets guide architectural and operational decisions.",
+      "incorrect": {
+        "A": "Incidents can still occur.",
+        "C": "Testing remains required.",
+        "D": "Logging is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0162",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "mean time between failures",
+    "difficulty": "Easy",
+    "question": "What does mean time between failures (MTBF) measure?",
+    "options": {
+      "A": "Recovery speed",
+      "B": "Frequency of failures",
+      "C": "Deployment duration",
+      "D": "Payload size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "MTBF reflects how often failures occur.",
+      "incorrect": {
+        "A": "Recovery speed is MTTR.",
+        "C": "Deployment duration is unrelated.",
+        "D": "Payload size is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH14-0163",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "reliability testing",
+    "difficulty": "Medium",
+    "question": "Why should reliability testing include failure scenarios?",
+    "options": {
+      "A": "To slow development",
+      "B": "To validate system behavior under stress",
+      "C": "To reduce documentation",
+      "D": "To improve authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Failures reveal weaknesses not seen in normal operation.",
+      "incorrect": {
+        "A": "Testing improves long-term speed.",
+        "C": "Documentation is still required.",
+        "D": "Authentication is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0164",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "redundant dependencies",
+    "difficulty": "Hard",
+    "question": "Why should critical dependencies have redundancy?",
+    "options": {
+      "A": "To increase latency",
+      "B": "To avoid total service outage",
+      "C": "To simplify architecture",
+      "D": "To reduce monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Redundancy ensures continuity when one dependency fails.",
+      "incorrect": {
+        "A": "Latency may increase.",
+        "C": "Architecture becomes more complex.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0165",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Reliability",
+    "subtopic": "dependency health",
+    "difficulty": "Medium",
+    "question": "Why should dependency health be continuously monitored?",
+    "options": {
+      "A": "To reduce logging",
+      "B": "To detect upstream issues early",
+      "C": "To eliminate retries",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early detection allows proactive mitigation.",
+      "incorrect": {
+        "A": "Logging is unrelated.",
+        "C": "Retries are still needed.",
+        "D": "Deployment is unaffected."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0166",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "defense in depth",
+    "difficulty": "Medium",
+    "question": "What is the principle of defense in depth?",
+    "options": {
+      "A": "Relying on a single security control",
+      "B": "Using multiple layers of security controls",
+      "C": "Disabling logging",
+      "D": "Avoiding authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Multiple layers reduce the chance of complete compromise.",
+      "incorrect": {
+        "A": "Single controls are insufficient.",
+        "C": "Logging remains necessary.",
+        "D": "Authentication is essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0167",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "rate limiting",
+    "difficulty": "Medium",
+    "question": "Why should rate limiting be applied to APIs?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To protect services from abuse and overload",
+      "C": "To simplify transformations",
+      "D": "To eliminate authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Rate limiting prevents denial-of-service scenarios.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Transformations are unaffected.",
+        "D": "Authentication remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0168",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "audit logging",
+    "difficulty": "Easy",
+    "question": "Why are audit logs important for security?",
+    "options": {
+      "A": "To improve performance",
+      "B": "To support compliance and forensic analysis",
+      "C": "To reduce monitoring",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Audit logs provide traceability for security events.",
+      "incorrect": {
+        "A": "Performance is not improved.",
+        "C": "Monitoring is still needed.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0169",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "secret rotation",
+    "difficulty": "Medium",
+    "question": "Why should secrets be rotated periodically?",
+    "options": {
+      "A": "To increase configuration complexity",
+      "B": "To reduce risk from long-lived credential exposure",
+      "C": "To improve logging",
+      "D": "To eliminate authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Rotation limits the usefulness of compromised credentials.",
+      "incorrect": {
+        "A": "Complexity is a tradeoff.",
+        "C": "Logging is unrelated.",
+        "D": "Authentication remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0170",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "input sanitization",
+    "difficulty": "Easy",
+    "question": "Why should user inputs be sanitized before processing?",
+    "options": {
+      "A": "To reduce latency",
+      "B": "To prevent injection attacks",
+      "C": "To simplify logging",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Sanitization blocks malicious payloads.",
+      "incorrect": {
+        "A": "Latency is secondary.",
+        "C": "Logging is unrelated.",
+        "D": "Retries are unaffected."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0171",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "least privilege",
+    "difficulty": "Medium",
+    "question": "Why should service accounts follow least-privilege principles?",
+    "options": {
+      "A": "To improve performance",
+      "B": "To minimize damage if compromised",
+      "C": "To simplify deployments",
+      "D": "To reduce testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Limited permissions reduce blast radius.",
+      "incorrect": {
+        "A": "Performance is unaffected.",
+        "C": "Deployment complexity is unchanged.",
+        "D": "Testing remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0172",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "secure defaults",
+    "difficulty": "Medium",
+    "question": "Why should systems default to secure configurations?",
+    "options": {
+      "A": "To reduce usability",
+      "B": "To prevent accidental exposure",
+      "C": "To simplify logging",
+      "D": "To improve performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Secure defaults reduce misconfiguration risk.",
+      "incorrect": {
+        "A": "Usability can still be maintained.",
+        "C": "Logging is unaffected.",
+        "D": "Performance is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0173",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "security testing",
+    "difficulty": "Medium",
+    "question": "Why should security testing be part of regular release cycles?",
+    "options": {
+      "A": "To reduce development speed",
+      "B": "To identify vulnerabilities introduced by changes",
+      "C": "To eliminate monitoring",
+      "D": "To simplify documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Changes can introduce new vulnerabilities.",
+      "incorrect": {
+        "A": "Testing improves long-term speed.",
+        "C": "Monitoring remains required.",
+        "D": "Documentation is still needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0174",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Security",
+    "subtopic": "threat modeling",
+    "difficulty": "Hard",
+    "question": "What is the primary goal of threat modeling?",
+    "options": {
+      "A": "Increase logging",
+      "B": "Identify and mitigate potential attack vectors",
+      "C": "Reduce testing effort",
+      "D": "Simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Threat modeling anticipates and reduces security risks.",
+      "incorrect": {
+        "A": "Logging is complementary.",
+        "C": "Testing remains necessary.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+
+  {
+    "id": "CH14-0175",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "data handling",
+    "difficulty": "Medium",
+    "question": "Why must data classification be defined for integrations?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To apply appropriate security and retention controls",
+      "C": "To simplify transformations",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Different data types require different protections.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Transformations are unaffected.",
+        "D": "Testing remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0176",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "data retention",
+    "difficulty": "Easy",
+    "question": "Why should data retention periods be enforced?",
+    "options": {
+      "A": "To increase storage costs",
+      "B": "To comply with legal and regulatory requirements",
+      "C": "To improve performance",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Retention rules are often legally mandated.",
+      "incorrect": {
+        "A": "Costs must be controlled.",
+        "C": "Performance is unrelated.",
+        "D": "Deployment is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0177",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "data minimization",
+    "difficulty": "Medium",
+    "question": "What is the principle of data minimization?",
+    "options": {
+      "A": "Storing all available data",
+      "B": "Collecting only necessary data",
+      "C": "Encrypting all data",
+      "D": "Deleting data immediately"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Minimization reduces exposure and compliance risk.",
+      "incorrect": {
+        "A": "Excess data increases risk.",
+        "C": "Encryption alone is insufficient.",
+        "D": "Immediate deletion may violate requirements."
+      }
+    }
+  },
+  {
+    "id": "CH14-0178",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "audit readiness",
+    "difficulty": "Medium",
+    "question": "Why should audit readiness be maintained continuously?",
+    "options": {
+      "A": "To reduce monitoring",
+      "B": "To avoid last-minute compliance gaps",
+      "C": "To simplify deployments",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Continuous readiness avoids rushed remediation.",
+      "incorrect": {
+        "A": "Monitoring remains required.",
+        "C": "Deployment is unaffected.",
+        "D": "Testing remains required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0179",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "access reviews",
+    "difficulty": "Medium",
+    "question": "Why should access rights be reviewed periodically?",
+    "options": {
+      "A": "To increase complexity",
+      "B": "To remove unnecessary or outdated permissions",
+      "C": "To reduce logging",
+      "D": "To simplify transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Periodic reviews reduce security risk.",
+      "incorrect": {
+        "A": "Complexity is not the goal.",
+        "C": "Logging is unaffected.",
+        "D": "Transformations are unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0180",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "policy enforcement",
+    "difficulty": "Hard",
+    "question": "Why should compliance policies be enforced automatically where possible?",
+    "options": {
+      "A": "To eliminate governance",
+      "B": "To reduce human error and inconsistency",
+      "C": "To simplify documentation",
+      "D": "To avoid audits"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automation ensures consistent policy enforcement.",
+      "incorrect": {
+        "A": "Governance remains essential.",
+        "C": "Documentation is still needed.",
+        "D": "Audits still occur."
+      }
+    }
+  },
+  {
+    "id": "CH14-0181",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "policy as code",
+    "difficulty": "Hard",
+    "question": "Why is implementing compliance rules as code considered a best practice?",
+    "options": {
+      "A": "It removes the need for audits",
+      "B": "It ensures consistent and repeatable enforcement",
+      "C": "It simplifies payload transformations",
+      "D": "It reduces system latency"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Policy-as-code ensures compliance is enforced uniformly and automatically.",
+      "incorrect": {
+        "A": "Audits are still required.",
+        "C": "Transformations are unrelated.",
+        "D": "Latency is not the goal."
+      }
+    }
+  },
+  {
+    "id": "CH14-0182",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "regulatory changes",
+    "difficulty": "Medium",
+    "question": "How should systems be designed to handle regulatory changes efficiently?",
+    "options": {
+      "A": "By hardcoding compliance rules",
+      "B": "By isolating compliance logic from business logic",
+      "C": "By disabling automation",
+      "D": "By reducing monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Isolation allows regulatory updates without widespread refactoring.",
+      "incorrect": {
+        "A": "Hardcoding increases change cost.",
+        "C": "Automation is beneficial.",
+        "D": "Monitoring remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0183",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "data residency",
+    "difficulty": "Medium",
+    "question": "Why must data residency requirements be considered in integration design?",
+    "options": {
+      "A": "To reduce payload size",
+      "B": "To ensure data is stored and processed in approved locations",
+      "C": "To simplify logging",
+      "D": "To improve throughput"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Regulations often restrict where data may be processed or stored.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Logging does not ensure residency.",
+        "D": "Throughput is secondary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0184",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Compliance",
+    "subtopic": "privacy by design",
+    "difficulty": "Hard",
+    "question": "What does privacy by design require in system architecture?",
+    "options": {
+      "A": "Adding privacy controls after deployment",
+      "B": "Embedding privacy controls from the start",
+      "C": "Encrypting all logs only",
+      "D": "Disabling monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Privacy must be built into the system from inception.",
+      "incorrect": {
+        "A": "Late additions are risky.",
+        "C": "Logs alone are insufficient.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+  {
+    "id": "CH14-0185",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "runbooks",
+    "difficulty": "Easy",
+    "question": "What is the primary purpose of operational runbooks?",
+    "options": {
+      "A": "Replace monitoring tools",
+      "B": "Guide responders during incidents",
+      "C": "Reduce alert volume",
+      "D": "Eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Runbooks provide clear steps for incident response.",
+      "incorrect": {
+        "A": "Monitoring is still needed.",
+        "C": "Alert volume is unrelated.",
+        "D": "Testing remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0186",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "incident classification",
+    "difficulty": "Medium",
+    "question": "Why should incidents be classified by severity?",
+    "options": {
+      "A": "To increase documentation",
+      "B": "To prioritize response and escalation",
+      "C": "To reduce monitoring",
+      "D": "To simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Severity levels guide urgency and resource allocation.",
+      "incorrect": {
+        "A": "Documentation is secondary.",
+        "C": "Monitoring is unaffected.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0187",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "escalation paths",
+    "difficulty": "Medium",
+    "question": "Why must escalation paths be clearly defined?",
+    "options": {
+      "A": "To slow down incident response",
+      "B": "To avoid confusion during critical incidents",
+      "C": "To reduce logging",
+      "D": "To eliminate automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Clear escalation ensures timely involvement of the right teams.",
+      "incorrect": {
+        "A": "Speed is critical during incidents.",
+        "C": "Logging is unaffected.",
+        "D": "Automation complements escalation."
+      }
+    }
+  },
+  {
+    "id": "CH14-0188",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "change freeze",
+    "difficulty": "Medium",
+    "question": "Why are change freezes applied during critical business periods?",
+    "options": {
+      "A": "To eliminate deployments permanently",
+      "B": "To reduce operational risk during peak usage",
+      "C": "To avoid testing",
+      "D": "To simplify governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Freezes minimize risk when system stability is critical.",
+      "incorrect": {
+        "A": "Deployments resume later.",
+        "C": "Testing still occurs.",
+        "D": "Governance remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0189",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "capacity planning",
+    "difficulty": "Hard",
+    "question": "What is the goal of proactive capacity planning?",
+    "options": {
+      "A": "React to failures after they occur",
+      "B": "Ensure systems can handle expected growth",
+      "C": "Reduce monitoring",
+      "D": "Simplify deployments"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Planning prevents performance degradation and outages.",
+      "incorrect": {
+        "A": "Reactive approaches are risky.",
+        "C": "Monitoring is still required.",
+        "D": "Deployment complexity is unchanged."
+      }
+    }
+  },
+  {
+    "id": "CH14-0190",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Operations",
+    "subtopic": "capacity thresholds",
+    "difficulty": "Medium",
+    "question": "Why should capacity thresholds trigger alerts before limits are reached?",
+    "options": {
+      "A": "To increase alert noise",
+      "B": "To allow corrective action before outages",
+      "C": "To reduce logging",
+      "D": "To eliminate scaling"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early warnings enable preventive action.",
+      "incorrect": {
+        "A": "Noise is harmful.",
+        "C": "Logging is unrelated.",
+        "D": "Scaling may still be needed."
+      }
+    }
+  },
+  {
+    "id": "CH14-0191",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "definition of done",
+    "difficulty": "Easy",
+    "question": "Why should a clear definition of done be established?",
+    "options": {
+      "A": "To reduce documentation",
+      "B": "To ensure consistent quality standards",
+      "C": "To eliminate testing",
+      "D": "To simplify monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Clear criteria prevent incomplete or unstable releases.",
+      "incorrect": {
+        "A": "Documentation remains required.",
+        "C": "Testing is essential.",
+        "D": "Monitoring is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH14-0192",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "quality gates",
+    "difficulty": "Medium",
+    "question": "What is the role of quality gates in delivery pipelines?",
+    "options": {
+      "A": "Increase deployment speed at all costs",
+      "B": "Prevent promotion of unstable builds",
+      "C": "Reduce logging",
+      "D": "Avoid reviews"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Quality gates block releases that fail standards.",
+      "incorrect": {
+        "A": "Speed without quality is risky.",
+        "C": "Logging is unrelated.",
+        "D": "Reviews remain valuable."
+      }
+    }
+  },
+  {
+    "id": "CH14-0193",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "test coverage",
+    "difficulty": "Medium",
+    "question": "Why is high test coverage alone insufficient to guarantee quality?",
+    "options": {
+      "A": "Coverage metrics are irrelevant",
+      "B": "Tests may not validate correct behavior",
+      "C": "Coverage slows development",
+      "D": "Coverage eliminates bugs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Poorly designed tests can miss critical issues.",
+      "incorrect": {
+        "A": "Coverage still has value.",
+        "C": "Speed impact is manageable.",
+        "D": "No test strategy eliminates all bugs."
+      }
+    }
+  },
+  {
+    "id": "CH14-0194",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "static analysis",
+    "difficulty": "Medium",
+    "question": "What is the primary benefit of static code analysis?",
+    "options": {
+      "A": "Runtime performance optimization",
+      "B": "Early detection of defects and code smells",
+      "C": "Reduced logging",
+      "D": "Elimination of testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Static analysis catches issues before runtime.",
+      "incorrect": {
+        "A": "Performance is indirect.",
+        "C": "Logging is unrelated.",
+        "D": "Testing remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0195",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "defect prevention",
+    "difficulty": "Hard",
+    "question": "Which practice most effectively prevents defects from reaching production?",
+    "options": {
+      "A": "Post-release monitoring",
+      "B": "Early validation and peer reviews",
+      "C": "Increased alerting",
+      "D": "Higher retry counts"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early detection is cheaper and more effective.",
+      "incorrect": {
+        "A": "Monitoring detects issues after release.",
+        "C": "Alerting does not prevent defects.",
+        "D": "Retries handle failures, not defects."
+      }
+    }
+  },
+  {
+    "id": "CH14-0196",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Quality",
+    "subtopic": "continuous improvement",
+    "difficulty": "Medium",
+    "question": "Why should teams regularly review quality metrics?",
+    "options": {
+      "A": "To reduce documentation",
+      "B": "To identify trends and improvement opportunities",
+      "C": "To eliminate monitoring",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Metrics reveal areas needing improvement.",
+      "incorrect": {
+        "A": "Documentation remains required.",
+        "C": "Monitoring is still necessary.",
+        "D": "Testing remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0197",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Strategy",
+    "subtopic": "technology selection",
+    "difficulty": "Medium",
+    "question": "What should primarily drive technology choices for integrations?",
+    "options": {
+      "A": "Personal preference",
+      "B": "Business requirements and constraints",
+      "C": "Latest trends",
+      "D": "Ease of learning only"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Technology must serve business needs.",
+      "incorrect": {
+        "A": "Preferences are subjective.",
+        "C": "Trends may not fit requirements.",
+        "D": "Learning ease is secondary."
+      }
+    }
+  },
+  {
+    "id": "CH14-0198",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Strategy",
+    "subtopic": "standardization",
+    "difficulty": "Medium",
+    "question": "Why is standardization important in large integration programs?",
+    "options": {
+      "A": "To reduce flexibility entirely",
+      "B": "To improve consistency and maintainability",
+      "C": "To eliminate innovation",
+      "D": "To simplify authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Standards reduce complexity at scale.",
+      "incorrect": {
+        "A": "Flexibility still exists within standards.",
+        "C": "Innovation is still possible.",
+        "D": "Authentication is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH14-0199",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Strategy",
+    "subtopic": "long-term planning",
+    "difficulty": "Hard",
+    "question": "Why should integration strategies consider long-term evolution?",
+    "options": {
+      "A": "To delay delivery",
+      "B": "To avoid costly rework as systems grow",
+      "C": "To reduce monitoring",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Scalable design reduces future refactoring cost.",
+      "incorrect": {
+        "A": "Planning enables sustainable speed.",
+        "C": "Monitoring remains required.",
+        "D": "Testing remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH14-0200",
+    "chapter": 14,
+    "chapterTitle": "Best Practices",
+    "topic": "Strategy",
+    "subtopic": "technical governance",
+    "difficulty": "Hard",
+    "question": "What is the primary objective of technical governance in integration programs?",
+    "options": {
+      "A": "Control every implementation detail",
+      "B": "Ensure alignment with standards and business goals",
+      "C": "Reduce deployment frequency",
+      "D": "Eliminate automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Governance balances consistency with autonomy.",
+      "incorrect": {
+        "A": "Overcontrol slows teams.",
+        "C": "Deployment frequency is unrelated.",
+        "D": "Automation supports governance."
+      }
+    }
+  }
+]

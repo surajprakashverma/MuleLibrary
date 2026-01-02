@@ -1,0 +1,3613 @@
+[
+  {
+    "id": "CH16-0001",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "role in integration",
+    "difficulty": "Easy",
+    "question": "What is the primary role of AI capabilities in MuleSoft integrations?",
+    "options": {
+      "A": "Replacing APIs entirely",
+      "B": "Enhancing automation, intelligence, and decision-making",
+      "C": "Eliminating data transformation",
+      "D": "Managing deployment pipelines"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "AI augments integrations with intelligence such as prediction and automation.",
+      "incorrect": {
+        "A": "APIs remain core to integrations.",
+        "C": "Transformations are still required.",
+        "D": "Deployment is a DevOps concern."
+      }
+    }
+  },
+  {
+    "id": "CH16-0002",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "use cases",
+    "difficulty": "Medium",
+    "question": "Which use case best fits AI-driven decisioning in MuleSoft?",
+    "options": {
+      "A": "Static routing based on hard-coded rules",
+      "B": "Dynamic routing based on predicted outcomes",
+      "C": "Manual data entry",
+      "D": "Synchronous logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "AI enables predictions that influence routing and processing logic.",
+      "incorrect": {
+        "A": "Hard-coded rules lack intelligence.",
+        "C": "Manual entry is non-automated.",
+        "D": "Logging is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0003",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Anypoint Composer",
+    "subtopic": "target users",
+    "difficulty": "Easy",
+    "question": "Who is the primary target user of Anypoint Composer?",
+    "options": {
+      "A": "Infrastructure engineers",
+      "B": "Business users with minimal coding experience",
+      "C": "Low-level JVM developers",
+      "D": "Database administrators"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Composer is designed for no-code/low-code business automation.",
+      "incorrect": {
+        "A": "Composer is not infrastructure-focused.",
+        "C": "Deep coding knowledge is unnecessary.",
+        "D": "DBAs are not the target audience."
+      }
+    }
+  },
+  {
+    "id": "CH16-0004",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Anypoint Composer",
+    "subtopic": "integration scope",
+    "difficulty": "Medium",
+    "question": "What type of integrations is Anypoint Composer best suited for?",
+    "options": {
+      "A": "Highly complex, custom-coded integrations",
+      "B": "Simple, event-driven business automations",
+      "C": "Kernel-level system integrations",
+      "D": "High-throughput streaming pipelines"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Composer focuses on simple, business-centric automation scenarios.",
+      "incorrect": {
+        "A": "Complex logic belongs in Mule apps.",
+        "C": "Kernel-level work is out of scope.",
+        "D": "Streaming requires Mule runtime."
+      }
+    }
+  },
+  {
+    "id": "CH16-0005",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Anypoint Composer",
+    "subtopic": "governance",
+    "difficulty": "Medium",
+    "question": "Why is governance important even for Composer-based integrations?",
+    "options": {
+      "A": "Composer automations are temporary",
+      "B": "Uncontrolled automations can create data and security risks",
+      "C": "Composer replaces API governance",
+      "D": "Governance only applies to Mule apps"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "No-code automations can still impact enterprise systems.",
+      "incorrect": {
+        "A": "Composer automations can be long-lived.",
+        "C": "Governance complements Composer.",
+        "D": "Governance applies across platforms."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0006",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "definition",
+    "difficulty": "Easy",
+    "question": "What problem does Robotic Process Automation (RPA) primarily address?",
+    "options": {
+      "A": "Replacing APIs",
+      "B": "Automating repetitive human-driven tasks",
+      "C": "Transforming structured data",
+      "D": "Managing cloud infrastructure"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "RPA mimics human actions in user interfaces.",
+      "incorrect": {
+        "A": "APIs are still preferred when available.",
+        "C": "Transformations are not the core goal.",
+        "D": "Infrastructure is out of scope."
+      }
+    }
+  },
+  {
+    "id": "CH16-0007",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "when to use",
+    "difficulty": "Medium",
+    "question": "When is RPA most appropriate compared to API-based integration?",
+    "options": {
+      "A": "When APIs are stable and well-documented",
+      "B": "When no APIs are available and UI automation is required",
+      "C": "When performance is critical",
+      "D": "When real-time streaming is required"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "RPA is a last resort when systems lack integration interfaces.",
+      "incorrect": {
+        "A": "APIs are preferable when available.",
+        "C": "RPA is not high-performance.",
+        "D": "Streaming is unsuitable for RPA."
+      }
+    }
+  },
+  {
+    "id": "CH16-0008",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "limitations",
+    "difficulty": "Medium",
+    "question": "What is a key limitation of RPA solutions?",
+    "options": {
+      "A": "They cannot access UIs",
+      "B": "They are sensitive to UI changes",
+      "C": "They require APIs",
+      "D": "They cannot run unattended"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "UI changes can easily break RPA bots.",
+      "incorrect": {
+        "A": "UI access is the core feature.",
+        "C": "RPA avoids APIs.",
+        "D": "Bots can run unattended."
+      }
+    }
+  },
+  {
+    "id": "CH16-0009",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "governance",
+    "difficulty": "Medium",
+    "question": "Why must RPA bots be governed like other enterprise integrations?",
+    "options": {
+      "A": "They consume API limits",
+      "B": "They can impact critical business processes",
+      "C": "They are only temporary",
+      "D": "They eliminate compliance requirements"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Bots can affect production systems and data integrity.",
+      "incorrect": {
+        "A": "Bots often bypass APIs.",
+        "C": "Bots may be long-running.",
+        "D": "Compliance still applies."
+      }
+    }
+  },
+  {
+    "id": "CH16-0010",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "definition",
+    "difficulty": "Easy",
+    "question": "What does Intelligent Document Processing (IDP) primarily handle?",
+    "options": {
+      "A": "Structured API payloads",
+      "B": "Unstructured and semi-structured documents",
+      "C": "Network traffic",
+      "D": "Application logs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "IDP extracts data from documents like PDFs, images, and forms.",
+      "incorrect": {
+        "A": "APIs usually provide structured data.",
+        "C": "Networking is unrelated.",
+        "D": "Logs are structured differently."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0011",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "AI techniques",
+    "difficulty": "Medium",
+    "question": "Which AI techniques are commonly used in IDP solutions?",
+    "options": {
+      "A": "OCR and machine learning models",
+      "B": "Thread pooling",
+      "C": "Load balancing",
+      "D": "API rate limiting"
+    },
+    "correctAnswer": "A",
+    "explanation": {
+      "correct": "OCR and ML extract and classify document data.",
+      "incorrect": {
+        "B": "Threading is runtime-related.",
+        "C": "Load balancing is infrastructural.",
+        "D": "Rate limiting is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0012",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "business value",
+    "difficulty": "Medium",
+    "question": "What business value does IDP provide in integration workflows?",
+    "options": {
+      "A": "Manual document review",
+      "B": "Faster and more accurate data extraction",
+      "C": "Higher API throughput",
+      "D": "Reduced need for governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "IDP reduces manual effort and errors in document handling.",
+      "incorrect": {
+        "A": "Manual review is reduced.",
+        "C": "Throughput is indirect.",
+        "D": "Governance is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0013",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "decision automation",
+    "difficulty": "Hard",
+    "question": "Why should AI-driven decisions be explainable in enterprise integrations?",
+    "options": {
+      "A": "To reduce latency",
+      "B": "To support auditability and trust",
+      "C": "To increase automation speed",
+      "D": "To eliminate human oversight"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Explainability supports compliance and business confidence.",
+      "incorrect": {
+        "A": "Latency is secondary.",
+        "C": "Speed alone is insufficient.",
+        "D": "Oversight is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0014",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "human-in-the-loop",
+    "difficulty": "Medium",
+    "question": "Why is a human-in-the-loop model often required with AI integrations?",
+    "options": {
+      "A": "AI models cannot scale",
+      "B": "Certain decisions require human judgment",
+      "C": "APIs require approval",
+      "D": "Automation must be avoided"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Human validation is needed for high-risk decisions.",
+      "incorrect": {
+        "A": "AI can scale.",
+        "C": "APIs do not require approval.",
+        "D": "Automation remains valuable."
+      }
+    }
+  },
+  {
+    "id": "CH16-0015",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "tool selection",
+    "difficulty": "Medium",
+    "question": "What should guide the choice between Mule apps, Composer, RPA, and IDP?",
+    "options": {
+      "A": "Tool popularity",
+      "B": "Use case complexity and system capabilities",
+      "C": "Licensing cost only",
+      "D": "Developer preference"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Different tools suit different integration scenarios.",
+      "incorrect": {
+        "A": "Popularity is not a technical criterion.",
+        "C": "Cost alone is insufficient.",
+        "D": "Preference must align with requirements."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0016",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "layered approach",
+    "difficulty": "Medium",
+    "question": "How should AI and automation tools be positioned in API-led architectures?",
+    "options": {
+      "A": "Replacing System APIs",
+      "B": "Complementing APIs within governed layers",
+      "C": "Bypassing governance",
+      "D": "Running without monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "AI and automation enhance, not replace, API-led design.",
+      "incorrect": {
+        "A": "System APIs remain essential.",
+        "C": "Governance is mandatory.",
+        "D": "Monitoring is required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0017",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Security",
+    "subtopic": "data privacy",
+    "difficulty": "Medium",
+    "question": "Why is data privacy a major concern when using AI and IDP?",
+    "options": {
+      "A": "AI cannot process data securely",
+      "B": "Sensitive documents and data may be processed automatically",
+      "C": "APIs stop working",
+      "D": "Performance degrades"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automated processing of sensitive data requires strict controls.",
+      "incorrect": {
+        "A": "AI can be secured with controls.",
+        "C": "APIs are unaffected.",
+        "D": "Performance is secondary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0018",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Security",
+    "subtopic": "access control",
+    "difficulty": "Easy",
+    "question": "What access control principle applies equally to AI, RPA, and Composer integrations?",
+    "options": {
+      "A": "Maximum privilege",
+      "B": "Least privilege",
+      "C": "Anonymous access",
+      "D": "Hard-coded credentials"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Least privilege reduces security risk across all tools.",
+      "incorrect": {
+        "A": "Excess privilege increases risk.",
+        "C": "Anonymous access is unsafe.",
+        "D": "Hard-coded credentials are insecure."
+      }
+    }
+  },
+  {
+    "id": "CH16-0019",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "monitoring",
+    "difficulty": "Medium",
+    "question": "Why must AI-driven automations be monitored in production?",
+    "options": {
+      "A": "AI never fails",
+      "B": "Models and automations can drift or behave unexpectedly",
+      "C": "Monitoring replaces testing",
+      "D": "Monitoring reduces costs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Behavior may change due to data or environment shifts.",
+      "incorrect": {
+        "A": "AI systems can fail.",
+        "C": "Testing and monitoring complement each other.",
+        "D": "Cost reduction is indirect."
+      }
+    }
+  },
+  {
+    "id": "CH16-0020",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "failure handling",
+    "difficulty": "Medium",
+    "question": "How should failures in RPA or AI workflows be handled?",
+    "options": {
+      "A": "Ignored until business reports issues",
+      "B": "Captured with retries, alerts, and fallback paths",
+      "C": "Hidden from users",
+      "D": "Handled manually every time"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Operational resilience requires structured failure handling.",
+      "incorrect": {
+        "A": "Ignoring failures increases impact.",
+        "C": "Transparency is required.",
+        "D": "Manual handling does not scale."
+      }
+    }
+  },
+  {
+    "id": "CH16-0021",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "model lifecycle",
+    "difficulty": "Medium",
+    "question": "Why must AI models used in integrations be periodically retrained?",
+    "options": {
+      "A": "Because APIs change frequently",
+      "B": "Because data patterns and business behavior evolve over time",
+      "C": "Because retraining improves network latency",
+      "D": "Because Mule runtime requires it"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Model accuracy degrades over time due to data drift and changing patterns.",
+      "incorrect": {
+        "A": "API changes do not mandate retraining.",
+        "C": "Latency is unrelated to training.",
+        "D": "Runtime does not enforce retraining."
+      }
+    }
+  },
+  {
+    "id": "CH16-0022",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "prediction confidence",
+    "difficulty": "Medium",
+    "question": "Why should AI predictions include confidence scores in enterprise workflows?",
+    "options": {
+      "A": "To increase payload size",
+      "B": "To decide when human review is required",
+      "C": "To eliminate governance",
+      "D": "To simplify transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Confidence thresholds help route uncertain decisions for human validation.",
+      "incorrect": {
+        "A": "Payload size is irrelevant.",
+        "C": "Governance remains mandatory.",
+        "D": "Transformations are separate."
+      }
+    }
+  },
+  {
+    "id": "CH16-0023",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "event triggers",
+    "difficulty": "Easy",
+    "question": "What commonly triggers a Composer flow?",
+    "options": {
+      "A": "JVM startup",
+      "B": "A business event such as record creation or update",
+      "C": "Manual code deployment",
+      "D": "Thread pool exhaustion"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Composer flows are typically event-driven based on SaaS actions.",
+      "incorrect": {
+        "A": "JVM startup is irrelevant.",
+        "C": "Deployments do not trigger flows.",
+        "D": "Thread pools are runtime concerns."
+      }
+    }
+  },
+  {
+    "id": "CH16-0024",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "limitations",
+    "difficulty": "Medium",
+    "question": "What is a limitation of Anypoint Composer compared to Mule applications?",
+    "options": {
+      "A": "No support for SaaS systems",
+      "B": "Limited support for complex branching and custom logic",
+      "C": "No governance controls",
+      "D": "Inability to authenticate securely"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Composer is designed for simplicity, not complex orchestration.",
+      "incorrect": {
+        "A": "Composer supports many SaaS platforms.",
+        "C": "Governance still applies.",
+        "D": "Secure authentication is supported."
+      }
+    }
+  },
+  {
+    "id": "CH16-0025",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "error handling",
+    "difficulty": "Medium",
+    "question": "Why is error handling still critical in no-code Composer integrations?",
+    "options": {
+      "A": "Composer flows never fail",
+      "B": "External systems can still return errors",
+      "C": "Composer replaces monitoring",
+      "D": "Errors are auto-resolved"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Failures from dependent systems must be handled gracefully.",
+      "incorrect": {
+        "A": "All integrations can fail.",
+        "C": "Monitoring is still required.",
+        "D": "Errors require handling."
+      }
+    }
+  },
+  {
+    "id": "CH16-0026",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "bot reliability",
+    "difficulty": "Medium",
+    "question": "What improves the reliability of RPA bots?",
+    "options": {
+      "A": "Hard-coding screen coordinates",
+      "B": "Using stable UI identifiers and validations",
+      "C": "Increasing execution speed",
+      "D": "Ignoring UI exceptions"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stable selectors reduce breakage from UI changes.",
+      "incorrect": {
+        "A": "Coordinates break easily.",
+        "C": "Speed does not improve reliability.",
+        "D": "Exceptions must be handled."
+      }
+    }
+  },
+  {
+    "id": "CH16-0027",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "bot scaling",
+    "difficulty": "Hard",
+    "question": "Why is horizontal scaling of RPA bots challenging?",
+    "options": {
+      "A": "Bots cannot run in parallel",
+      "B": "UI-based interactions often serialize access",
+      "C": "RPA uses APIs internally",
+      "D": "Bots require manual triggering"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Many UIs cannot safely handle concurrent automated access.",
+      "incorrect": {
+        "A": "Bots can run in parallel.",
+        "C": "RPA avoids APIs.",
+        "D": "Bots can be scheduled."
+      }
+    }
+  },
+  {
+    "id": "CH16-0028",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "fallback strategy",
+    "difficulty": "Medium",
+    "question": "What is a recommended fallback when an RPA bot fails?",
+    "options": {
+      "A": "Retry indefinitely",
+      "B": "Route work to manual processing with alerts",
+      "C": "Ignore the failure",
+      "D": "Disable monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Manual fallback prevents business disruption.",
+      "incorrect": {
+        "A": "Infinite retries worsen failures.",
+        "C": "Ignoring failures is unsafe.",
+        "D": "Monitoring is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0029",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "confidence thresholds",
+    "difficulty": "Medium",
+    "question": "Why should IDP systems use confidence thresholds before auto-processing documents?",
+    "options": {
+      "A": "To reduce throughput",
+      "B": "To prevent incorrect data ingestion",
+      "C": "To avoid machine learning",
+      "D": "To eliminate validation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Low-confidence extractions require review to prevent data corruption.",
+      "incorrect": {
+        "A": "Throughput is secondary.",
+        "C": "ML is core to IDP.",
+        "D": "Validation remains required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0030",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "document variability",
+    "difficulty": "Medium",
+    "question": "Why is document variability a challenge for IDP solutions?",
+    "options": {
+      "A": "Documents are always structured",
+      "B": "Layouts and formats differ across sources",
+      "C": "IDP works only on images",
+      "D": "APIs eliminate variability"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Different formats require adaptive extraction models.",
+      "incorrect": {
+        "A": "Documents are often unstructured.",
+        "C": "IDP supports many formats.",
+        "D": "APIs do not normalize documents."
+      }
+    }
+  },
+  {
+    "id": "CH16-0031",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "bias risk",
+    "difficulty": "Hard",
+    "question": "Why must AI bias be addressed in integration-driven decisions?",
+    "options": {
+      "A": "Bias improves accuracy",
+      "B": "Bias can cause unfair or incorrect automated outcomes",
+      "C": "Bias reduces cost",
+      "D": "Bias simplifies governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Biased decisions can violate ethics, trust, and compliance.",
+      "incorrect": {
+        "A": "Bias degrades quality.",
+        "C": "Cost is unrelated.",
+        "D": "Governance becomes harder."
+      }
+    }
+  },
+  {
+    "id": "CH16-0032",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "model versioning",
+    "difficulty": "Medium",
+    "question": "Why is model versioning important in AI-enabled integrations?",
+    "options": {
+      "A": "To increase payload size",
+      "B": "To track, rollback, and audit decision logic changes",
+      "C": "To eliminate testing",
+      "D": "To simplify UI automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Versioning ensures traceability and safe updates.",
+      "incorrect": {
+        "A": "Payload size is irrelevant.",
+        "C": "Testing remains critical.",
+        "D": "UI automation is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0033",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "API preference",
+    "difficulty": "Easy",
+    "question": "Why should APIs be preferred over RPA whenever possible?",
+    "options": {
+      "A": "APIs are harder to secure",
+      "B": "APIs are more stable, scalable, and maintainable",
+      "C": "APIs eliminate governance",
+      "D": "APIs replace AI"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "APIs provide cleaner and more reliable integrations.",
+      "incorrect": {
+        "A": "APIs are easier to secure.",
+        "C": "Governance still applies.",
+        "D": "AI complements APIs."
+      }
+    }
+  },
+  {
+    "id": "CH16-0034",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "hybrid approach",
+    "difficulty": "Medium",
+    "question": "What defines a hybrid integration approach?",
+    "options": {
+      "A": "Using only one integration tool",
+      "B": "Combining APIs, RPA, Composer, and AI appropriately",
+      "C": "Avoiding governance",
+      "D": "Replacing Mule with RPA"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Hybrid strategies use the best tool per use case.",
+      "incorrect": {
+        "A": "Single-tool strategies are limiting.",
+        "C": "Governance is required.",
+        "D": "Mule remains core."
+      }
+    }
+  },
+  {
+    "id": "CH16-0035",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "drift detection",
+    "difficulty": "Hard",
+    "question": "What does drift detection monitor in AI-driven integrations?",
+    "options": {
+      "A": "API latency",
+      "B": "Changes in input data patterns or model behavior",
+      "C": "Thread utilization",
+      "D": "Deployment frequency"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Drift impacts accuracy and decision reliability.",
+      "incorrect": {
+        "A": "Latency is operational.",
+        "C": "Threads are runtime-related.",
+        "D": "Deployment is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0036",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "observability",
+    "difficulty": "Medium",
+    "question": "Why is observability critical for AI and automation platforms?",
+    "options": {
+      "A": "To avoid governance",
+      "B": "To understand behavior, failures, and outcomes",
+      "C": "To eliminate testing",
+      "D": "To reduce automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Visibility enables control and trust in automation.",
+      "incorrect": {
+        "A": "Governance remains required.",
+        "C": "Testing is still needed.",
+        "D": "Automation is the goal."
+      }
+    }
+  },
+  {
+    "id": "CH16-0037",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "policy enforcement",
+    "difficulty": "Medium",
+    "question": "Why must governance policies apply equally to AI and no-code integrations?",
+    "options": {
+      "A": "Because no-code tools are experimental",
+      "B": "Because business impact is independent of implementation style",
+      "C": "Because policies slow delivery",
+      "D": "Because APIs are optional"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Risk depends on impact, not tool choice.",
+      "incorrect": {
+        "A": "No-code tools are production-grade.",
+        "C": "Policies enable safe speed.",
+        "D": "APIs remain foundational."
+      }
+    }
+  },
+  {
+    "id": "CH16-0038",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "change management",
+    "difficulty": "Medium",
+    "question": "Why must changes to AI models and bots follow formal change management?",
+    "options": {
+      "A": "To slow innovation",
+      "B": "To prevent unintended business impact",
+      "C": "To reduce automation",
+      "D": "To avoid documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Uncontrolled changes can break critical processes.",
+      "incorrect": {
+        "A": "Change management enables safe innovation.",
+        "C": "Automation remains valuable.",
+        "D": "Documentation is mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH16-0039",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "enterprise adoption",
+    "difficulty": "Medium",
+    "question": "What is the biggest risk of uncontrolled AI and RPA adoption?",
+    "options": {
+      "A": "Higher performance",
+      "B": "Shadow automation and compliance violations",
+      "C": "Reduced automation",
+      "D": "Lower efficiency"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Unmanaged automation creates hidden operational and security risks.",
+      "incorrect": {
+        "A": "Performance is not the risk.",
+        "C": "Automation often increases.",
+        "D": "Efficiency may appear high initially."
+      }
+    }
+  },
+  {
+    "id": "CH16-0040",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "long-term success",
+    "difficulty": "Easy",
+    "question": "What best ensures long-term success of AI and automation initiatives?",
+    "options": {
+      "A": "Tool-first adoption",
+      "B": "Clear use cases, governance, and continuous monitoring",
+      "C": "Avoiding human involvement",
+      "D": "Maximizing automation volume"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Sustainable automation requires discipline and oversight.",
+      "incorrect": {
+        "A": "Tools alone do not ensure success.",
+        "C": "Humans remain critical.",
+        "D": "Volume without control increases risk."
+      }
+    }
+  },
+  {
+    "id": "CH16-0041",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "inference latency",
+    "difficulty": "Medium",
+    "question": "Why should AI inference latency be considered when embedding models in synchronous integrations?",
+    "options": {
+      "A": "Inference latency improves throughput",
+      "B": "High latency can degrade end-user response times",
+      "C": "Latency affects only batch jobs",
+      "D": "Latency eliminates the need for caching"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Synchronous flows are sensitive to response time; slow inference impacts UX.",
+      "incorrect": {
+        "A": "Latency reduces perceived performance.",
+        "C": "Synchronous calls are directly affected.",
+        "D": "Caching may still be required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0042",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "feature selection",
+    "difficulty": "Hard",
+    "question": "Why is feature selection critical before deploying AI models into integration flows?",
+    "options": {
+      "A": "It increases payload size",
+      "B": "It reduces noise and improves model reliability",
+      "C": "It replaces data validation",
+      "D": "It removes the need for governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Relevant features improve accuracy and reduce unpredictable behavior.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Validation is still required.",
+        "D": "Governance remains mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH16-0043",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "transaction boundaries",
+    "difficulty": "Medium",
+    "question": "Why should transaction boundaries be carefully designed in Composer automations?",
+    "options": {
+      "A": "Composer does not support transactions",
+      "B": "Long-running automations increase failure impact",
+      "C": "Transactions improve UI stability",
+      "D": "Transactions remove the need for retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Long-running transactions increase rollback complexity and failure scope.",
+      "incorrect": {
+        "A": "Composer supports transactional behavior via systems.",
+        "C": "UI stability is unrelated.",
+        "D": "Retries may still be required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0044",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "data consistency",
+    "difficulty": "Medium",
+    "question": "How should data consistency be handled in event-driven Composer flows?",
+    "options": {
+      "A": "Assume eventual consistency where appropriate",
+      "B": "Force synchronous confirmation for all steps",
+      "C": "Disable retries",
+      "D": "Avoid idempotency"
+    },
+    "correctAnswer": "A",
+    "explanation": {
+      "correct": "Event-driven systems commonly rely on eventual consistency.",
+      "incorrect": {
+        "B": "Forcing sync increases coupling.",
+        "C": "Retries remain useful.",
+        "D": "Idempotency is critical."
+      }
+    }
+  },
+  {
+    "id": "CH16-0045",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "connector limits",
+    "difficulty": "Medium",
+    "question": "Why should SaaS connector limits be considered when designing Composer flows?",
+    "options": {
+      "A": "Limits only apply to Mule apps",
+      "B": "Exceeded limits can cause throttling or failures",
+      "C": "Limits increase payload size",
+      "D": "Limits remove the need for monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "API limits can block automation execution.",
+      "incorrect": {
+        "A": "Limits apply across tools.",
+        "C": "Payload size is unrelated.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0046",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "exception handling",
+    "difficulty": "Medium",
+    "question": "What is the most effective way to handle exceptions in RPA workflows?",
+    "options": {
+      "A": "Suppress all exceptions",
+      "B": "Implement structured retries and escalation paths",
+      "C": "Restart bots manually every time",
+      "D": "Disable bot logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Structured handling improves resilience and visibility.",
+      "incorrect": {
+        "A": "Suppression hides failures.",
+        "C": "Manual restarts do not scale.",
+        "D": "Logging is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0047",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "credential management",
+    "difficulty": "Hard",
+    "question": "Why should RPA bots avoid using shared human credentials?",
+    "options": {
+      "A": "Shared credentials improve auditability",
+      "B": "They create security and accountability risks",
+      "C": "They reduce execution speed",
+      "D": "They simplify governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Shared credentials obscure accountability and increase breach impact.",
+      "incorrect": {
+        "A": "Auditability is reduced.",
+        "C": "Speed is unaffected.",
+        "D": "Governance becomes harder."
+      }
+    }
+  },
+  {
+    "id": "CH16-0048",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "bot maintenance",
+    "difficulty": "Medium",
+    "question": "Why does RPA require higher ongoing maintenance than API integrations?",
+    "options": {
+      "A": "Bots execute faster",
+      "B": "UI changes frequently break automation",
+      "C": "Bots are stateless",
+      "D": "APIs cannot scale"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "UI volatility increases maintenance overhead.",
+      "incorrect": {
+        "A": "Speed is irrelevant.",
+        "C": "Statelessness is unrelated.",
+        "D": "APIs scale well."
+      }
+    }
+  },
+  {
+    "id": "CH16-0049",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "process suitability",
+    "difficulty": "Medium",
+    "question": "Which process is least suitable for RPA automation?",
+    "options": {
+      "A": "Highly repetitive rule-based tasks",
+      "B": "Processes requiring frequent UI changes",
+      "C": "Data entry between legacy systems",
+      "D": "Scheduled report extraction"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Frequent UI changes cause frequent bot failures.",
+      "incorrect": {
+        "A": "These are ideal for RPA.",
+        "C": "Legacy bridging is common.",
+        "D": "Scheduling is supported."
+      }
+    }
+  },
+  {
+    "id": "CH16-0050",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "operational risk",
+    "difficulty": "Medium",
+    "question": "What operational risk increases when many bots operate without coordination?",
+    "options": {
+      "A": "Lower throughput",
+      "B": "Race conditions and system contention",
+      "C": "Improved observability",
+      "D": "Reduced maintenance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Uncoordinated bots can conflict and overload systems.",
+      "incorrect": {
+        "A": "Throughput may increase initially.",
+        "C": "Observability worsens.",
+        "D": "Maintenance increases."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0051",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "preprocessing",
+    "difficulty": "Medium",
+    "question": "Why is document preprocessing important before OCR in IDP pipelines?",
+    "options": {
+      "A": "To increase image size",
+      "B": "To improve text extraction accuracy",
+      "C": "To eliminate validation",
+      "D": "To bypass ML models"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Noise reduction and alignment improve OCR results.",
+      "incorrect": {
+        "A": "Larger images do not guarantee accuracy.",
+        "C": "Validation is still needed.",
+        "D": "ML models remain core."
+      }
+    }
+  },
+  {
+    "id": "CH16-0052",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "model generalization",
+    "difficulty": "Hard",
+    "question": "Why must IDP models be tested against unseen document layouts?",
+    "options": {
+      "A": "To increase training time",
+      "B": "To ensure generalization beyond trained samples",
+      "C": "To reduce confidence scores",
+      "D": "To eliminate governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Generalization prevents failure on new formats.",
+      "incorrect": {
+        "A": "Training time is secondary.",
+        "C": "Confidence may increase.",
+        "D": "Governance is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH16-0053",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "human review",
+    "difficulty": "Medium",
+    "question": "When should extracted document data be routed for human review?",
+    "options": {
+      "A": "Always",
+      "B": "When confidence falls below defined thresholds",
+      "C": "Never",
+      "D": "Only during development"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Threshold-based review balances automation and accuracy.",
+      "incorrect": {
+        "A": "Always defeats automation.",
+        "C": "Never increases risk.",
+        "D": "Production also requires review."
+      }
+    }
+  },
+  {
+    "id": "CH16-0054",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "error propagation",
+    "difficulty": "Medium",
+    "question": "How should IDP extraction errors be propagated downstream?",
+    "options": {
+      "A": "Silently ignored",
+      "B": "With structured error metadata and context",
+      "C": "As raw stack traces",
+      "D": "Without logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Structured errors enable proper handling and remediation.",
+      "incorrect": {
+        "A": "Ignoring errors corrupts data.",
+        "C": "Stack traces expose internals.",
+        "D": "Logging is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0055",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "decision latency",
+    "difficulty": "Medium",
+    "question": "Why should decision latency be bounded in AI-assisted workflows?",
+    "options": {
+      "A": "To increase model accuracy",
+      "B": "To maintain predictable system behavior",
+      "C": "To avoid governance",
+      "D": "To eliminate retries"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Bounded latency ensures SLAs and reliability.",
+      "incorrect": {
+        "A": "Accuracy is model-related.",
+        "C": "Governance remains.",
+        "D": "Retries may still be required."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0056",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "fallback logic",
+    "difficulty": "Medium",
+    "question": "What is an appropriate fallback when AI services are unavailable?",
+    "options": {
+      "A": "Block all processing indefinitely",
+      "B": "Use rule-based logic or route to manual review",
+      "C": "Disable monitoring",
+      "D": "Skip validation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Fallbacks preserve continuity during outages.",
+      "incorrect": {
+        "A": "Blocking harms availability.",
+        "C": "Monitoring is required.",
+        "D": "Validation is critical."
+      }
+    }
+  },
+  {
+    "id": "CH16-0057",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "separation of concerns",
+    "difficulty": "Medium",
+    "question": "Why should AI inference be separated from core transaction processing?",
+    "options": {
+      "A": "To increase payload size",
+      "B": "To reduce blast radius and simplify scaling",
+      "C": "To eliminate APIs",
+      "D": "To avoid versioning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Separation improves resilience and scalability.",
+      "incorrect": {
+        "A": "Payload size is irrelevant.",
+        "C": "APIs remain essential.",
+        "D": "Versioning is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0058",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "event buffering",
+    "difficulty": "Hard",
+    "question": "Why is event buffering useful when integrating AI services asynchronously?",
+    "options": {
+      "A": "To increase coupling",
+      "B": "To absorb spikes and handle variable processing time",
+      "C": "To eliminate retries",
+      "D": "To simplify security"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Buffers decouple producers from slow or variable consumers.",
+      "incorrect": {
+        "A": "Coupling is reduced.",
+        "C": "Retries may still apply.",
+        "D": "Security is unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH16-0059",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "capacity planning",
+    "difficulty": "Medium",
+    "question": "Why is capacity planning important for AI and automation workloads?",
+    "options": {
+      "A": "To reduce feature development",
+      "B": "To ensure resources meet variable demand",
+      "C": "To eliminate governance",
+      "D": "To avoid testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "AI workloads can have unpredictable resource needs.",
+      "incorrect": {
+        "A": "Feature work is unrelated.",
+        "C": "Governance is still required.",
+        "D": "Testing remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0060",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "cost management",
+    "difficulty": "Medium",
+    "question": "What practice best controls costs in AI-enabled integrations?",
+    "options": {
+      "A": "Unlimited inference calls",
+      "B": "Monitoring usage and enforcing quotas",
+      "C": "Disabling caching",
+      "D": "Avoiding batching"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Visibility and limits prevent cost overruns.",
+      "incorrect": {
+        "A": "Unlimited usage increases costs.",
+        "C": "Caching can reduce cost.",
+        "D": "Batching often improves efficiency."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0061",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "model approval",
+    "difficulty": "Medium",
+    "question": "Why should AI models undergo formal approval before production use?",
+    "options": {
+      "A": "To slow deployment",
+      "B": "To validate accuracy, bias, and compliance",
+      "C": "To increase payload size",
+      "D": "To eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Approval reduces legal and operational risk.",
+      "incorrect": {
+        "A": "Approval enables safe deployment.",
+        "C": "Payload size is irrelevant.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0062",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "policy drift",
+    "difficulty": "Hard",
+    "question": "What risk does policy drift introduce in AI-driven automations?",
+    "options": {
+      "A": "Improved compliance",
+      "B": "Decisions that no longer align with business rules",
+      "C": "Reduced scalability",
+      "D": "Lower automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Outdated policies can cause incorrect decisions.",
+      "incorrect": {
+        "A": "Compliance decreases.",
+        "C": "Scalability is unaffected.",
+        "D": "Automation may still run."
+      }
+    }
+  },
+  {
+    "id": "CH16-0063",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "use case prioritization",
+    "difficulty": "Medium",
+    "question": "How should AI and automation use cases be prioritized?",
+    "options": {
+      "A": "By novelty",
+      "B": "By business impact and feasibility",
+      "C": "By tool availability",
+      "D": "By developer preference"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "High impact and feasible use cases deliver value.",
+      "incorrect": {
+        "A": "Novelty is not value.",
+        "C": "Tools should follow needs.",
+        "D": "Preferences are secondary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0064",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "incremental adoption",
+    "difficulty": "Easy",
+    "question": "Why is incremental adoption recommended for AI and automation initiatives?",
+    "options": {
+      "A": "To delay value",
+      "B": "To reduce risk and validate assumptions",
+      "C": "To avoid governance",
+      "D": "To limit learning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Small steps allow learning and course correction.",
+      "incorrect": {
+        "A": "Incremental delivery accelerates value.",
+        "C": "Governance is still required.",
+        "D": "Learning is increased."
+      }
+    }
+  },
+  {
+    "id": "CH16-0065",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "success metrics",
+    "difficulty": "Medium",
+    "question": "Which metric best reflects success of AI-assisted integrations?",
+    "options": {
+      "A": "Model complexity",
+      "B": "Business outcome improvement",
+      "C": "Number of automations",
+      "D": "Lines of configuration"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Outcomes matter more than technical metrics.",
+      "incorrect": {
+        "A": "Complexity is not value.",
+        "C": "Quantity does not equal impact.",
+        "D": "Configuration size is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH16-0066",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "automation boundaries",
+    "difficulty": "Medium",
+    "question": "Why should certain decisions remain outside full automation?",
+    "options": {
+      "A": "Automation is unreliable",
+      "B": "High-risk decisions require human judgment",
+      "C": "APIs cannot scale",
+      "D": "Monitoring is difficult"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Human oversight mitigates ethical and legal risks.",
+      "incorrect": {
+        "A": "Automation can be reliable.",
+        "C": "APIs scale well.",
+        "D": "Monitoring is manageable."
+      }
+    }
+  },
+  {
+    "id": "CH16-0067",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "transparency",
+    "difficulty": "Easy",
+    "question": "Why is transparency important in AI-assisted automation?",
+    "options": {
+      "A": "To expose internal code",
+      "B": "To build trust and support accountability",
+      "C": "To reduce performance",
+      "D": "To avoid audits"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Transparent behavior supports trust and compliance.",
+      "incorrect": {
+        "A": "Internals should remain protected.",
+        "C": "Performance is unrelated.",
+        "D": "Audits remain required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0068",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "consent",
+    "difficulty": "Medium",
+    "question": "Why is consent management relevant in AI-driven data processing?",
+    "options": {
+      "A": "Consent increases accuracy",
+      "B": "Legal and regulatory requirements mandate it",
+      "C": "Consent replaces security",
+      "D": "Consent simplifies transformations"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Regulations require lawful data processing.",
+      "incorrect": {
+        "A": "Accuracy is separate.",
+        "C": "Security remains essential.",
+        "D": "Transformations are unaffected."
+      }
+    }
+  },
+  {
+    "id": "CH16-0069",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "accountability",
+    "difficulty": "Medium",
+    "question": "Who is accountable for decisions made by automated systems?",
+    "options": {
+      "A": "The AI model only",
+      "B": "The organization deploying the automation",
+      "C": "End users",
+      "D": "No one"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Organizations remain responsible for automated outcomes.",
+      "incorrect": {
+        "A": "Models lack legal responsibility.",
+        "C": "Users may be affected, not accountable.",
+        "D": "Accountability cannot be void."
+      }
+    }
+  },
+  {
+    "id": "CH16-0070",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "risk assessment",
+    "difficulty": "Medium",
+    "question": "Why should ethical risk assessment precede large-scale automation?",
+    "options": {
+      "A": "To slow delivery",
+      "B": "To identify potential harm and mitigation strategies",
+      "C": "To reduce learning",
+      "D": "To avoid governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Early assessment prevents unintended consequences.",
+      "incorrect": {
+        "A": "Assessment enables safe speed.",
+        "C": "Learning is increased.",
+        "D": "Governance remains required."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0071",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "automation maturity",
+    "difficulty": "Medium",
+    "question": "What indicates higher automation maturity in enterprises?",
+    "options": {
+      "A": "Isolated scripts",
+      "B": "Governed, monitored, and scalable automations",
+      "C": "Manual approvals for every step",
+      "D": "Tool sprawl"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Maturity includes governance, monitoring, and scale.",
+      "incorrect": {
+        "A": "Scripts indicate low maturity.",
+        "C": "Manual steps reduce maturity.",
+        "D": "Sprawl increases risk."
+      }
+    }
+  },
+  {
+    "id": "CH16-0072",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "center of excellence",
+    "difficulty": "Medium",
+    "question": "Why is a Center of Excellence (CoE) recommended for AI and automation?",
+    "options": {
+      "A": "To centralize all coding",
+      "B": "To standardize practices and governance",
+      "C": "To eliminate innovation",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "CoEs promote consistency and best practices.",
+      "incorrect": {
+        "A": "Centralization is not the goal.",
+        "C": "Innovation is supported.",
+        "D": "Monitoring remains critical."
+      }
+    }
+  },
+  {
+    "id": "CH16-0073",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "operating model",
+    "difficulty": "Medium",
+    "question": "What operating model best supports scalable automation?",
+    "options": {
+      "A": "Ad-hoc ownership",
+      "B": "Clear ownership with shared standards",
+      "C": "No documentation",
+      "D": "Tool-specific silos"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Defined ownership and standards enable scale.",
+      "incorrect": {
+        "A": "Ad-hoc models increase risk.",
+        "C": "Documentation is required.",
+        "D": "Silos reduce reuse."
+      }
+    }
+  },
+  {
+    "id": "CH16-0074",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "governance evolution",
+    "difficulty": "Medium",
+    "question": "How should governance evolve as automation adoption grows?",
+    "options": {
+      "A": "Remain static",
+      "B": "Scale with usage and risk profile",
+      "C": "Be removed",
+      "D": "Apply only to APIs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Governance must adapt to scale and complexity.",
+      "incorrect": {
+        "A": "Static governance becomes ineffective.",
+        "C": "Removal increases risk.",
+        "D": "All tools require governance."
+      }
+    }
+  },
+  {
+    "id": "CH16-0075",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "measurement",
+    "difficulty": "Easy",
+    "question": "What should be measured to guide automation improvement?",
+    "options": {
+      "A": "Number of tools",
+      "B": "Reliability, value delivered, and risk",
+      "C": "Code length",
+      "D": "Model size"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Meaningful metrics guide better decisions.",
+      "incorrect": {
+        "A": "Tool count is irrelevant.",
+        "C": "Code length lacks context.",
+        "D": "Model size does not indicate value."
+      }
+    }
+  },
+  {
+    "id": "CH16-0076",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "continuous review",
+    "difficulty": "Medium",
+    "question": "Why should automation initiatives undergo continuous review?",
+    "options": {
+      "A": "To reduce automation",
+      "B": "To adapt to changing business and risk conditions",
+      "C": "To avoid metrics",
+      "D": "To eliminate governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Ongoing review ensures relevance and safety.",
+      "incorrect": {
+        "A": "Automation remains valuable.",
+        "C": "Metrics are essential.",
+        "D": "Governance persists."
+      }
+    }
+  },
+  {
+    "id": "CH16-0077",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "skills",
+    "difficulty": "Easy",
+    "question": "What skill mix best supports AI and automation programs?",
+    "options": {
+      "A": "Only data science",
+      "B": "Technical, business, and governance skills",
+      "C": "Only automation tools",
+      "D": "Only compliance expertise"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Cross-functional skills ensure balanced outcomes.",
+      "incorrect": {
+        "A": "Data science alone is insufficient.",
+        "C": "Tools without context are risky.",
+        "D": "Compliance alone does not deliver value."
+      }
+    }
+  },
+  {
+    "id": "CH16-0078",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "tool governance",
+    "difficulty": "Medium",
+    "question": "Why should tool sprawl be controlled in automation ecosystems?",
+    "options": {
+      "A": "More tools always add value",
+      "B": "Sprawl increases complexity, cost, and risk",
+      "C": "Tools reduce governance needs",
+      "D": "Sprawl improves observability"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Uncontrolled tools fragment standards and oversight.",
+      "incorrect": {
+        "A": "More tools often add risk.",
+        "C": "Governance becomes harder.",
+        "D": "Observability worsens."
+      }
+    }
+  },
+  {
+    "id": "CH16-0079",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "retirement",
+    "difficulty": "Medium",
+    "question": "Why should outdated automations be retired periodically?",
+    "options": {
+      "A": "To reduce innovation",
+      "B": "To remove risk and technical debt",
+      "C": "To increase cost",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Unused or obsolete automation adds risk.",
+      "incorrect": {
+        "A": "Retirement improves focus.",
+        "C": "Costs usually decrease.",
+        "D": "Monitoring remains needed."
+      }
+    }
+  },
+  {
+    "id": "CH16-0080",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "long-term sustainability",
+    "difficulty": "Easy",
+    "question": "What most strongly supports sustainable AI and automation adoption?",
+    "options": {
+      "A": "Rapid tool rollout",
+      "B": "Balanced focus on value, risk, and governance",
+      "C": "Avoiding human involvement",
+      "D": "Maximizing automation volume"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Sustainability requires discipline alongside innovation.",
+      "incorrect": {
+        "A": "Speed without control increases risk.",
+        "C": "Humans remain essential.",
+        "D": "Volume without value is harmful."
+      }
+    }
+  },
+  {
+    "id": "CH16-0081",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "model monitoring",
+    "difficulty": "Medium",
+    "question": "Why must AI model outputs be continuously monitored after deployment?",
+    "options": {
+      "A": "To increase inference speed",
+      "B": "To detect accuracy degradation and unexpected behavior",
+      "C": "To reduce payload size",
+      "D": "To eliminate testing"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Production data can differ from training data, causing model drift.",
+      "incorrect": {
+        "A": "Monitoring does not affect speed directly.",
+        "C": "Payload size is unrelated.",
+        "D": "Testing remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0082",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "training data quality",
+    "difficulty": "Medium",
+    "question": "How does poor training data quality affect AI-driven integrations?",
+    "options": {
+      "A": "It improves generalization",
+      "B": "It produces unreliable and biased decisions",
+      "C": "It reduces inference cost",
+      "D": "It eliminates governance needs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Models learn patterns from data; poor data leads to poor decisions.",
+      "incorrect": {
+        "A": "Generalization worsens.",
+        "C": "Cost is unrelated.",
+        "D": "Governance becomes more important."
+      }
+    }
+  },
+  {
+    "id": "CH16-0083",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "explainability",
+    "difficulty": "Hard",
+    "question": "Why is explainability critical for AI-assisted decisions in regulated industries?",
+    "options": {
+      "A": "To increase throughput",
+      "B": "To justify decisions during audits and compliance reviews",
+      "C": "To remove monitoring",
+      "D": "To simplify model training"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Regulators often require transparent reasoning behind decisions.",
+      "incorrect": {
+        "A": "Throughput is unrelated.",
+        "C": "Monitoring remains mandatory.",
+        "D": "Training complexity is separate."
+      }
+    }
+  },
+  {
+    "id": "CH16-0084",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "event ordering",
+    "difficulty": "Medium",
+    "question": "What challenge can arise when Composer flows process events asynchronously?",
+    "options": {
+      "A": "Guaranteed ordering of events",
+      "B": "Potential out-of-order event processing",
+      "C": "Inability to retry",
+      "D": "Lack of authentication"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Asynchronous processing may not preserve original order.",
+      "incorrect": {
+        "A": "Ordering is not guaranteed.",
+        "C": "Retries are supported.",
+        "D": "Authentication is unrelated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0085",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "idempotency",
+    "difficulty": "Medium",
+    "question": "Why is idempotency important in Composer-triggered automations?",
+    "options": {
+      "A": "To reduce logging",
+      "B": "To prevent duplicate processing when events are retried",
+      "C": "To increase execution speed",
+      "D": "To remove error handling"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Retries or duplicate events must not cause inconsistent state.",
+      "incorrect": {
+        "A": "Logging is still required.",
+        "C": "Speed is secondary.",
+        "D": "Error handling remains critical."
+      }
+    }
+  },
+  {
+    "id": "CH16-0086",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "governed reuse",
+    "difficulty": "Medium",
+    "question": "How does governed reuse apply to Composer integrations?",
+    "options": {
+      "A": "Composer flows should never be reused",
+      "B": "Common automations should follow shared standards and controls",
+      "C": "Reuse increases security risk",
+      "D": "Governance is optional"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Standardized reuse reduces duplication and risk.",
+      "incorrect": {
+        "A": "Reuse is encouraged with governance.",
+        "C": "Governance reduces risk.",
+        "D": "Governance is mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH16-0087",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "process stability",
+    "difficulty": "Medium",
+    "question": "Which characteristic makes a business process suitable for RPA?",
+    "options": {
+      "A": "Frequent UI changes",
+      "B": "Stable, rule-based steps",
+      "C": "High need for judgment",
+      "D": "Rapidly evolving logic"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "RPA works best with predictable, repeatable tasks.",
+      "incorrect": {
+        "A": "UI volatility breaks bots.",
+        "C": "Judgment-heavy tasks suit humans.",
+        "D": "Rapid change increases maintenance."
+      }
+    }
+  },
+  {
+    "id": "CH16-0088",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "auditability",
+    "difficulty": "Medium",
+    "question": "Why must RPA executions be auditable?",
+    "options": {
+      "A": "To reduce automation",
+      "B": "To trace actions performed on behalf of users",
+      "C": "To simplify UI automation",
+      "D": "To avoid governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Audit trails support compliance and accountability.",
+      "incorrect": {
+        "A": "Automation remains valuable.",
+        "C": "Auditability is not about UI.",
+        "D": "Governance is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0089",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "exception frequency",
+    "difficulty": "Medium",
+    "question": "What does frequent exception handling indicate in an RPA solution?",
+    "options": {
+      "A": "High process maturity",
+      "B": "Poor process suitability or design",
+      "C": "Improved reliability",
+      "D": "Better scalability"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Frequent exceptions suggest instability or wrong tool choice.",
+      "incorrect": {
+        "A": "Mature processes are stable.",
+        "C": "Reliability decreases.",
+        "D": "Scalability suffers."
+      }
+    }
+  },
+  {
+    "id": "CH16-0090",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "bot identity",
+    "difficulty": "Hard",
+    "question": "What is the best practice for identifying RPA bots in target systems?",
+    "options": {
+      "A": "Using shared human accounts",
+      "B": "Using dedicated service accounts",
+      "C": "Anonymous access",
+      "D": "Hard-coded credentials"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Dedicated accounts improve traceability and security.",
+      "incorrect": {
+        "A": "Shared accounts reduce accountability.",
+        "C": "Anonymous access is insecure.",
+        "D": "Hard-coding credentials is unsafe."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0091",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "document classification",
+    "difficulty": "Medium",
+    "question": "Why is document classification often the first step in IDP pipelines?",
+    "options": {
+      "A": "To increase processing time",
+      "B": "To route documents to the correct extraction model",
+      "C": "To eliminate OCR",
+      "D": "To avoid validation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Different document types require different extraction logic.",
+      "incorrect": {
+        "A": "Processing should be optimized.",
+        "C": "OCR is still required.",
+        "D": "Validation remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0092",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "false positives",
+    "difficulty": "Medium",
+    "question": "What risk do false positives pose in IDP extraction?",
+    "options": {
+      "A": "Reduced throughput",
+      "B": "Incorrect data being accepted as valid",
+      "C": "Improved accuracy",
+      "D": "Lower operational cost"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "False positives can silently corrupt downstream systems.",
+      "incorrect": {
+        "A": "Throughput may appear high.",
+        "C": "Accuracy is reduced.",
+        "D": "Costs may increase due to rework."
+      }
+    }
+  },
+  {
+    "id": "CH16-0093",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "feedback loops",
+    "difficulty": "Hard",
+    "question": "Why are feedback loops important in IDP solutions?",
+    "options": {
+      "A": "To slow processing",
+      "B": "To improve model accuracy over time",
+      "C": "To eliminate human review",
+      "D": "To bypass governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Feedback from corrections helps models learn and improve.",
+      "incorrect": {
+        "A": "Feedback improves outcomes.",
+        "C": "Human review may still be required.",
+        "D": "Governance remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0094",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "confidence calibration",
+    "difficulty": "Medium",
+    "question": "Why should confidence scores in IDP systems be calibrated?",
+    "options": {
+      "A": "To reduce extraction speed",
+      "B": "To ensure confidence reflects true accuracy",
+      "C": "To eliminate thresholds",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Well-calibrated confidence enables reliable automation decisions.",
+      "incorrect": {
+        "A": "Speed is unaffected.",
+        "C": "Thresholds are still required.",
+        "D": "Monitoring remains critical."
+      }
+    }
+  },
+  {
+    "id": "CH16-0095",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "decision ownership",
+    "difficulty": "Medium",
+    "question": "Who owns decisions made by AI-assisted integration workflows?",
+    "options": {
+      "A": "The AI vendor",
+      "B": "The implementing organization",
+      "C": "The end user",
+      "D": "No one"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Organizations are accountable for deployed automation.",
+      "incorrect": {
+        "A": "Vendors provide tools, not decisions.",
+        "C": "Users may be affected, not owners.",
+        "D": "Ownership cannot be void."
+      }
+    }
+  },
+  {
+    "id": "CH16-0096",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "risk mitigation",
+    "difficulty": "Medium",
+    "question": "Which approach best mitigates risk in AI-assisted integrations?",
+    "options": {
+      "A": "Blind automation",
+      "B": "Gradual rollout with monitoring and fallback",
+      "C": "Avoiding governance",
+      "D": "Maximizing automation speed"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Controlled rollout reduces impact of failures.",
+      "incorrect": {
+        "A": "Blind automation is risky.",
+        "C": "Governance is essential.",
+        "D": "Speed without control increases risk."
+      }
+    }
+  },
+  {
+    "id": "CH16-0097",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "synchronous vs async",
+    "difficulty": "Medium",
+    "question": "Why are asynchronous patterns often preferred for AI-heavy processing?",
+    "options": {
+      "A": "They eliminate AI latency",
+      "B": "They decouple callers from variable processing time",
+      "C": "They reduce governance",
+      "D": "They remove monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Async patterns absorb variable inference time.",
+      "incorrect": {
+        "A": "Latency still exists.",
+        "C": "Governance remains required.",
+        "D": "Monitoring is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0098",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "decoupling",
+    "difficulty": "Medium",
+    "question": "What benefit does decoupling provide in AI-enabled architectures?",
+    "options": {
+      "A": "Increased coupling",
+      "B": "Improved resilience and scalability",
+      "C": "Elimination of APIs",
+      "D": "Reduced observability"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Decoupling isolates failures and improves scalability.",
+      "incorrect": {
+        "A": "Coupling increases risk.",
+        "C": "APIs remain foundational.",
+        "D": "Observability should improve."
+      }
+    }
+  },
+  {
+    "id": "CH16-0099",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "SLA management",
+    "difficulty": "Medium",
+    "question": "Why must SLAs account for AI processing variability?",
+    "options": {
+      "A": "AI is always predictable",
+      "B": "Inference times can vary based on input and load",
+      "C": "SLAs are optional",
+      "D": "Variability improves performance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Variable inference affects response times and availability.",
+      "incorrect": {
+        "A": "AI behavior can vary.",
+        "C": "SLAs are mandatory.",
+        "D": "Variability increases risk."
+      }
+    }
+  },
+  {
+    "id": "CH16-0100",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "incident resolution",
+    "difficulty": "Medium",
+    "question": "What is the first step when AI-assisted automation causes production incidents?",
+    "options": {
+      "A": "Disable governance",
+      "B": "Stabilize impact and activate fallback mechanisms",
+      "C": "Retrain models immediately",
+      "D": "Ignore the issue"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stabilization prevents further damage before root cause analysis.",
+      "incorrect": {
+        "A": "Governance remains required.",
+        "C": "Retraining comes after analysis.",
+        "D": "Ignoring issues increases impact."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0101",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "risk classification",
+    "difficulty": "Medium",
+    "question": "Why should AI and automation use cases be classified by risk?",
+    "options": {
+      "A": "To slow deployment",
+      "B": "To apply appropriate controls and oversight",
+      "C": "To avoid innovation",
+      "D": "To eliminate audits"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Risk-based governance ensures proportional controls.",
+      "incorrect": {
+        "A": "Classification enables safe speed.",
+        "C": "Innovation is supported.",
+        "D": "Audits remain required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0102",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "segregation of duties",
+    "difficulty": "Medium",
+    "question": "Why is segregation of duties important in automation governance?",
+    "options": {
+      "A": "To reduce efficiency",
+      "B": "To prevent single points of control and abuse",
+      "C": "To eliminate monitoring",
+      "D": "To increase tool sprawl"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Separation reduces fraud and operational risk.",
+      "incorrect": {
+        "A": "Efficiency can remain high.",
+        "C": "Monitoring remains required.",
+        "D": "Sprawl increases risk."
+      }
+    }
+  },
+  {
+    "id": "CH16-0103",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "policy enforcement",
+    "difficulty": "Medium",
+    "question": "How should governance policies be enforced across AI, RPA, and Composer?",
+    "options": {
+      "A": "Manually",
+      "B": "Through automated controls and reviews",
+      "C": "Only during audits",
+      "D": "Only in production"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Automation ensures consistent enforcement.",
+      "incorrect": {
+        "A": "Manual enforcement does not scale.",
+        "C": "Policies must be continuous.",
+        "D": "Governance applies across environments."
+      }
+    }
+  },
+  {
+    "id": "CH16-0104",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "audit readiness",
+    "difficulty": "Easy",
+    "question": "What supports audit readiness for AI-driven integrations?",
+    "options": {
+      "A": "Ad-hoc automation",
+      "B": "Documented decisions, logs, and controls",
+      "C": "Minimal logging",
+      "D": "Avoiding metrics"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Evidence is required for audits and compliance.",
+      "incorrect": {
+        "A": "Ad-hoc work increases risk.",
+        "C": "Minimal logging is insufficient.",
+        "D": "Metrics support audits."
+      }
+    }
+  },
+  {
+    "id": "CH16-0105",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "organizational readiness",
+    "difficulty": "Medium",
+    "question": "What indicates organizational readiness for AI and automation adoption?",
+    "options": {
+      "A": "Tool availability",
+      "B": "Clear ownership, skills, and governance",
+      "C": "Minimal documentation",
+      "D": "Avoidance of change"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Readiness depends on people, process, and controls.",
+      "incorrect": {
+        "A": "Tools alone are insufficient.",
+        "C": "Documentation is essential.",
+        "D": "Change avoidance blocks progress."
+      }
+    }
+  },
+  {
+    "id": "CH16-0106",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "scaling automation",
+    "difficulty": "Medium",
+    "question": "What is a prerequisite for safely scaling AI-driven automation?",
+    "options": {
+      "A": "Rapid tool expansion",
+      "B": "Strong monitoring and governance foundations",
+      "C": "Avoiding human review",
+      "D": "Maximizing automation volume"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Scale amplifies both value and risk.",
+      "incorrect": {
+        "A": "Expansion without control increases risk.",
+        "C": "Human review remains necessary.",
+        "D": "Volume without discipline is harmful."
+      }
+    }
+  },
+  {
+    "id": "CH16-0107",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "continuous learning",
+    "difficulty": "Easy",
+    "question": "Why is continuous learning important in AI-enabled integration teams?",
+    "options": {
+      "A": "AI never changes",
+      "B": "Tools, data, and risks evolve over time",
+      "C": "Learning slows delivery",
+      "D": "Governance replaces learning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Evolving landscapes require ongoing skill development.",
+      "incorrect": {
+        "A": "AI evolves rapidly.",
+        "C": "Learning improves outcomes.",
+        "D": "Governance complements learning."
+      }
+    }
+  },
+  {
+    "id": "CH16-0108",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "long-term planning",
+    "difficulty": "Medium",
+    "question": "Why should AI and automation be part of long-term integration strategy?",
+    "options": {
+      "A": "To replace all integrations",
+      "B": "To align innovation with sustainable architecture",
+      "C": "To avoid APIs",
+      "D": "To reduce governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Strategic alignment prevents fragmentation.",
+      "incorrect": {
+        "A": "APIs remain core.",
+        "C": "APIs are essential.",
+        "D": "Governance remains mandatory."
+      }
+    }
+  },
+  {
+    "id": "CH16-0109",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "value realization",
+    "difficulty": "Easy",
+    "question": "What best demonstrates value realization from AI-enabled integrations?",
+    "options": {
+      "A": "Model complexity",
+      "B": "Measurable business improvements",
+      "C": "Number of deployed tools",
+      "D": "Automation speed"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Business outcomes define success.",
+      "incorrect": {
+        "A": "Complexity is not value.",
+        "C": "Tool count is irrelevant.",
+        "D": "Speed alone is insufficient."
+      }
+    }
+  },
+  {
+    "id": "CH16-0110",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "exit strategy",
+    "difficulty": "Medium",
+    "question": "Why should automation initiatives include exit or rollback strategies?",
+    "options": {
+      "A": "To reduce confidence",
+      "B": "To safely reverse changes if risks materialize",
+      "C": "To slow deployment",
+      "D": "To eliminate monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Exit strategies reduce long-term risk.",
+      "incorrect": {
+        "A": "Confidence comes from preparedness.",
+        "C": "Preparedness enables speed.",
+        "D": "Monitoring remains essential."
+      }
+    }
+  },
+
+  {
+    "id": "CH16-0111",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "responsible AI",
+    "difficulty": "Medium",
+    "question": "What principle underpins responsible AI use in integrations?",
+    "options": {
+      "A": "Maximum automation",
+      "B": "Fairness, transparency, and accountability",
+      "C": "Avoiding human oversight",
+      "D": "Tool-centric decision-making"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Responsible AI balances innovation with ethics.",
+      "incorrect": {
+        "A": "Automation must be controlled.",
+        "C": "Oversight remains critical.",
+        "D": "Decisions should be value-driven."
+      }
+    }
+  },
+  {
+    "id": "CH16-0112",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "bias mitigation",
+    "difficulty": "Hard",
+    "question": "Which action helps mitigate bias in AI-assisted automation?",
+    "options": {
+      "A": "Ignoring bias risks",
+      "B": "Diverse training data and regular reviews",
+      "C": "Removing governance",
+      "D": "Increasing automation speed"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Diversity and review reduce systemic bias.",
+      "incorrect": {
+        "A": "Ignoring bias increases risk.",
+        "C": "Governance is required.",
+        "D": "Speed worsens bias impact."
+      }
+    }
+  },
+  {
+    "id": "CH16-0113",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "decision review",
+    "difficulty": "Medium",
+    "question": "Why should certain AI-driven decisions be reviewable after execution?",
+    "options": {
+      "A": "To slow processing",
+      "B": "To investigate issues and improve future decisions",
+      "C": "To avoid monitoring",
+      "D": "To eliminate automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Post-review supports learning and accountability.",
+      "incorrect": {
+        "A": "Review improves outcomes.",
+        "C": "Monitoring remains required.",
+        "D": "Automation remains valuable."
+      }
+    }
+  },
+  {
+    "id": "CH16-0114",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "user impact",
+    "difficulty": "Easy",
+    "question": "Why must user impact be considered in AI-enabled automation?",
+    "options": {
+      "A": "Users are irrelevant",
+      "B": "Automated decisions can significantly affect users",
+      "C": "Impact improves latency",
+      "D": "Impact eliminates governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "User trust and fairness are critical considerations.",
+      "incorrect": {
+        "A": "Users are central.",
+        "C": "Latency is unrelated.",
+        "D": "Governance remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0115",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "compliance alignment",
+    "difficulty": "Medium",
+    "question": "Why must AI automation align with regulatory requirements?",
+    "options": {
+      "A": "To reduce innovation",
+      "B": "To avoid legal and compliance violations",
+      "C": "To simplify tooling",
+      "D": "To remove monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Non-compliance can cause legal and reputational damage.",
+      "incorrect": {
+        "A": "Compliance enables safe innovation.",
+        "C": "Tooling is secondary.",
+        "D": "Monitoring is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0116",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "automation governance",
+    "difficulty": "Medium",
+    "question": "What distinguishes mature automation governance?",
+    "options": {
+      "A": "Manual approvals only",
+      "B": "Risk-based controls with continuous monitoring",
+      "C": "Tool-specific rules",
+      "D": "Minimal documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Maturity combines proportional controls and visibility.",
+      "incorrect": {
+        "A": "Manual-only governance does not scale.",
+        "C": "Rules should be consistent across tools.",
+        "D": "Documentation is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0117",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "reuse strategy",
+    "difficulty": "Medium",
+    "question": "Why is reuse strategy important in automation programs?",
+    "options": {
+      "A": "Reuse increases duplication",
+      "B": "Reuse improves efficiency and consistency",
+      "C": "Reuse eliminates governance",
+      "D": "Reuse reduces learning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Reuse reduces effort and enforces standards.",
+      "incorrect": {
+        "A": "Reuse reduces duplication.",
+        "C": "Governance still applies.",
+        "D": "Learning is enhanced."
+      }
+    }
+  },
+  {
+    "id": "CH16-0118",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "automation portfolio",
+    "difficulty": "Medium",
+    "question": "Why should organizations maintain an automation portfolio view?",
+    "options": {
+      "A": "To hide automation usage",
+      "B": "To manage risk, value, and redundancy",
+      "C": "To reduce governance",
+      "D": "To avoid audits"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Portfolio visibility enables informed decisions.",
+      "incorrect": {
+        "A": "Transparency is required.",
+        "C": "Governance is essential.",
+        "D": "Audits remain required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0119",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "continuous improvement",
+    "difficulty": "Easy",
+    "question": "What drives continuous improvement in AI-enabled integrations?",
+    "options": {
+      "A": "Avoiding feedback",
+      "B": "Metrics, reviews, and learning loops",
+      "C": "Tool replacement",
+      "D": "Reducing monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Feedback and metrics guide improvement.",
+      "incorrect": {
+        "A": "Feedback is essential.",
+        "C": "Tools alone do not improve outcomes.",
+        "D": "Monitoring remains required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0120",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "long-term resilience",
+    "difficulty": "Easy",
+    "question": "What most strongly supports long-term resilience of AI and automation programs?",
+    "options": {
+      "A": "Rapid experimentation without controls",
+      "B": "Strong fundamentals, governance, and adaptability",
+      "C": "Avoiding human involvement",
+      "D": "Maximizing automation volume"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Resilience comes from balanced discipline and flexibility.",
+      "incorrect": {
+        "A": "Uncontrolled experimentation increases risk.",
+        "C": "Humans remain essential.",
+        "D": "Volume without control is harmful."
+      }
+    }
+  },
+  {
+    "id": "CH16-0121",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "model deployment",
+    "difficulty": "Medium",
+    "question": "Why should AI models be deployed independently from core integration logic?",
+    "options": {
+      "A": "To increase payload size",
+      "B": "To allow independent scaling, updates, and rollback",
+      "C": "To remove monitoring requirements",
+      "D": "To avoid versioning"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Independent deployment reduces blast radius and improves operational flexibility.",
+      "incorrect": {
+        "A": "Payload size is unrelated.",
+        "C": "Monitoring remains required.",
+        "D": "Versioning is still necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0122",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "model rollback",
+    "difficulty": "Medium",
+    "question": "When should an AI model rollback be performed in production?",
+    "options": {
+      "A": "Whenever a newer model exists",
+      "B": "When monitored metrics indicate degraded or risky behavior",
+      "C": "Only during development",
+      "D": "After every deployment"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Rollback protects systems when accuracy, bias, or stability issues appear.",
+      "incorrect": {
+        "A": "Newer does not always mean better.",
+        "C": "Production issues require production action.",
+        "D": "Automatic rollback is unnecessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0123",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "MuleSoft AI",
+    "subtopic": "confidence thresholds",
+    "difficulty": "Medium",
+    "question": "How should confidence thresholds be used in AI-driven decision flows?",
+    "options": {
+      "A": "To always auto-approve decisions",
+      "B": "To route low-confidence outcomes for alternative handling",
+      "C": "To increase processing speed",
+      "D": "To remove human involvement"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Thresholds balance automation with accuracy and risk control.",
+      "incorrect": {
+        "A": "Auto-approval increases risk.",
+        "C": "Speed is secondary.",
+        "D": "Human review remains necessary."
+      }
+    }
+  },
+  {
+    "id": "CH16-0124",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "ownership",
+    "difficulty": "Easy",
+    "question": "Why should each Composer automation have a clearly defined owner?",
+    "options": {
+      "A": "To reduce reuse",
+      "B": "To ensure accountability and maintenance",
+      "C": "To avoid governance",
+      "D": "To limit documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Clear ownership ensures timely updates and issue resolution.",
+      "incorrect": {
+        "A": "Reuse is encouraged.",
+        "C": "Governance is mandatory.",
+        "D": "Documentation remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0125",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Composer",
+    "subtopic": "change impact",
+    "difficulty": "Medium",
+    "question": "What risk arises when Composer flows are modified without impact analysis?",
+    "options": {
+      "A": "Improved reliability",
+      "B": "Unintended downstream side effects",
+      "C": "Reduced execution speed",
+      "D": "Lower security"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Even simple automations can affect multiple systems.",
+      "incorrect": {
+        "A": "Reliability often decreases.",
+        "C": "Speed is not the main risk.",
+        "D": "Security impact is indirect."
+      }
+    }
+  },
+  {
+    "id": "CH16-0126",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "process ownership",
+    "difficulty": "Medium",
+    "question": "Why must business process owners be involved in RPA design?",
+    "options": {
+      "A": "They write bot scripts",
+      "B": "They understand process rules, exceptions, and intent",
+      "C": "They manage infrastructure",
+      "D": "They replace developers"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Correct automation requires deep process understanding.",
+      "incorrect": {
+        "A": "Bots are built by automation teams.",
+        "C": "Infrastructure is separate.",
+        "D": "Developers remain essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0127",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "resilience",
+    "difficulty": "Medium",
+    "question": "Which design choice improves resilience of RPA solutions?",
+    "options": {
+      "A": "Hard-coded waits",
+      "B": "Checkpointing and restart capability",
+      "C": "UI polling loops",
+      "D": "Shared credentials"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Checkpointing allows recovery from partial failures.",
+      "incorrect": {
+        "A": "Hard waits are brittle.",
+        "C": "Polling increases fragility.",
+        "D": "Shared credentials reduce security."
+      }
+    }
+  },
+  {
+    "id": "CH16-0128",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "RPA",
+    "subtopic": "exception analytics",
+    "difficulty": "Medium",
+    "question": "Why should RPA exception data be analyzed regularly?",
+    "options": {
+      "A": "To increase automation volume",
+      "B": "To identify process improvements or redesign needs",
+      "C": "To eliminate governance",
+      "D": "To reduce bot execution"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Exception trends reveal instability or poor suitability.",
+      "incorrect": {
+        "A": "Volume alone is not value.",
+        "C": "Governance remains required.",
+        "D": "Execution should be optimized, not reduced blindly."
+      }
+    }
+  },
+  {
+    "id": "CH16-0129",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "training feedback",
+    "difficulty": "Medium",
+    "question": "How should corrections from human reviewers be used in IDP systems?",
+    "options": {
+      "A": "Discarded after processing",
+      "B": "Fed back into model training and tuning",
+      "C": "Stored only for audits",
+      "D": "Used to disable automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Feedback improves extraction accuracy over time.",
+      "incorrect": {
+        "A": "Discarding feedback wastes learning.",
+        "C": "Audits alone do not improve models.",
+        "D": "Automation should improve, not stop."
+      }
+    }
+  },
+  {
+    "id": "CH16-0130",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "IDP",
+    "subtopic": "document drift",
+    "difficulty": "Medium",
+    "question": "What causes document drift issues in IDP implementations?",
+    "options": {
+      "A": "Stable templates",
+      "B": "Changes in document layouts or formats over time",
+      "C": "API versioning",
+      "D": "Improved OCR engines"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Layout changes degrade extraction accuracy if unmanaged.",
+      "incorrect": {
+        "A": "Stable templates reduce drift.",
+        "C": "API versioning is unrelated.",
+        "D": "Improved OCR helps but does not prevent drift."
+      }
+    }
+  },
+  {
+    "id": "CH16-0131",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "fallback routing",
+    "difficulty": "Medium",
+    "question": "Why should AI-assisted workflows include explicit fallback routing?",
+    "options": {
+      "A": "To slow automation",
+      "B": "To maintain continuity during AI or data failures",
+      "C": "To eliminate human review",
+      "D": "To reduce logging"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Fallbacks prevent business disruption during AI issues.",
+      "incorrect": {
+        "A": "Fallbacks improve reliability.",
+        "C": "Human review remains important.",
+        "D": "Logging is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0132",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "AI + Integration",
+    "subtopic": "decision traceability",
+    "difficulty": "Medium",
+    "question": "Why must AI-assisted decisions be traceable end-to-end?",
+    "options": {
+      "A": "To increase processing time",
+      "B": "To support audits, debugging, and accountability",
+      "C": "To reduce automation",
+      "D": "To eliminate governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Traceability enables trust and compliance.",
+      "incorrect": {
+        "A": "Time is secondary.",
+        "C": "Automation remains valuable.",
+        "D": "Governance is strengthened, not removed."
+      }
+    }
+  },
+  {
+    "id": "CH16-0133",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "bounded context",
+    "difficulty": "Medium",
+    "question": "Why should AI capabilities be limited to well-defined bounded contexts?",
+    "options": {
+      "A": "To reduce learning",
+      "B": "To control complexity and risk",
+      "C": "To increase automation speed",
+      "D": "To eliminate APIs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Boundaries prevent uncontrolled behavior and scaling issues.",
+      "incorrect": {
+        "A": "Learning is still required.",
+        "C": "Speed is not the primary goal.",
+        "D": "APIs remain essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0134",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Architecture",
+    "subtopic": "stateless inference",
+    "difficulty": "Medium",
+    "question": "Why is stateless inference preferred for scalable AI services?",
+    "options": {
+      "A": "It increases coupling",
+      "B": "It simplifies scaling and recovery",
+      "C": "It eliminates monitoring",
+      "D": "It reduces accuracy"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Stateless services scale horizontally and recover easily.",
+      "incorrect": {
+        "A": "Coupling is reduced.",
+        "C": "Monitoring remains required.",
+        "D": "Accuracy is model-dependent."
+      }
+    }
+  },
+  {
+    "id": "CH16-0135",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "model SLAs",
+    "difficulty": "Medium",
+    "question": "What should AI service SLAs primarily consider?",
+    "options": {
+      "A": "Model complexity",
+      "B": "Latency, availability, and accuracy thresholds",
+      "C": "Training duration",
+      "D": "Tool popularity"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Operational SLAs focus on measurable service behavior.",
+      "incorrect": {
+        "A": "Complexity does not define service quality.",
+        "C": "Training time is not an SLA metric.",
+        "D": "Popularity is irrelevant."
+      }
+    }
+  },
+  {
+    "id": "CH16-0136",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Operations",
+    "subtopic": "incident learning",
+    "difficulty": "Medium",
+    "question": "Why should AI-related incidents result in documented lessons learned?",
+    "options": {
+      "A": "To assign blame",
+      "B": "To prevent recurrence and improve system design",
+      "C": "To reduce automation",
+      "D": "To avoid governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Learning reduces future risk and improves resilience.",
+      "incorrect": {
+        "A": "Blame does not improve systems.",
+        "C": "Automation remains valuable.",
+        "D": "Governance is reinforced."
+      }
+    }
+  },
+  {
+    "id": "CH16-0137",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "model ownership",
+    "difficulty": "Medium",
+    "question": "Why must AI models have clearly defined owners?",
+    "options": {
+      "A": "To reduce reuse",
+      "B": "To ensure accountability for performance and compliance",
+      "C": "To avoid monitoring",
+      "D": "To eliminate documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Ownership ensures models are maintained and governed.",
+      "incorrect": {
+        "A": "Reuse is encouraged.",
+        "C": "Monitoring is mandatory.",
+        "D": "Documentation remains essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0138",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Governance",
+    "subtopic": "approval workflow",
+    "difficulty": "Medium",
+    "question": "What should trigger a governance re-approval of an AI model?",
+    "options": {
+      "A": "Minor logging changes",
+      "B": "Significant changes in training data, logic, or usage",
+      "C": "Increased automation usage",
+      "D": "Tool upgrades"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Material changes affect risk and behavior.",
+      "incorrect": {
+        "A": "Logging changes are low risk.",
+        "C": "Usage alone is insufficient.",
+        "D": "Tool upgrades may not affect logic."
+      }
+    }
+  },
+  {
+    "id": "CH16-0139",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "automation roadmap",
+    "difficulty": "Medium",
+    "question": "Why should AI and automation initiatives follow a roadmap?",
+    "options": {
+      "A": "To reduce flexibility",
+      "B": "To align adoption with business priorities and capacity",
+      "C": "To eliminate experimentation",
+      "D": "To avoid governance"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Roadmaps balance innovation with sustainability.",
+      "incorrect": {
+        "A": "Roadmaps enable controlled flexibility.",
+        "C": "Experimentation remains important.",
+        "D": "Governance is integrated."
+      }
+    }
+  },
+  {
+    "id": "CH16-0140",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Strategy",
+    "subtopic": "value validation",
+    "difficulty": "Easy",
+    "question": "How should value from AI-enabled automation be validated?",
+    "options": {
+      "A": "By model accuracy alone",
+      "B": "By measurable business outcomes",
+      "C": "By number of automations",
+      "D": "By tool adoption rate"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Business impact defines real value.",
+      "incorrect": {
+        "A": "Accuracy alone is insufficient.",
+        "C": "Quantity is not quality.",
+        "D": "Adoption does not equal value."
+      }
+    }
+  },
+  {
+    "id": "CH16-0141",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "human oversight",
+    "difficulty": "Medium",
+    "question": "Why must human oversight remain part of AI-driven automation?",
+    "options": {
+      "A": "AI cannot scale",
+      "B": "Some decisions carry ethical, legal, or reputational risk",
+      "C": "Humans slow automation",
+      "D": "Oversight eliminates automation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Human judgment mitigates high-impact risk.",
+      "incorrect": {
+        "A": "AI can scale.",
+        "C": "Oversight improves trust.",
+        "D": "Automation remains valuable."
+      }
+    }
+  },
+  {
+    "id": "CH16-0142",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "decision appeal",
+    "difficulty": "Medium",
+    "question": "Why should automated decisions be appealable or reviewable?",
+    "options": {
+      "A": "To slow systems",
+      "B": "To correct errors and maintain trust",
+      "C": "To reduce automation",
+      "D": "To avoid monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Appeal mechanisms protect users and organizations.",
+      "incorrect": {
+        "A": "Review improves outcomes.",
+        "C": "Automation is still beneficial.",
+        "D": "Monitoring is required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0143",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Ethics",
+    "subtopic": "data consent",
+    "difficulty": "Easy",
+    "question": "Why must user consent be respected in AI-driven data processing?",
+    "options": {
+      "A": "Consent improves latency",
+      "B": "Legal and ethical standards require lawful data use",
+      "C": "Consent replaces security",
+      "D": "Consent reduces accuracy"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Consent is fundamental to lawful and ethical processing.",
+      "incorrect": {
+        "A": "Latency is unrelated.",
+        "C": "Security remains essential.",
+        "D": "Accuracy is not reduced."
+      }
+    }
+  },
+  {
+    "id": "CH16-0144",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "program scaling",
+    "difficulty": "Medium",
+    "question": "What must be in place before scaling AI and automation programs?",
+    "options": {
+      "A": "More tools",
+      "B": "Strong governance, monitoring, and ownership",
+      "C": "Reduced documentation",
+      "D": "Avoidance of human review"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Scale amplifies both strengths and weaknesses.",
+      "incorrect": {
+        "A": "Tools alone increase risk.",
+        "C": "Documentation remains necessary.",
+        "D": "Human review is still required."
+      }
+    }
+  },
+  {
+    "id": "CH16-0145",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "automation retirement",
+    "difficulty": "Medium",
+    "question": "Why should AI and automation solutions be periodically reviewed for retirement?",
+    "options": {
+      "A": "To reduce innovation",
+      "B": "To remove obsolete or risky automations",
+      "C": "To eliminate monitoring",
+      "D": "To increase costs"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Unused or outdated automation increases technical debt.",
+      "incorrect": {
+        "A": "Retirement improves focus.",
+        "C": "Monitoring remains required.",
+        "D": "Costs usually decrease."
+      }
+    }
+  },
+  {
+    "id": "CH16-0146",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "continuous governance",
+    "difficulty": "Medium",
+    "question": "Why must governance be continuous rather than one-time?",
+    "options": {
+      "A": "Systems never change",
+      "B": "Data, models, and risks evolve over time",
+      "C": "Governance slows delivery",
+      "D": "Governance replaces monitoring"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Change introduces new risk that must be managed.",
+      "incorrect": {
+        "A": "Change is constant.",
+        "C": "Governance enables safe speed.",
+        "D": "Monitoring complements governance."
+      }
+    }
+  },
+  {
+    "id": "CH16-0147",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "skill development",
+    "difficulty": "Easy",
+    "question": "Why is ongoing skill development essential for AI-enabled integration teams?",
+    "options": {
+      "A": "AI tools never change",
+      "B": "Evolving technology and risk require updated expertise",
+      "C": "Training reduces productivity",
+      "D": "Skills are tool-specific"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Continuous learning maintains effectiveness and safety.",
+      "incorrect": {
+        "A": "AI evolves rapidly.",
+        "C": "Training improves productivity.",
+        "D": "Skills are transferable."
+      }
+    }
+  },
+  {
+    "id": "CH16-0148",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "operating model",
+    "difficulty": "Medium",
+    "question": "What operating model best supports long-term AI and automation success?",
+    "options": {
+      "A": "Ad-hoc ownership",
+      "B": "Clear ownership with shared standards and reviews",
+      "C": "Tool-specific silos",
+      "D": "No documentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Shared standards and ownership enable scale and control.",
+      "incorrect": {
+        "A": "Ad-hoc models increase risk.",
+        "C": "Silos reduce reuse.",
+        "D": "Documentation is essential."
+      }
+    }
+  },
+  {
+    "id": "CH16-0149",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "resilience",
+    "difficulty": "Easy",
+    "question": "What most strongly contributes to resilience in AI-enabled integrations?",
+    "options": {
+      "A": "Maximum automation",
+      "B": "Fallbacks, monitoring, and governance",
+      "C": "Avoiding human oversight",
+      "D": "Rapid experimentation"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Resilience comes from preparation and control.",
+      "incorrect": {
+        "A": "Automation without control increases risk.",
+        "C": "Human oversight improves resilience.",
+        "D": "Experimentation must be governed."
+      }
+    }
+  },
+  {
+    "id": "CH16-0150",
+    "chapter": 16,
+    "chapterTitle": "AI, Composer, RPA, IDP",
+    "topic": "Maturity",
+    "subtopic": "sustainable adoption",
+    "difficulty": "Easy",
+    "question": "What defines sustainable adoption of AI and automation in enterprises?",
+    "options": {
+      "A": "Tool-first mindset",
+      "B": "Balanced focus on value, risk, and governance",
+      "C": "Avoiding APIs",
+      "D": "Maximizing automation volume"
+    },
+    "correctAnswer": "B",
+    "explanation": {
+      "correct": "Sustainability requires discipline alongside innovation.",
+      "incorrect": {
+        "A": "Tools follow strategy.",
+        "C": "APIs remain core.",
+        "D": "Volume without control is harmful."
+      }
+    }
+  }
+]
