@@ -6,7 +6,7 @@
     "topic": "No-code vs Low-code",
     "subtopic": "Definition",
     "difficulty": "Easy",
-    "question": "Which statement most accurately defines a no-code technology as discussed in the book?",
+    "question": "Which statement most accurately defines a no-code technology ?",
     "options": {
       "A": "A platform that eliminates the need for backend systems",
       "B": "A platform that allows configuration using visual interfaces without writing any code",
@@ -1185,7 +1185,7 @@
     "topic": "Future Trends",
     "subtopic": "Platform evolution",
     "difficulty": "Hard",
-    "question": "Why does the book suggest MuleSoft will become increasingly important in the Salesforce ecosystem?",
+    "question": "Why does MuleSoft will become increasingly important in the Salesforce ecosystem?",
     "options": {
       "A": "Because Salesforce will stop building APIs",
       "B": "Because Salesforce continues to acquire and integrate multiple platforms",
@@ -1573,7 +1573,7 @@
     "topic": "No-code",
     "subtopic": "Limitations",
     "difficulty": "Medium",
-    "question": "What is a key limitation of no-code tools highlighted in the book?",
+    "question": "What is a key limitation of no-code tools ?",
     "options": {
       "A": "They cannot integrate systems",
       "B": "They lack flexibility for complex logic",
@@ -1943,7 +1943,7 @@
     "topic": "Future Outlook",
     "subtopic": "Integration trends",
     "difficulty": "Hard",
-    "question": "What long-term trend does the book associate with integration platforms like MuleSoft?",
+    "question": "What long-term trend  associate with integration platforms like MuleSoft?",
     "options": {
       "A": "Reduced need for APIs",
       "B": "Growing importance due to system proliferation",
@@ -9751,3 +9751,4 @@
       }
     }
   }]
+
