@@ -1424,59 +1424,49 @@
         }
 
         // Display a question
-        function displayQuestion(index) {
-            if (filteredQuestions.length === 0) return;
+        
+function displayQuestion(index) {
+    if (filteredQuestions.length === 0) return;
 
-            const question = filteredQuestions[index];
-            currentQuestionIndex = index;
-            currentQuestion.textContent = index + 1;
+    const question = filteredQuestions[index];
+    currentQuestionIndex = index;
+    currentQuestion.textContent = index + 1;
 
-            // Update question text
-            questionText.textContent = question.question;
+    // Reset states BEFORE rendering options
+    selectedOption = null;
+    answerSubmitted = false; // <-- Move this up
 
-            // Update tags
-            mcqChapterTag.textContent = `Chapter ${question.chapter || currentChapterId}`;
+    // Update question text and tags...
+    questionText.textContent = question.question;
+    mcqChapterTag.textContent = `Chapter ${question.chapter || currentChapterId}`;
+    const difficulty = question.difficulty || 'Easy';
+    mcqDifficultyTag.textContent = difficulty;
+    mcqDifficultyTag.className = `mcq-tag difficulty ${difficulty.toLowerCase()}`;
+    mcqId.textContent = `ID: ${question.id || `CH${currentChapterId.toString().padStart(2, '0')}-${(index + 1).toString().padStart(4, '0')}`}`;
 
-            // Set difficulty tag with fallback
-            const difficulty = question.difficulty || 'Easy';
-            mcqDifficultyTag.textContent = difficulty;
-            mcqDifficultyTag.className = `mcq-tag difficulty ${difficulty.toLowerCase()}`;
+    // Render options
+    optionsContainer.innerHTML = '';
+    if (question.options && typeof question.options === 'object') {
+        Object.entries(question.options).forEach(([key, value]) => {
+            const optionElement = document.createElement('div');
+            optionElement.className = 'option';
+            optionElement.dataset.option = key;
+            optionElement.innerHTML = `
+                <div class="option-letter">${key}</div>
+                <div class="option-text">${value}</div>
+            `;
+            optionElement.addEventListener('click', () => selectOption(key)); // Always attach listener
+            optionsContainer.appendChild(optionElement);
+        });
+    }
 
-            mcqId.textContent = `ID: ${question.id || `CH${currentChapterId.toString().padStart(2, '0')}-${(index + 1).toString().padStart(4, '0')}`}`;
+    // Reset explanation panel
+    explanationPanel.classList.remove('show');
 
-            // Update options
-            optionsContainer.innerHTML = '';
+    updateNavigationButtons();
+    updateProgress();
+}
 
-            if (question.options && typeof question.options === 'object') {
-                Object.entries(question.options).forEach(([key, value]) => {
-                    const optionElement = document.createElement('div');
-                    optionElement.className = 'option';
-                    optionElement.dataset.option = key;
-
-                    optionElement.innerHTML = `
-                        <div class="option-letter">${key}</div>
-                        <div class="option-text">${value}</div>
-                    `;
-
-                    if (!answerSubmitted) {
-                        optionElement.addEventListener('click', () => selectOption(key));
-                    }
-
-                    optionsContainer.appendChild(optionElement);
-                });
-            }
-
-            // Update navigation buttons
-            updateNavigationButtons();
-
-            // Reset explanation panel
-            explanationPanel.classList.remove('show');
-            selectedOption = null;
-            answerSubmitted = false;
-
-            // Update progress
-            updateProgress();
-        }
 
         // Update navigation buttons
         function updateNavigationButtons() {
