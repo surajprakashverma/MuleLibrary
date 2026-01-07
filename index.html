@@ -1426,6 +1426,7 @@
 
         // Display a question
         
+
 function displayQuestion(index) {
     if (filteredQuestions.length === 0) return;
 
@@ -1433,11 +1434,9 @@ function displayQuestion(index) {
     currentQuestionIndex = index;
     currentQuestion.textContent = index + 1;
 
-    // Reset states BEFORE rendering options
     selectedOption = null;
-    answerSubmitted = false; // <-- Move this up
+    answerSubmitted = false;
 
-    // Update question text and tags...
     questionText.textContent = question.question;
     mcqChapterTag.textContent = `Chapter ${question.chapter || currentChapterId}`;
     const difficulty = question.difficulty || 'Easy';
@@ -1445,28 +1444,24 @@ function displayQuestion(index) {
     mcqDifficultyTag.className = `mcq-tag difficulty ${difficulty.toLowerCase()}`;
     mcqId.textContent = `ID: ${question.id || `CH${currentChapterId.toString().padStart(2, '0')}-${(index + 1).toString().padStart(4, '0')}`}`;
 
-    // Render options
+    // Shuffle options and store order
     optionsContainer.innerHTML = '';
-    if (question.options && typeof question.options === 'object') {
-        Object.entries(question.options).forEach(([key, value]) => {
-            const optionElement = document.createElement('div');
-            optionElement.className = 'option';
-            optionElement.dataset.option = key;
-            optionElement.innerHTML = `
-                <div class="option-letter">${key}</div>
-                <div class="option-text">${value}</div>
-            `;
-            optionElement.addEventListener('click', () => selectOption(key)); // Always attach listener
-            optionsContainer.appendChild(optionElement);
-        });
-    }
+    shuffledOptions = Object.entries(question.options).sort(() => Math.random() - 0.5);
 
-    // Reset explanation panel
+    shuffledOptions.forEach(([key, value]) => {
+        const optionElement = document.createElement('div');
+        optionElement.className = 'option';
+        optionElement.dataset.option = key;
+        optionElement.innerHTML = `<div class="option-text">${value}</div>`;
+        optionElement.addEventListener('click', () => selectOption(key));
+        optionsContainer.appendChild(optionElement);
+    });
+
     explanationPanel.classList.remove('show');
-
     updateNavigationButtons();
     updateProgress();
 }
+
 
 
         // Update navigation buttons
@@ -1495,60 +1490,49 @@ function displayQuestion(index) {
 
         // Show answer explanation
         function showAnswer() {
-            if (filteredQuestions.length === 0 || answerSubmitted) return;
+    if (filteredQuestions.length === 0 || answerSubmitted) return;
 
-            const question = filteredQuestions[currentQuestionIndex];
-            answerSubmitted = true;
+    const question = filteredQuestions[currentQuestionIndex];
+    answerSubmitted = true;
 
-            // Mark correct and incorrect options
-            document.querySelectorAll('.option').forEach(opt => {
-                const optionKey = opt.dataset.option;
-                opt.classList.remove('selected');
+    // Mark correct and incorrect options
+    document.querySelectorAll('.option').forEach(opt => {
+        const optionKey = opt.dataset.option;
+        opt.classList.remove('selected');
 
-                if (optionKey === question.correctAnswer) {
-                    opt.classList.add('correct');
-                } else if (optionKey === selectedOption) {
-                    opt.classList.add('incorrect');
-                }
-            });
-
-            // Show explanation if available
-            if (question.explanation) {
-                correctExplanation.innerHTML = `<strong>Correct Answer Explanation:</strong> ${question.explanation.correct || 'No explanation available.'}`;
-
-                // Show incorrect options explanations if available
-                incorrectOptionsList.innerHTML = '';
-                if (question.explanation.incorrect && typeof question.explanation.incorrect === 'object') {
-                    Object.entries(question.explanation.incorrect).forEach(([key, value]) => {
-                        if (key !== question.correctAnswer) {
-                            const incorrectOption = document.createElement('div');
-                            incorrectOption.className = 'incorrect-option';
-                            incorrectOption.innerHTML = `
-                                <span class="incorrect-letter">${key}:</span> ${value}
-                            `;
-                            incorrectOptionsList.appendChild(incorrectOption);
-                        }
-                    });
-                } else {
-                    incorrectOptionsList.innerHTML = '<p>No detailed explanation for incorrect options available.</p>';
-                }
-            } else {
-                correctExplanation.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
-                incorrectOptionsList.innerHTML = '<p>No explanation available for this question.</p>';
-            }
-
-            explanationPanel.classList.add('show');
-
-            // Update progress if user got it right
-            if (selectedOption === question.correctAnswer && userProgress[currentChapterId]) {
-                userProgress[currentChapterId].completed = Math.min(
-                    userProgress[currentChapterId].completed + 1,
-                    userProgress[currentChapterId].total
-                );
-                saveUserProgress();
-                updateChapterProgressUI();
-            }
+        if (optionKey === question.correctAnswer) {
+            opt.classList.add('correct');
+        } else if (optionKey === selectedOption) {
+            opt.classList.add('incorrect');
         }
+    });
+
+    // Show explanation in shuffled order
+    correctExplanation.innerHTML = `<strong>Correct Answer Explanation:</strong> ${question.explanation?.correct || 'No explanation available.'}`;
+    incorrectOptionsList.innerHTML = '';
+
+    shuffledOptions.forEach(([key, value]) => {
+        if (key !== question.correctAnswer) {
+            const explanationText = question.explanation?.incorrect?.[key] || 'No explanation available.';
+            const incorrectOption = document.createElement('div');
+            incorrectOption.className = 'incorrect-option';
+            incorrectOption.innerHTML = `${explanationText}`;
+            incorrectOptionsList.appendChild(incorrectOption);
+        }
+    });
+
+    explanationPanel.classList.add('show');
+
+    if (selectedOption === question.correctAnswer && userProgress[currentChapterId]) {
+        userProgress[currentChapterId].completed = Math.min(
+            userProgress[currentChapterId].completed + 1,
+            userProgress[currentChapterId].total
+        );
+        saveUserProgress();
+        updateChapterProgressUI();
+    }
+}
+
 
         // Show previous question
         function showPreviousQuestion() {
