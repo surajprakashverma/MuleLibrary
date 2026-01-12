@@ -8095,31 +8095,6 @@
       }
     }
   },
-
-  {
-    "id": "CH03-0341",
-    "chapter": 3,
-    "chapterTitle": "Anypoint Studio & Anypoint Code Builder",
-    "topic": "Completion",
-    "subtopic": "Chapter conclusion",
-    "difficulty": "Easy",
-    "question": "What does completing this chapter signify?",
-    "options": {
-      "A": "UI mastery",
-      "B": "Strong foundation in Studio and ACB",
-      "C": "No further learning needed",
-      "D": "Deployment expertise only"
-    },
-    "correctAnswer": "B",
-    "explanation": {
-      "correct": "The chapter builds a solid development foundation.",
-      "incorrect": {
-        "A": "UI mastery is secondary.",
-        "C": "Learning continues.",
-        "D": "Deployment is only one aspect."
-      }
-    }
-  },
   {
     "id": "CH03-0342",
     "chapter": 3,
@@ -8312,29 +8287,6 @@
         "D": "Effort is required."
       }
     }
-  },
-  {
-    "id": "CH03-0350",
-    "chapter": 3,
-    "chapterTitle": "Anypoint Studio & Anypoint Code Builder",
-    "topic": "Completion",
-    "subtopic": "Chapter completion",
-    "difficulty": "Easy",
-    "question": "What does completing Chapter 3 prepare you for?",
-    "options": {
-      "A": "UI design only",
-      "B": "Advanced MuleSoft concepts and real-world projects",
-      "C": "Ignoring best practices",
-      "D": "Manual-only development"
-    },
-    "correctAnswer": "B",
-    "explanation": {
-      "correct": "Chapter 3 prepares you for advanced and practical Mule work.",
-      "incorrect": {
-        "A": "UI is not the sole focus.",
-        "C": "Best practices remain essential.",
-        "D": "Automation and discipline are key."
-      }
-    }
   }
 ]
+
