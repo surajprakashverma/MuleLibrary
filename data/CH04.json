@@ -1559,30 +1559,31 @@
       }
     }
   },
-  {
-    "id": "CH04-0066",
-    "chapter": 4,
-    "chapterTitle": "Core Components, Flows, Error Handling",
-    "topic": "Core Components",
-    "subtopic": "For Each Aggregation",
-    "difficulty": "Medium",
-    "question": "How is the payload handled after a For Each scope completes?",
-    "options": {
-      "A": "Original payload is restored",
-      "B": "Payload contains aggregated results",
-      "C": "Payload is cleared",
-      "D": "Payload becomes null"
-    },
-    "correctAnswer": "B",
-    "explanation": {
-      "correct": "Results of each iteration are aggregated into the payload.",
-      "incorrect": {
-        "A": "Original payload is not restored.",
-        "C": "Payload is not cleared.",
-        "D": "Payload is not null."
-      }
-    }
+  
+{
+  "id": "CH04-0066",
+  "chapter": 4,
+  "chapterTitle": "Core Components, Flows, Error Handling",
+  "topic": "Core Components",
+  "subtopic": "For Each Scope Behavior",
+  "difficulty": "Medium",
+  "question": "How is the payload handled after a For Each scope completes?",
+  "options": {
+    "A": "Original payload is restored",
+    "B": "Payload contains aggregated results",
+    "C": "Payload is cleared",
+    "D": "Payload becomes null"
   },
+  "correctAnswer": "A",
+  "explanation": {
+    "correct": "After the For Each scope completes, Mule restores the original payload that existed before entering the scope.",
+    "incorrect": {
+      "B": "The For Each scope does not perform any automatic aggregation of results.",
+      "C": "The payload is not cleared after the For Each completes.",
+      "D": "The payload does not become null after the For Each completes."
+    }
+  }
+},
   {
     "id": "CH04-0067",
     "chapter": 4,
@@ -12000,3 +12001,4 @@
     }
   }
 ]
+
